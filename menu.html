@@ -1,0 +1,55 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="cordova.js"></script>
+	<script src="js/php_number_format.js"></script>
+	<script src="js/jquery-2.0.0.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		// Wait for device API libraries to load
+		//
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		// device APIs are available
+		
+		function onDeviceReady() {
+			// Now safe to use device APIs
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			var os = device.platform;
+			if(os == "Android") $(".quit").removeClass('hidden');
+		}
+		
+		function onBackKeyDown() {
+			// Handle the back button
+			if(confirm('Logout of '+appname+'?')) logout();
+		}
+		$(function (){
+			balance();
+		});
+    </script>
+</head>
+<body onload="onLoad()">
+<h1 class="title appname">Menu</h1>
+<div class="page">
+	<h4 class="center">Your SMS balance on <span class="domain"></span> is <span class="balance"></span></h4>
+
+		<div >
+		<a href="compose.html" class="button">Compose SMS</a>
+		<a href="draft.html" class="button">Draft Messages</a>
+		<a href="voucher.html" class="button">Load SMS Voucher</a>
+		<a href="backup.html" class="button">Backup Phone Contacts</a>
+		<a href="restore.html" class="button">Restore Phone Contacts</a>
+		<a href="settings.html" class="button">Settings</a>
+		<a href="#" onclick="if(confirm('logout of '+appname+'?')){logout();} return false;" class="button">Logout</a>
+		<a href="#" onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="button quit hidden">Quit</a>
+	</div>
+</div>
+<div class="footer"></a>
+</body>
+</html>
