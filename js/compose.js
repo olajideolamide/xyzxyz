@@ -18,7 +18,7 @@ function getGroup(){
 	var p = getSession('password');
 	$.get( api+'username='+escape(u)+'&password='+escape(p)+'&group=true' )
 	.fail(function() {
-		alert( "Error connecting to server" );
+		//alert( "Error connecting to server" );
 		$("#grp").html('Error connecting to server');
 		setFontSize();
 	})
@@ -124,14 +124,15 @@ function countDest(){
 			return;
 		}
 		
-		var u = getSession('username');
+		var u = getSession('email');
 		var p = getSession('password');
-		var url = api+'username='+escape(u)+'&password='+escape(p)+'&sender='+escape(s)+'&message='+escape(m)+'&recipient='+escape(r)+'&schedule='+escape(sch);
+		var url = api+'?pd_m=send&email='+escape(u)+'&password='+escape(p)+'&senderID='+escape(s)+'&textmessage='+escape(m)+'&to_number='+escape(r)+'&dateTime='+escape(sch)+'&callback=?';
+		
 		
 		$('.sending').toggle(300);
-		$.get( url )
+		/*$.get( url )
 		.fail(function() {
-			alert( "Error connecting to server!" );
+			//alert( "Error connecting to server!" );
 			$('.sending').toggle(300);
 		})
 		.done(function(data) {
@@ -140,7 +141,36 @@ function countDest(){
 			var msg = window[y[0]];
 			alert( msg );
 			$('.sending').toggle(300);
-		})
+		})*/
+
+		$.ajax({
+			type: 'GET',
+
+		  	dataType:'jsonp',
+
+			url: url,
+
+		 	jsonpCallback: 'jsonCallback',
+		    contentType: "application/json",
+		    dataType: 'jsonp',
+		    success: function(json) {
+		       if(json.response[0].code == '000')
+		       {
+				   alert('Message sent Successfully: SMS cost is '+json.response[0].payload);
+					$('.sending').toggle(300);
+				}
+				else
+				{
+					
+					alert('SMS was not sent: '+json.response[0].payload);
+					$('.sending').toggle(300);
+				}
+		    },
+		    error: function(e) {
+		       alert('Unable to connect to server');
+		       $('.sending').toggle(300);
+		    }
+		});
 	};
  }
 

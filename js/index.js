@@ -1,16 +1,16 @@
-$(function (){
-	$.get( api+'regMobile=check' )
+/*$(function (){
+	$.get( api+'regMobile=check&callback=?' )
 	.done(function(data) {
 		if(data == 'Enabled') $('.register').show(300);
 	});
-});
+});*/
 
 function login(){
 	$('.login').toggle();
-	var username = $('#username').val();
+	var email = $('#email').val();
 	var password = $('#password').val();
-	if(username == '') {
-		alert('Username is required');
+	if(email == '') {
+		alert('Email is required');
 		$('.login').toggle();
 		return;
 	}
@@ -19,7 +19,7 @@ function login(){
 		$('.login').toggle();
 		return;
 	}
-	$.get( api+'username='+escape(username)+'&password='+escape(password)+'&balance=true' )
+	/*$.get( api+'username='+escape(username)+'&password='+escape(password)+'&balance=true' )
 	.fail(function() {
 		alert( "Error connecting to server" );
 	  })
@@ -33,7 +33,36 @@ function login(){
 			$('.login').toggle();
 			window.location = 'menu.html';
 		}
-	  });
+	  });*/
+
+
+		$.ajax({
+			type: 'GET',
+
+		  	dataType:'jsonp',
+
+			url: api+'?pd_m=login&email='+escape(email)+'&password='+escape(password)+'&callback=?',
+
+		 	jsonpCallback: 'jsonCallback',
+		    contentType: "application/json",
+		    dataType: 'jsonp',
+		    success: function(json) {
+		       if(json.response[0].code == '000')
+		       {
+					setSession('email',email);
+					setSession('password',password);
+					$('.login').toggle();
+					window.location = 'menu.html';
+				}
+				else
+					alert('Sorry, we could not log you in.');
+		    },
+		    error: function(e) {
+		       alert('Sorry, we could not log you in.');
+		    }
+		});
+
+
 }
 
 if(isLoggedIn() == true){

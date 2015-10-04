@@ -7,7 +7,9 @@
 	
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<script src="cordova.js"></script>
+
 	<script src="js/jquery-2.0.0.js"></script>
+	<script src="js/jquery.xdomainrequest.min.js"></script>
 	<script src="js/main.js"></script>
 	<script src="js/index.js"></script>
 	<script type="text/javascript" charset="utf-8">
@@ -41,13 +43,13 @@
 <h1 class="title appname">Menu</h1>
 <div class="page">
 	<h3>&nbsp;</h3>
-	<div class="login hidden center">Contacting Server...<br /><img src="images/loading.gif" /></div>
+	<div class="login hidden center">Connecting to Server...<br /><img src="images/loading.gif" /></div>
 	<div class="login">
 		<div class="form-container" style="width: 65%;">
 			<h3>Login</h3>
 			
-			<div class="label">Username</div>
-			<input type="text" id="username" placeholder="Username" />
+			<div class="label">Email</div>
+			<input type="text" id="email" placeholder="Email" />
 			
 			<div class="label">Password</div>
 			<input type="text" id="password" placeholder="Password" />

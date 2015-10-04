@@ -1,4 +1,4 @@
-api = 'http://estoresms.com/index.php?option=com_spc&comm=spc_api&mobi=true&';
+api = 'http://www.padisms.com/smsmobi';
 domain = 'estoresms.com';
 appname = 'EstoreSMS';
 xOK = 'Operation completed successfully.';
@@ -76,14 +76,15 @@ function isLoggedIn(){
 function nothing(){};
 
 function balance(){
-	var u = getSession('username');
+	var u = getSession('email');
 	var p = getSession('password');
+	
 	if(u != '' || u != undefined || p != '' || p != undefined){
 	} else {
 		logout();
 	}
 	
-	$.get( api+'username='+escape(u)+'&password='+escape(p)+'&balance=true' )
+	/*$.get( api+'username='+escape(u)+'&password='+escape(p)+'&balance=true' )
 	.fail(function() {
 		alert( "Error connecting to server" );
 	  })
@@ -94,7 +95,35 @@ function balance(){
 		} else {
 			$(".balance").html(number_format(0+data,2));
 		}
-	  });
+	  });*/
+		
+	  $.ajax({
+			type: 'GET',
+
+		  	dataType:'jsonp',
+
+			url: api+'?pd_m=balance&email='+escape(u)+'&password='+escape(p)+'&callback=?',
+			
+		 	jsonpCallback: 'jsonCallback',
+		    contentType: "application/json",
+		    dataType: 'jsonp',
+		    success: function(json) {
+				if(json.response[0].code == '000')
+				{
+					$(".balance").html(number_format(0+json.response[0].payload,2));
+				}
+				else
+				{
+					
+					alert('Wrong email/password combination.');
+					logout();
+				}
+		    },
+		    error: function(e) {
+		       alert('Wrong email/password combination.');
+		       logout();
+		    }
+		});
 }
 
 function logout(){
