@@ -21,6 +21,7 @@ x_106 = 'Invalid group name.';
 x_107 = 'Operation failed.';
 
 
+
 $(function (){
 	$('.appname').html(appname);
 	$('.domain').html(domain);
