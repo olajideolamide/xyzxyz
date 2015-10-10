@@ -21,6 +21,6 @@
         Afrisoft Interactive 
     </author>
 
+	<access origin="*" />
 </widget>
 
-<access origin="*" />
