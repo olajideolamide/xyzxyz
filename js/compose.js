@@ -9,7 +9,7 @@ $(function(){
     $("#message").val(message);
 	unsetSession('draft')
 	counta(0);
-	getGroup();
+	//getGroup();
 });
 
 function getGroup(){	
@@ -21,6 +21,8 @@ function getGroup(){
 			type: 'GET',
 
 		  	dataType:'jsonp',
+
+		  	cache: 'true',
 
 			url: api+'?pd_m=groups&email='+escape(u)+'&password='+escape(p)+'&callback=?',
 			
@@ -57,7 +59,9 @@ function getGroup(){
 				setFontSize();
 		    },
 		    error: function(e) {
-		       alert('Unable to connect to server. Please check your network connection');
+		       //alert('Unable to connect to server. Please check your network connection');
+		       alert('this is where the error is');
+		       alert(api+'?pd_m=groups&email='+escape(u)+'&password='+escape(p)+'&callback=?');
 		       //$('.sending').toggle(300);
 		    }
 		});
@@ -80,6 +84,7 @@ function addGroup(grp, id){
 function showGroups(){
 	$('.page').hide(300);
 	$('.main').show(300);
+	getGroup();
 	$('#groups').show(300);
 	$('.groups').hide(300);
 }

@@ -21,6 +21,9 @@ x_103 = 'Unable to load voucher';
 x_106 = 'Invalid group name.';
 x_107 = 'Operation failed.';
 
+$.ajaxSetup({
+  timeout: 10000
+});
 
 $(function (){
 	$('.appname').html(appname);
@@ -28,6 +31,7 @@ $(function (){
 	$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
 	
     setFontSize();
+
 });
 
 
@@ -92,6 +96,8 @@ function balance(){
 			type: 'GET',
 
 		  	dataType:'jsonp',
+			
+			cache: 'false',
 
 			url: api+'?pd_m=balance&email='+escape(u)+'&password='+escape(p)+'&callback=?',
 			
@@ -106,13 +112,13 @@ function balance(){
 				else
 				{
 					
-					alert('Wrong email/password combination.');
-					logout();
+					//alert('Wrong email/password combination.');
+					//logout();
 				}
 		    },
 		    error: function(e) {
-		       alert('Wrong email/password combination.');
-		       logout();
+		       //alert('Wrong email/password combination.');
+		       //logout();
 		    }
 		});
 }
