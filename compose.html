@@ -1,6 +1,7 @@
 <html>
 <head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+	<meta  name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	
@@ -42,7 +43,7 @@
 	<a href="#" style="width: 24%;" onclick="$('#schedule').val('');$('.scheduler').toggle(300); return false;" class="hidden scheduler">Unschedule</a>
 	<a href="menu.html" style="width: 24%;" >Menu</a></div>
 	
-	<h1 class="pageName">Compose SMS</h1>
+	<h3 class="pageName">Compose SMS</h3>
 	<div id="main" class="page">
 		<div class="sending hidden center">Sending SMS...<br /><img src="images/loading.gif" /></div>
 		<div class="sending">
@@ -118,11 +119,11 @@
 								</select>
 							</td>
 							<td>
-								<a href="#" onclick="$('#schedule').val('');$('.scheduler').toggle(300); return false;" class="button">Close</a>
+								<a href="#" id="closeSchedule" onclick="$('#schedule').val('');$('.scheduler').toggle(300); return false;" class="button">Close</a>
 							</td>
 						</tr>
 					</table>
-					<input type="hidden" class="hidden" id="schedule" value="" placeholder="YYYY-MM-DD hh:mm" /> 
+					<input type="hidden" class="hidden" id="schedule" value="" placeholder="YYYY-MM-DD hh:mm:ss" /> 
 				</div>
 			</div>
 			

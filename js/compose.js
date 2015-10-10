@@ -13,46 +13,65 @@ $(function(){
 });
 
 function getGroup(){	
-	$("#grp").html('Contacting Server...<br /><img src="images/loading.gif" />');
-	var u = getSession('username');
+	$("#grp").html('Fetching Groups...<br /><img src="images/loading.gif" />');
+	var u = getSession('email');
 	var p = getSession('password');
-	$.get( api+'username='+escape(u)+'&password='+escape(p)+'&group=true' )
-	.fail(function() {
-		//alert( "Error connecting to server" );
-		$("#grp").html('Error connecting to server');
-		setFontSize();
-	})
-	.done(function(data) {
-		if(data == '2905' || data == '-2905'){
-			alert('Invalid username and password combination.');
-			$("#grp").html('Error connecting to server');
-			logout();
-		} else {
-			if(data == '') $("#grp").html('No groups available');
-				else {
-				var d = data.split('|||');
-				var e = '';
-				var o = '';
-				for(var i = 0; i < d.length; i++){
-					e = d[i].split('###');
-					o = o +'<a href="#" class="button" onclick="addGroup(\''+e[0]+'\');" >'+e[0]+' ('+e[1]+')</a>';
+
+	$.ajax({
+			type: 'GET',
+
+		  	dataType:'jsonp',
+
+			url: api+'?pd_m=groups&email='+escape(u)+'&password='+escape(p)+'&callback=?',
+			
+			
+		 	jsonpCallback: 'jsonCallback',
+		    contentType: "application/json",
+		    dataType: 'jsonp',
+		    success: function(json) {
+		      	if(json.response[0].code == '001')
+		      	{
+					alert('Invalid username and password combination.');
+					$("#grp").html('Could not fetch groups');
+					logout();
 				}
-				$("#grp").html(o);
-			}
-		}
-		setFontSize();
-	});
+				else if(json.response[0].code == '004')
+				{
+					$("#grp").html('No groups available');
+				} 
+				else 
+				{
+					var data = json.response[0].payload;
+					
+					var d = data.split('|||');
+					var e = '';
+					var o = '';
+					for(var i = 0; i < d.length; i++)
+					{
+						e = d[i].split('###');
+						o = o +'<a href="#" class="button" onclick="addGroup(\''+e[0]+'\',\''+e[1]+'\');" >'+e[0]+' (ID: '+e[1]+')</a>';
+					}
+					$("#grp").html(o);
+					
+				}
+				setFontSize();
+		    },
+		    error: function(e) {
+		       alert('Unable to connect to server. Please check your network connection');
+		       //$('.sending').toggle(300);
+		    }
+		});
 }
 
 function pickDate(){
 	var D = $('#YYYY').val()+'-'+$('#MM').val()+'-'+$('#DD').val()+' '+$('#hh').val()+':'+$('#mm').val();
 	$('#schedule').val(D);
 }
-function addGroup(grp){
+function addGroup(grp, id){
 	var r = $('#recipient').val();
 	if(r == '' || r == undefined) r = '';
 	else r= r+',';
-	$('#recipient').val(r+'::'+grp);
+	$('#recipient').val(r+'<'+id+'>'+grp);
 	$('.page').hide();
 	$('#main').show();
 	countDest();
@@ -111,6 +130,9 @@ function countDest(){
 		var m = $('#message').val()+sign;
 		var r = $('#recipient').val();
 		var sch = $('#schedule').val();
+		if(sch != '')
+			sch = sch+':00';
+		
 		if(s == ''){
 			alert('Invalid Sender');
 			return;
@@ -156,18 +178,18 @@ function countDest(){
 		    success: function(json) {
 		       if(json.response[0].code == '000')
 		       {
-				   alert('Message sent Successfully: SMS cost is '+json.response[0].payload);
+				   alert(json.response[0].description+': SMS cost is '+json.response[0].payload);
 					$('.sending').toggle(300);
 				}
 				else
 				{
 					
-					alert('SMS was not sent: '+json.response[0].payload);
+					alert(json.response[0].description+': '+json.response[0].payload);
 					$('.sending').toggle(300);
 				}
 		    },
 		    error: function(e) {
-		       alert('Unable to connect to server');
+		       alert('Unable to connect to server. Please check your network connection');
 		       $('.sending').toggle(300);
 		    }
 		});

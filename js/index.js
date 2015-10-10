@@ -58,7 +58,7 @@ function login(){
 					alert('Sorry, we could not log you in.');
 		    },
 		    error: function(e) {
-		       alert('Sorry, we could not log you in.');
+		       alert('Sorry, we could not log you in2.');
 		    }
 		});
 

@@ -1,5 +1,6 @@
 api = 'http://www.padisms.com/smsmobi';
 domain = 'estoresms.com';
+
 appname = 'EstoreSMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
@@ -21,11 +22,10 @@ x_106 = 'Invalid group name.';
 x_107 = 'Operation failed.';
 
 
-
 $(function (){
 	$('.appname').html(appname);
 	$('.domain').html(domain);
-	$('.footer').html('&copy; '+domain+'. All rights reserved.');
+	$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
 	
     setFontSize();
 });
@@ -49,7 +49,7 @@ function clearSession(){
 function setFontSize(){
     var fs = getSession('fontsize');
     if(fs == '' || !is_numeric(fs) || fs < 10){
-		fs = 16;
+		fs = 13;
 		setSession('fontsize',fs);
 	}
     $("html, body, .page, a, textarea, select").css("font-size", fs+"px");
@@ -82,21 +82,11 @@ function balance(){
 	
 	if(u != '' || u != undefined || p != '' || p != undefined){
 	} else {
+
 		logout();
 	}
 	
-	/*$.get( api+'username='+escape(u)+'&password='+escape(p)+'&balance=true' )
-	.fail(function() {
-		alert( "Error connecting to server" );
-	  })
-	  .done(function(data) {
-		if(data == '2905' || data == '-2905'){
-			alert('Invalid username and password combination.');
-			logout();
-		} else {
-			$(".balance").html(number_format(0+data,2));
-		}
-	  });*/
+	
 		
 	  $.ajax({
 			type: 'GET',

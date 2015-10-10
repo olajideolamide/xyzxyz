@@ -15,11 +15,9 @@
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="com.kolwit.pickcontact" version="~1" />
 	<gap:plugin name="org.apache.cordova.contacts" version="~0" />
-	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+	<gap:plugin name="org.apache.cordova.InAppBrowser" />
     <author href="http://smsportalcreator.com" email="support@afrisoft.net">
         Afrisoft Interactive 
     </author>
-
-    <access origin="*" />
 
 </widget>

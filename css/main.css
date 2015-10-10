@@ -4,6 +4,7 @@ html, body {
 	margin: 0px;
 	background: #ddd;
 	color: #000000;
+	font-family:arial;
 }
 .page {
 	padding: 20px;
@@ -139,6 +140,71 @@ select {
 	top:1px;
 }
 
+.buttonGreen{
+	box-shadow: 0px 1px 0px 0px #69F754 inset;
+	background: #27C100 linear-gradient(to bottom, #05C100 5%, #0AA700 100%) repeat scroll 0% 0%;
+	border-radius: 3px;
+	border: 1px solid #1F7712;
+	display: block;
+	cursor: pointer;
+	color: #FFF;
+	font-family: arial;
+	font-size: 16px;
+	padding: 12px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #1B8215;
+	width: 85%;
+	margin: 1px auto;
+	text-align: center;
+
+
+}
+
+.buttonRed{
+box-shadow: 0px 1px 0px 0px #F77C54 inset;
+background: #C13000 linear-gradient(to bottom, #C13000 5%, #A72900 100%) repeat scroll 0% 0%;
+border-radius: 3px;
+border: 1px solid #773212;
+display: block;
+cursor: pointer;
+color: #FFF;
+font-family: arial;
+font-size: 16px;
+padding: 12px;
+text-decoration: none;
+text-shadow: 0px 1px 0px #822C15;
+width: 85%;
+margin: 1px auto;
+text-align: center;
+
+}
+
+.buttonYellow{
+box-shadow: 0px 1px 0px 0px #EDF754 inset;
+background: #C1B800 linear-gradient(to bottom, #C1B800 5%, #A7A500 100%) repeat scroll 0% 0%;
+border-radius: 3px;
+border: 1px solid #757712;
+display: block;
+cursor: pointer;
+color: #FFF;
+font-family: arial;
+font-size: 16px;
+padding: 12px;
+text-decoration: none;
+text-shadow: 0px 1px 0px #828115;
+width: 85%;
+margin: 1px auto;
+text-align: center;
+
+}
+#yyyy{
+	width:70px;
+}
+
+#closeSchedule{
+padding:5px 7px;
+}
+
 .hidden {
 	display: none;
 }
@@ -154,7 +220,8 @@ select {
 .footer {
 	text-align: center;
 	width: 100%;
-	margin: 50px 0px;
+	margin: 20px 0px;
+	font-size:10px;
 }
 .title {
 	margin: 0px;

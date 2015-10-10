@@ -1,7 +1,8 @@
 <html>
 <head>
 	<title>[title]</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<!--<meta name="viewport" content="width=device-width, initial-scale=1" /> -->
+	<meta  name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	
@@ -45,7 +46,7 @@
 	<h3>&nbsp;</h3>
 	<div class="login hidden center">Connecting to Server...<br /><img src="images/loading.gif" /></div>
 	<div class="login">
-		<div class="form-container" style="width: 65%;">
+		<div class="form-container" style="width: 80%;">
 			<h3>Login</h3>
 			
 			<div class="label">Email</div>
@@ -55,9 +56,10 @@
 			<input type="text" id="password" placeholder="Password" />
 			
 			<div class="button-div">
-				<a href="#" onclick="login(); return false;" class="button">Login</a>
-				<a href="register.html" class="button register hidden">Register</a>
-				<a href="#"  onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="button quit hidden">Quit</a>
+				<a href="#" onclick="login(); return false;" class="button"><b>Login</b></a>
+				<center><p><b>Or</b></p></center>
+				<a href="#" onclick="window.open('http://www.padisms.com/pd-admin/extstart', '_system');" class="buttonGreen register "><b>Register</b></a>
+				<!--<a href="#"  onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="button quit hidden">Quit</a>-->
 			</div>
 		</div>
 	</div>

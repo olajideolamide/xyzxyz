@@ -28,12 +28,12 @@
 			// Handle the back button
 			window.location = 'menu.html';
 		}
-		$(function (){
+		/*$(function (){
 			balance();
-		});
+		});*/
 		
 		
-	function  voucher(){
+	/*function  voucher(){
 		var x = "Submit Voucher?";
 		if(confirm(x)){
 			var v = $('#voucher').val();
@@ -69,21 +69,27 @@
 				
 			})
 		};
-	}
+	}*/
 </script>
 </head>
 <body onload="onLoad()">
-	<h1 class="title appname">Voucher</h1>
-	<div class="menu"><a href="compose.html" style="width: 32%;" >Compose SMS</a><a href="settings.html" style="width: 32%;" >Settings</a><a href="menu.html" style="width: 32%;" >Menu</a></div>
+	<h1 class="title appname">Buy SMS</h1>
+	<div class="menu"><a href="compose.html" style="width: 50%;" >Compose SMS</a><a href="menu.html" style="width: 50%;" >Menu</a></div>
 	
-	<h1 class="pageName">Load Voucher</h1>
+	<h1 class="pageName">Buy SMS</h1>
 	<div class="page">
 		<div class="sending hidden center">Connecting to server...<br /><img src="images/loading.gif" /></div>
 		<div class="sending">
-			<div class="label">Submit Voucher Pin</div>
-			<input type="text" placeholder="Enter Voucher Pin" id="voucher">
+			
+			<a class="button" href="#" onclick="window.open('http://www.padisms.com/sms?pd_m=buy', '_system');" >Buy with ATM Card</a>
+			<center><h2>Or</h2><h4>Pay directly to our account</h4></center>
+
+			<center><img src="banklogo.png" />
 			<br />
-			<a class="button" href="#" onclick="voucher(); return;" >Submit Voucher</a>
+			<p><b>Bank Name:</b> Gurantee Trust Bank</p>
+			<p><b>Account Name:</b> Olajide Olanrewaju</p>
+			<p><b>Account No.:</b> 01177844567</p>
+			</center>
 		</div>
 	</div>
 	
