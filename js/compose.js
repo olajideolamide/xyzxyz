@@ -60,7 +60,7 @@ function getGroup(){
 		    },
 		    error: function(e) {
 		       //alert('Unable to connect to server. Please check your network connection');
-		       alert('this is where the error is');
+		       alert('No internet connection');
 		       alert(api+'?pd_m=groups&email='+escape(u)+'&password='+escape(p)+'&callback=?');
 		       //$('.sending').toggle(300);
 		    }
@@ -184,12 +184,14 @@ function countDest(){
 		       if(json.response[0].code == '000')
 		       {
 				   alert(json.response[0].description+': SMS cost is '+json.response[0].payload);
+				   
 					$('.sending').toggle(300);
 				}
 				else
 				{
 					
 					alert(json.response[0].description+': '+json.response[0].payload);
+
 					$('.sending').toggle(300);
 				}
 		    },

@@ -1,7 +1,6 @@
 api = 'http://www.padisms.com/smsmobi';
-domain = 'estoresms.com';
-
-appname = 'EstoreSMS';
+domain = 'Padisms.com';
+appname = 'MySMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
@@ -22,7 +21,7 @@ x_106 = 'Invalid group name.';
 x_107 = 'Operation failed.';
 
 $.ajaxSetup({
-  timeout: 10000
+  timeout: 20000
 });
 
 $(function (){
