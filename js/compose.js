@@ -61,7 +61,7 @@ function getGroup(){
 		    error: function(e) {
 		       //alert('Unable to connect to server. Please check your network connection');
 		       alert('No internet connection');
-		       alert(api+'?pd_m=groups&email='+escape(u)+'&password='+escape(p)+'&callback=?');
+		       
 		       //$('.sending').toggle(300);
 		    }
 		});

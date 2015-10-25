@@ -1,6 +1,6 @@
-api = 'http://www.padisms.com/smsmobi';
-domain = 'Padisms.com';
-appname = 'MySMS';
+api = 'http://www.smswind.com/smsmobi';
+domain = 'smswind.com';
+appname = 'SMS Wind';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
