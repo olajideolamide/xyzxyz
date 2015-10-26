@@ -7,7 +7,7 @@
 
     <!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
-    <name>SMS Wind</name>
+    <name>SMS Solo</name>
 	<icon src="icon.png" />
     <description>
         Bulk SMS App
@@ -17,8 +17,8 @@
 	<gap:plugin name="org.apache.cordova.contacts" version="~0" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <author href="http://www.smswind.com" email="sdrfngg640@gmail.com">
-        SMS Wind Limited. 
+    <author href="http://www.smssolo.com" email="solokool66@gmail.com">
+        SMS Solo Limited. 
     </author>
 
 	<access origin="*" />
