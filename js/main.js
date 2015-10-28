@@ -1,6 +1,6 @@
-api = 'http://www.bulkiesms.com/smsmobi';
-domain = 'bulkiesms.com';
-appname = 'BulkieSMS';
+api = 'http://www.smssolo.com/smsmobi';
+domain = 'smssolo.com';
+appname = 'SMS Solo';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';

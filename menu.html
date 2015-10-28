@@ -37,20 +37,17 @@
 <body onload="onLoad()">
 <h1 class="title appname">Menu</h1>
 <div class="page">
-
 <center><img src="logos.jpg"  /></center>
 
 	<h4 class="center">Your SMS balance is <span class="balance">...</span></h4>
-
 
 		<div >
 		<a href="compose.html" class="button">Compose SMS</a>
 		<a href="draft.html" class="button">Draft Messages</a>
 		<a href="voucher.html" class="buttonGreen">Buy SMS</a>
-		
-		<!--<a href="restore.html" class="button">Restore Phone Contacts</a>-->
+		<!--<a href="backup.html" class="button">Backup Phone Contacts</a>
+		<a href="restore.html" class="button">Restore Phone Contacts</a>-->
 		<a href="settings.html" class="button">Settings</a>
-		<a href="about.html" class="button">About Us</a>
 		<a href="#" onclick="if(confirm('logout of '+appname+'?')){logout();} return false;" class="buttonYellow">Logout</a>
 		<a href="#" onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="buttonRed quit hidden">Quit</a>
 	</div>
