@@ -1,6 +1,6 @@
-api = 'http://www.smswind.com/smsmobi';
-domain = 'smswind.com';
-appname = 'SMSWind';
+api = 'http://www.bosssms.com/smsmobi';
+domain = 'bosssms.com';
+appname = 'BossSMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
