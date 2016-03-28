@@ -1,6 +1,6 @@
-api = 'http://www.bosssms.com/smsmobi';
-domain = 'bosssms.com';
-appname = 'BossSMS';
+api = 'http://www.sanchosmexican.com/smsmobi';
+domain = 'sanchosmexican.com';
+appname = 'Sanchos Mexican';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
