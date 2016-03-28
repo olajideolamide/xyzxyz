@@ -1,69 +1,481 @@
+
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title>[title]</title>
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-	<meta  name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<script src="cordova.js"></script>
-
-	<script src="js/jquery-2.0.0.js"></script>
-	<script src="js/jquery.xdomainrequest.min.js"></script>
-	<script src="js/main.js"></script>
-	<script src="js/index.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		// Wait for device API libraries to load
-		//
-		function onLoad() {
-			document.addEventListener("deviceready", onDeviceReady, false);
-			
-		}
-
-		// device APIs are available
-		
-		function onDeviceReady() {
-			// Now safe to use device APIs
-			document.addEventListener("backbutton", onBackKeyDown, false);
-			var os = device.platform;
-			if(os == "Android") $(".quit").removeClass('hidden');
-		}
-		
-		function onBackKeyDown() {
-			// Handle the back button
-			var os = device.platform;
-			if(os == "Android") {
-				if(confirm('Quit '+appname+'?')) navigator.app.exitApp();
-			}
-		}
-		
-    </script>
+<title>Sanchos Mexican</title>
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.11.0.min.js"></script>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Appest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="js/move-top.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
+	<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+				});
+			});
+	</script>
+<!-- //end-smoth-scrolling -->
+<link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 </head>
-<body onload="onLoad()">
-<h1 class="title appname">Menu</h1>
-<div class="page">
-	<h3>&nbsp;</h3>
-	<div class="login hidden center">Connecting to Server...<br /><img src="images/loading.gif" /></div>
-	<div class="login">
-		<div class="form-container" style="width: 80%;">
-			<h3>Login</h3>
-			
-			<div class="label">Email</div>
-			<input type="text" id="email" placeholder="Email" />
-			
-			<div class="label">Password</div>
-			<input type="text" id="password" placeholder="Password" />
-			
-			<div class="button-div">
-				<a href="#" onclick="login(); return false;" class="button"><b>Login</b></a>
-				<center><p><b>Or</b></p></center>
-				<a href="#" onclick="window.open('http://www.9jasmsland.com/pd-admin/extstart', '_system');" class="buttonGreen register "><b>Register</b></a>
-				<!--<a href="#"  onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="button quit hidden">Quit</a>-->
+<body>
+<!--header start here-->
+<div class="banner">
+  <div class="header">
+	<div class="container">
+		 <div class="header-main">
+				<div class="logo">
+					<h1><a href="index.html" style="font-size:30px">Sanchos Mexican</a></h1>
+				</div>
+				<div class="top-nav">
+					<span class="menu"> <img src="images/icon.png" alt=""/></span>
+				 <nav class="cl-effect-16">
+					<ul class="res">
+					   <li><a href="index.html" class="active"  data-hover="Home">Home</a></li> 
+					   <li><a class="scroll" href="#about"  data-hover="About">About</a></li> 
+						<li><a class="scroll" href="#services"  data-hover="Service">Services</a></li> 
+						<li><a class="scroll" href="#gallery"  data-hover="Gallery">Gallery</a></li> 
+						<li><a class="scroll" href="#contact"  data-hover="Contact">Contact</a></li> 
+				   </ul>
+				 </nav>
+					<!-- script-for-menu -->
+						 <script>
+						   $( "span.menu" ).click(function() {
+							 $( "ul.res" ).slideToggle( 300, function() {
+							 // Animation complete.
+							  });
+							 });
+						</script>
+		        <!-- /script-for-menu -->
+				</div>				
+		 <div class="clearfix"> </div>
+	  </div>
+   </div>
+</div>
+	   <section class="slider">
+		 <div class="flexslider">
+			<ul class="slides">
+			  <li>
+			     <div class="banner-bottom">
+			 	  <h3>Best Place For You</h3>
+			    </div>
+		     </li>
+		      <li>
+			     <div class="banner-bottom">
+			 	  <h3>Accusant voluptat</h3>
+			    </div>
+		     </li>
+		      <li>
+			     <div class="banner-bottom">
+			 	  <h3>Enim voluptatem</h3>
+			    </div>
+		     </li>
+		    </ul>
+		 </div>
+		 <div class="clearfix"> </div>
+	  </section>
+</div>
+<!-- FlexSlider -->
+				  <script defer src="js/jquery.flexslider.js"></script>
+				  <script type="text/javascript">
+					$(function(){
+					 
+					});
+					$(window).load(function(){
+					  $('.flexslider').flexslider({
+						animation: "slide",
+						start: function(slider){
+						  $('body').removeClass('loading');
+						}
+					  });
+					});
+				  </script>
+			<!-- FlexSlider -->
+
+<!--header end here-->
+<!--about start here-->
+<div class="about" id="about">
+	<div class="container">
+		<div class="about-main">
+			<div class="about-top">
+				<h2>About</h2>
+				<h4>Temporibus autem quibusdam officiis debitis rerum necessitatibus.</h4>
+				<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque assumenda  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ounce with righteous indignation and dislike men beguiled and demoralized</p>
+			</div>
+			<div class="about-bottom">
+				<div class="col-md-4 about-grid">
+					<h3>Et harum quidem rerum</h3>
+					<img src="images/a1.jpg" alt="" class="img-responsive">
+					<p>cumque assumenda  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ounce with righteous indignation and dislike men beguiled</p>
+				</div>
+				<div class="col-md-4 about-grid">
+					<h3>Libero tempore soluta</h3>
+					<img src="images/a2.jpg" alt="" class="img-responsive">
+					<p>cumque assumenda  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ounce with righteous indignation and dislike men beguiled</p>
+				</div>
+				<div class="col-md-4 about-grid">
+					<h3>Temporibus quibusdam</h3>
+					<img src="images/a3.jpg" alt="" class="img-responsive">
+					<p>cumque assumenda  consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ounce with righteous indignation and dislike men beguiled</p>
+				</div>
+			  <div class="clearfix"> </div>
 			</div>
 		</div>
 	</div>
-<div>
-<div class="footer"></a>
+</div>
+<!--about end here-->
+<!--why us start here-->
+<div class="why-us">
+	<div class="container">
+		<div class="why-us-main">
+			<div class="col-md-6 why-us-left">
+				<h3>Why us</h3>
+				<h4>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa inventore veritatis et quasi architecto explicabo.</h4>
+				<p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness</p>
+			</div>
+			<div class="col-md-6 why-us-right">
+				<img src="images/mobil.png" alt="">
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--why us end here-->
+<!--services start here-->
+<div class="services" id="services">
+	<div class="container">
+		<div class="services-main">
+			<div class="services-top">
+				<h3>Services</h3>
+				<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque assumenda</p>
+			</div>
+			<div class="services-bottom">
+				<div class="col-md-4 ser-grid">
+					<div class="ser-icon">
+					  <span class="glyphicon glyphicon-cog" aria-hidden="true"> </span>
+					</div>
+					<h4>Repairing</h4>
+					<p>facilis est et expedita distinctio Nam libero tempore cum</p>
+				</div>
+				<div class="col-md-4 ser-grid">
+					<div class="ser-icon">
+					  <span class="glyphicon glyphicon-erase" aria-hidden="true"> </span>
+					</div>
+					<h4>Features</h4>
+					<p>facilis est et expedita distinctio Nam libero tempore cum</p>
+				</div>
+				<div class="col-md-4 ser-grid">
+					<div class="ser-icon">
+					  <span class="glyphicon glyphicon-film" aria-hidden="true"> </span>
+					</div>
+					<h4>Shooting</h4>
+					<p>facilis est et expedita distinctio Nam libero tempore cum</p>
+				</div>
+				<div class="col-md-4 ser-grid">
+					<div class="ser-icon">
+					  <span class="glyphicon glyphicon-music" aria-hidden="true"> </span>
+					</div>
+					<h4>Music</h4>
+					<p>facilis est et expedita distinctio Nam libero tempore cum</p>
+				</div>
+				<div class="col-md-4 ser-grid">
+					<div class="ser-icon">
+					  <span class="glyphicon glyphicon-picture" aria-hidden="true"> </span>
+					</div>
+					<h4>Gallery</h4>
+					<p>facilis est et expedita distinctio Nam libero tempore cum</p>
+				</div>
+				<div class="col-md-4 ser-grid">
+					<div class="ser-icon">
+					  <span class="glyphicon glyphicon-print" aria-hidden="true"> </span>
+					</div>
+					<h4>Printing</h4>
+					<p>facilis est et expedita distinctio Nam libero tempore cum</p>
+				</div>
+			  <div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--services end here-->
+<!--testmony start here-->
+<div class="testimony">
+	<div class="container">
+		<div class="testimony-main">
+			  	<ul class="rslides" id="slider">
+	             <li>
+	             	<div class="testimo-slid">
+	             	<div class="testimony-left">
+			  	       <img src="images/t1.jpg" alt="" class="img-responsive">
+			        </div>
+	             	 <div class="testimony-right">
+					  	 <span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>
+					  	 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					  	 <h4>Quisquam</h4>
+				  	 </div>
+				  	 <div class="clearfix"> </div>
+				  	</div>
+			  	 </li>
+	             <li>
+	             	<div class="testimony-left">
+			  	       <img src="images/t3.jpg" alt="" class="img-responsive">
+			        </div>
+	             	 <div class="testimony-right">
+					  	 <span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>
+					  	 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					  	 <h4>Bonorum</h4>
+				  	 </div>
+				  	<div class="clearfix"> </div>
+			  	 </li>
+			  	 <li>
+			  	 	<div class="testimony-left">
+			  	       <img src="images/t2.jpg" alt="" class="img-responsive">
+			        </div>
+	             	 <div class="testimony-right">
+					  	 <span class="glyphicon glyphicon-comment" aria-hidden="true"> </span>
+					  	 <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+					  	 <h4>Finibus</h4>
+				  	 </div>
+				  	<div class="clearfix"> </div>
+			  	 </li>
+	          </ul>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<!--testmony end here-->
+<!-- banner Slider starts Here -->
+<script src="js/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+      $("#slider").responsiveSlides({
+      	auto: true,
+      	speed: 500,
+        namespace: "callbacks",
+        pager: false,
+        nav:true,
+      });
+    });
+  </script>
+
+<!--gallery start here-->
+<div class="gallery" id="gallery">
+	<div class="container">
+		<div class="gallery-top">
+			<h3>Gallery</h3>
+			<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances.</p>
+		</div>
+		<div class="gallery-bottom">
+				<div class="col-md-4 gallery-grid">
+					<div class="project-eff">
+						<div id="nivo-lightbox-demo"><p><a href="images/g1.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a></p></div>     
+							<img class="img-responsive" src="images/g1.jpg" alt="">
+					</div>
+				</div>
+				<div class="col-md-4 gallery-grid">
+					<div class="project-eff">
+						<div id="nivo-lightbox-demo"><p><a href="images/g2.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a></p></div>     
+							<img class="img-responsive" src="images/g2.jpg" alt="">
+					</div>
+				</div>
+				<div class="col-md-4 gallery-grid">
+					<div class="project-eff">
+						<div id="nivo-lightbox-demo"><p><a href="images/g3.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a></p></div>     
+							<img class="img-responsive" src="images/g3.jpg" alt="">
+					</div>
+				</div>
+                <div class="col-md-4 gallery-grid">
+					<div class="project-eff">
+						<div id="nivo-lightbox-demo"><p><a href="images/g4.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a></p></div>     
+							<img class="img-responsive" src="images/g4.jpg" alt="">
+					</div>
+				</div>
+				<div class="col-md-4 gallery-grid">
+					<div class="project-eff">
+						<div id="nivo-lightbox-demo"><p><a href="images/g5.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a></p></div>     
+							<img class="img-responsive" src="images/g5.jpg" alt="">
+					</div>
+				</div>
+				<div class="col-md-4 gallery-grid">
+					<div class="project-eff">
+						<div id="nivo-lightbox-demo"> <p><a href="images/g6.jpg" data-lightbox-gallery="gallery1" id="nivo-lightbox-demo"> <span class="rollover1"> </span></a></p></div>     
+							<img class="img-responsive" src="images/g6.jpg" alt="">
+					</div>
+				</div>
+		   <div class="clearfix"> </div>
+		</div>
+	</div>
+</div>
+<link rel="stylesheet" type="text/css" href="css/magnific-popup.css">
+			<script type="text/javascript" src="js/nivo-lightbox.min.js"></script>
+				<script type="text/javascript">
+				$(document).ready(function(){
+				    $('#nivo-lightbox-demo a').nivoLightbox({ effect: 'fade' });
+				});
+				</script>
+<!--gallery end here-->
+<!--features strat here-->
+<div class="features">
+	<div class="container">
+		<div class="features-main">
+			<div class="features-top">
+				<h3>Features</h3>
+				<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque assumenda</p>
+			</div>
+			<div class="features-bottom">
+				<div class="feats-bot1">
+				<div class="col-md-6 feat-grid">
+					<div class="col-md-5 feat-img">
+						<img src="images/f1.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="col-md-7 feat-text">
+						<h4>Et iusto odio dignissimos ducimus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+				<div class="col-md-6 feat-grid">
+					<div class="col-md-5 feat-img">
+						<img src="images/f2.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="col-md-7 feat-text">
+						<h4>Et iusto odio dignissimos ducimus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+					</div>
+				</div>
+			   <div class="clearfix"> </div>
+			</div>
+			<div class="feats-bot1">
+				<div class="col-md-6 feat-grid">
+					<div class="col-md-5 feat-img">
+						<img src="images/f3.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="col-md-7 feat-text">
+						<h4>Et iusto odio dignissimos ducimus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+				<div class="col-md-6 feat-grid">
+					<div class="col-md-5 feat-img">
+						<img src="images/f4.jpg" alt="" class="img-responsive">
+					</div>
+					<div class="col-md-7 feat-text">
+						<h4>Et iusto odio dignissimos ducimus</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, </p>
+					</div>
+				  <div class="clearfix"> </div>
+				</div>
+			  <div class="clearfix"> </div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--features end here-->
+<!--contact-starts-->
+	<div class="contact" id="contact">
+		<div class="container">
+			<div class="contact-head">
+				<h3>Contact</h3>
+				<p>Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque assumenda</p>
+			</div>
+			<div class="contact-top">
+				<div class="col-md-4 contact-left">
+					<div class="add1">
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+						<p><small class="con-bold">company name,</small> Glasglow 40 Fe 72.</p>
+					</div>
+					<div class="add1">
+						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+						<p>+755 265 8822 , +955 326 3695</p>
+					</div>
+					<div class="add1">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+						<p>Email: <a href="mailto:example@email.com">contact@example.com</a></p>
+					</div>
+				</div>	
+				<div class="col-md-8 contact-right">
+				   <form>
+					<input type="text" placeholder="Name">
+			        <input type="text" class="email" placeholder="Email">
+					<textarea placeholder="Message" required=""></textarea>
+			     	 <div class="submit">
+			     	 	<input type="submit" value="Send Message">
+			     	 </div>    
+			     	</form>
+				</div>	
+				<div class="clearfix"> </div>	
+			</div>
+		</div>
+	</div>
+	<!--contact-end-->
+<!--map start here-->
+<div class="map">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127640.75918330808!2d103.8466694772479!3d1.3111268075660079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2sin!4v1436965675589"> </iframe>
+</div>
+<!--map start here-->
+<!--footer start here-->
+<div class="footer">
+	<div class="container">
+		<div class="footer-main">
+			  <div class="col-md-4 ftr-grd">
+			  	 <h3>Get in Touch</h3>
+			  	 <p>8901 ibero  Road</p>
+			  	 <p>Nam libero tempore</p>
+			  	 <p>Phone: +148 5746 415</p>
+			  </div>
+			  <div class="col-md-4 ftr-grd">
+			  	 <h3>Follow Us</h3>
+			  	 <ul>
+			  	 	<li><a href="#"><span class="fa"> </span></a></li>
+			  	 	<li><a href="#"><span class="tw"> </span></a></li>
+			  	 	<li><a href="#"><span class="g"> </span></a></li>
+			  	 	<li><a href="#"><span class="in"> </span></a></li>
+			  	 </ul>
+			  </div>
+			  <div class="col-md-4 ftr-grd">
+			  	<h3>Join Our Newsletter</h3>
+				<form>
+			  	 	<input type="text" placeholder="Email">
+			  	 	<input type="submit" value="Subscribe">
+				</form>
+			  </div>
+			<div class="clearfix"> </div>
+			<div class="copy-right">
+			  <p>© 2015 Appest. All rights reserved | Design by  <a href="http://w3layouts.com/" target="_blank">  W3layouts </a></p>
+		   </div>
+		</div>
+		<script type="text/javascript">
+										$(document).ready(function() {
+											/*
+											var defaults = {
+									  			containerID: 'toTop', // fading element id
+												containerHoverID: 'toTopHover', // fading element hover id
+												scrollSpeed: 1200,
+												easingType: 'linear' 
+									 		};
+											*/
+											
+											$().UItoTop({ easingType: 'easeOutQuart' });
+											
+										});
+									</script>
+						<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+	</div>
+</div>
+<!--//footer--> 
+
 </body>
 </html>

@@ -1,6 +1,6 @@
-api = 'http://www.9jasmsland.com/smsmobi';
-domain = '9jasmsland.com';
-appname = '9jaSMSLand';
+api = 'http://www.bosssms.com/smsmobi';
+domain = 'bosssms.com';
+appname = 'BossSMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
