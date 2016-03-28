@@ -1,20 +1,52 @@
 
-<!DOCTYPE HTML>
+
 <html>
 <head>
 <title>Sanchos Mexican</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
+
+<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="js/jquery-1.11.0.min.js"></script>
+<script src="cordova.js"></script>
+<script src="js/jquery-2.0.0.js"></script>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Appest Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<meta  name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+
+
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- start-smoth-scrolling -->
+
+<script src="js/main.js"></script>
+<script src="js/index.js"></script>
+<script type="text/javascript" charset="utf-8">
+		// Wait for device API libraries to load
+		//
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+			
+		}
+
+		// device APIs are available
+		
+		function onDeviceReady() {
+			// Now safe to use device APIs
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			var os = device.platform;
+			if(os == "Android") $(".quit").removeClass('hidden');
+		}
+		
+		function onBackKeyDown() {
+			// Handle the back button
+			var os = device.platform;
+			if(os == "Android") {
+				if(confirm('Quit '+appname+'?')) navigator.app.exitApp();
+			}
+		}
+		
+    </script>
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
 	<script type="text/javascript">
