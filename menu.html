@@ -34,25 +34,23 @@
 		});
     </script>
 </head>
-<body onload="onLoad()" style="background: url(b.jpg); background-size:     cover;                    
-    background-repeat:   no-repeat;
-    background-position: center center;">
-<h1 class="title appname" style="background-color:white"><img src="Logo.png" style="width:50%" /></h1>
+<body onload="onLoad()">
+<h1 class="title appname">Menu</h1>
 <div class="page">
 
-	<h4 class="center"></h4>
+	<h4 class="center">Your SMS balance is <span class="balance">...</span></h4>
 
 
 		<div >
-		<a href="#" class="button">Menu</a>
-		<a href="#" class="button">Catering</a>
-		
+		<a href="compose.html" class="button">Compose SMS</a>
+		<a href="draft.html" class="button">Draft Messages</a>
+		<a href="voucher.html" class="buttonGreen">Buy SMS</a>
 		
 		<!--<a href="restore.html" class="button">Restore Phone Contacts</a>-->
-		<a href="#" class="button">Food Cart</a>
-		<a href="#" class="button">Contact Us</a>
+		<a href="settings.html" class="button">Settings</a>
 		<!--<a href="about.html" class="button">About Us</a>-->
-		
+		<a href="#" onclick="if(confirm('logout of '+appname+'?')){logout();} return false;" class="buttonYellow">Logout</a>
+		<a href="#" onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="buttonRed quit hidden">Quit</a>
 	</div>
 </div>
 <div class="footer"></a>

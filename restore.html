@@ -1,0 +1,155 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="cordova.js"></script>
+	<script src="js/jquery-2.0.0.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		// Wait for device API libraries to load
+		//
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		// device APIs are available
+		
+		
+		function onDeviceReady() {
+			// Now safe to use device APIs
+			document.addEventListener("backbutton", onBackKeyDown, false);
+		}
+		
+		function onBackKeyDown() {
+			// Handle the back button
+			window.location = 'menu.html';
+		}
+	
+function fetchGroup(){	
+	$(".sending").toggle(300);
+	var u = getSession('username');
+	var p = getSession('password');
+	$.get( api+'username='+escape(u)+'&password='+escape(p)+'&group=true' )
+	.fail(function() {
+		$(".sending").toggle(300);
+		alert( "Error connecting to server" );
+	})
+	.done(function(data) {
+		
+		if(data == ''){
+			alert('No groups available');
+			$(".sending").toggle(300);
+		} else {
+			var y = data.split(' ');
+			y[0] = 'x' + y[0].split('-').join('_');
+			var msg = window[y[0]];
+			if(msg == '' || msg == undefined){
+				var o = '';
+				var d = data.split('|||');
+				var e = '';
+				for(var i = 0; i < d.length; i++){
+					e = d[i].split('###');
+					o = o +'<a href="#" class="button" onclick="restore(\''+e[0]+'\');" >'+e[0]+' ('+e[1]+')</a>';
+				}
+				if(o == '') o = '<h3>No groups found on '+domain+' for you.</h3>';
+				$("#groupDiv").html(o);
+				$(".sending").toggle(300);
+			} else {
+				alert(msg);
+				$(".sending").toggle(300);
+			}
+		}
+		setFontSize();
+	});
+}
+
+
+function restore(grp){
+	if(grp == '' || grp == undefined) {
+		alert('Invalid group name');
+		return;
+	}
+	
+	if(!confirm('Restore entire '+grp+' contacts from '+domain+'?')){
+		return;
+	}
+	
+	$(".sending").toggle(300);
+	var u = getSession('username');
+	var p = getSession('password');
+	$.get( api+'username='+escape(u)+'&password='+escape(p)+'&restore='+escape(grp) )
+	.fail(function() {
+		$(".sending").toggle(300);
+		alert( "Error connecting to server" );
+	})
+	.done(function(data) {
+		
+		if(data == ''){
+			alert('No groups available');
+			$(".sending").toggle(300);
+		} else {
+			var y = data.split(' ');
+			y[0] = 'x' + y[0].split('-').join('_');
+			var msg = window[y[0]];
+			if(msg == '' || msg == undefined){
+				var contact = '';
+				data = data.split(',');
+				var count = 0;
+				for(var i = 0; i < data.length; i++){
+					contact = data[i].split('=');
+					try {
+						if(contact[0] != '' && contact[1] != ''){
+							//save contact
+							// create a new contact
+							person = navigator.contacts.create();
+							// store contact phone numbers in ContactField[]
+							phoneNumbers = [];
+							phoneNumbers[0] = new ContactField('mobile', contact[0], true); 
+							person.phoneNumbers = phoneNumbers;
+							person.displayName = contact[1];
+							person.nickname = contact[1];
+							// save the contact
+							person.save();
+							count++;
+						}
+					} catch(err) {
+			
+					}
+				}
+				alert(count+' contacts saved successfully.');
+				$(".sending").toggle(300);
+			} else {
+				alert(msg);
+				$(".sending").toggle(300);
+			}
+		}
+		setFontSize();
+	});
+	
+}
+
+</script>
+</head>
+<body onload="onLoad()">
+	<h1 class="title appname">Restore Phonebook</h1>
+	<div class="menu"><a href="compose.html" style="width: 32%;" >Compose SMS</a><a href="settings.html" style="width: 32%;" >Settings</a><a href="menu.html" style="width: 32%;" >Menu</a></div>
+	
+	<h1 class="pageName">Restore Phone Contacts</h1>
+	<div class="page">
+	
+		<div class="sending hidden center">Connecting...Please wait<br /><img src="images/loading.gif" /></div>
+		<div id="info"></div>
+		<div class="sending">
+		<h4>Restore phone group contacts from <span class="domain">server</span></h4>		
+		<div id="groupDiv">
+			<a href="#" onclick="fetchGroup();return false;" class="button">Fetch groups</a>
+		</div>
+		</div>
+	</div>
+	
+	<div class="footer"></a>
+</body>
+</html>

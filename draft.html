@@ -1,0 +1,121 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.accordionz.css" />
+	<script src="cordova.js"></script>
+	<script src="js/jquery-2.0.0.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/localstoragedb.min.js"></script>
+	<script src="js/jquery.accordionz.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		// Wait for device API libraries to load
+		//
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		// device APIs are available
+		
+		
+		function onDeviceReady() {
+			// Now safe to use device APIs
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			
+		}
+		
+		function onBackKeyDown() {
+			// Handle the back button
+			window.location = 'menu.html';
+		}
+		
+		
+		function getUniqueName(prefix) {
+			return (new Date()).getTime();
+		};
+		function saveDraft(){
+			var t = $('#title').val();
+			var m = $('#message').val();
+			var id = getUniqueName();
+			if(t =='' || t == undefined){
+				alert('Title cannot be empty');
+				return;
+			}
+			if(m =='' || m == undefined){
+				alert('Message cannot be empty');
+				return;
+			}
+			result = lib.insert("spc_draft", {code: id, title: t, msg: m});
+			if(result > 0) {
+				lib.commit();
+				alert('Message Saved!');
+				location.reload();
+			} else alert('Saving failed!');
+		}
+		function deleteDraft(c){
+			if(!confirm('Delete draft?')) return;
+			lib.deleteRows('spc_draft', {code: c}); 
+			lib.commit();
+			location.reload();
+		}
+		function sendDraft(c){
+			var d = lib.query("spc_draft", {code: c});
+			var m = d[0].msg;
+			setSession('draft',m);
+			//window.localStorage.setItem('draft',m);
+			window.location = 'compose.html';
+		}
+		$(function (){
+			lib = new localStorageDB("draftMsg", localStorage);
+			// Check if the database was just created. Useful for initial database setup
+			if( lib.isNew() ) {
+
+				// create the "books" table
+				lib.createTable("spc_draft", ["code", "title", "msg"]);
+
+				// insert some data
+				lib.insert("spc_draft", {code: "1", title: "Draft Message Demo", msg: "Sample Draft Message."});
+				// commit the database to localStorage
+				// all create/drop/insert/update/delete operations should be committed
+				lib.commit();
+			}
+			
+			var drafts  = lib.queryAll("spc_draft", { 
+                        sort: [["title", "ASC"],["code", "ASC"]]
+                      });
+			var output = '';
+			for(var i= 0; i<drafts.length; i++){
+				output += '<h3>'+drafts[i].title+'</h3><div style="padding: 10px;">'+drafts[i].msg+'<br />&nbsp;<br /><div><a href="#" style="width: 40%; display: inline-block;" onclick="sendDraft(\''+drafts[i].code+'\'); return false;" class="button">Send</a> <a href="#" style="width: 40%; display: inline-block;" onclick="deleteDraft(\''+drafts[i].code+'\'); return false;" class="button">Delete</a></div></div>';			
+			}
+			$('#draft').html(output);
+			$('.accordion').accordionz(300);
+		});
+	</script>
+</head>
+<body onload="onLoad()">
+	<h1 class="title appname">Draft Messages</h1>
+	<div class="menu"><a href="compose.html" style="width: 50%;" >Compose SMS</a><a href="menu.html" style="width: 50%;" >Menu</a></div>
+	
+	<h3 class="pageName">Draft Messages</h3>
+	<div class="page">
+		<a href="#" onclick="$('.sending').toggle(300); return false;" style="margin-bottom: 20px;" class="sending button">Add new draft message</a>
+		<div class="sending form-container hidden" style="width: 80%; margin-bottom: 20px;">
+			<h3>Add Draft Message</h3>
+			<input type="text" id="title" placeholder="Title" />
+			<textarea id="message" placeholder="Message" ></textarea>
+			
+			<div class="button-div">
+				<a href="#" style="width: 45%; display: inline-block;" onclick="saveDraft(); return false;" class="button">Save</a>
+				<a href="#" style="width: 45%; display: inline-block;" onclick="$('.sending').toggle(300); return false;" class="button">Close</a>
+			</div>
+		</div>
+		<div id="draft" class="accordion">
+		</div>
+	</div>
+	
+	<div class="footer"></a>
+</body>
+</html>

@@ -25,9 +25,9 @@ $.ajaxSetup({
 });
 
 $(function (){
-	$('.appname').html(appname);
-	$('.domain').html(domain);
-	$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
+	//$('.appname').html(appname);
+	//$('.domain').html(domain);
+	//$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
 	
     setFontSize();
 
