@@ -22,7 +22,10 @@
     <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
        Sanchos Mexican  
     </author>
-
+	
 	<access origin="*" />
+	<access origin="http://sanchosmexican.com/" />
+
+	<allow-navigation href="http://sanchosmexican.com/*" />
 </widget>
 
