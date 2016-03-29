@@ -14,6 +14,7 @@
         Sanchos Mexican  Restaurant
     </description>
 	<gap:plugin name="org.apache.cordova.device" />
+	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" version="1.0.0" />
 	
 	
 	

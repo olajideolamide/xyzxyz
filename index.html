@@ -33,9 +33,17 @@
 			balance();
 		});
 
-		function openURL(urlString){
-    myURL = encodeURI(urlString);
-    window.open(myURL, '_blank');
+		function openInWebView(url)
+	    {
+	        var anchor = document.createElement('a');
+	        anchor.setAttribute('href', url);
+	        //anchor.setAttribute('target', '_self');
+	        
+	        var dispatch = document.createEvent('HTMLEvents')
+	        dispatch.initEvent('click', true, true);
+	        
+	        anchor.dispatchEvent(dispatch);
+	    }
 }
     </script>
 </head>
@@ -49,7 +57,7 @@
 
 
 		<div >
-		<a href="#" onclick='openURL("http://sanchosmexican.com/menu/")' class="button">Menu</a>
+		<a href="#" onclick='openInWebView("http://sanchosmexican.com/menu/")' class="button">Menu</a>
 		<a href="#" class="button">Catering</a>
 		
 		
