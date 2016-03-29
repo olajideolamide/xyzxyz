@@ -18,14 +18,14 @@
 	
 	
 	
-	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+	<!--<gap:plugin name="cordova-plugin-whitelist" source="npm" />-->
     <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
        Sanchos Mexican  
     </author>
 	
 	<access origin="*" />
-	<access origin="http://sanchosmexican.com/" />
+	<!--<access origin="http://sanchosmexican.com/" />-->
 
-	<allow-navigation href="http://sanchosmexican.com/*" />
+	<!--<allow-navigation href="http://sanchosmexican.com/*" />-->
 </widget>
 
