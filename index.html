@@ -33,18 +33,10 @@
 			balance();
 		});
 
-		function openInWebView(url)
-	    {
-	        var anchor = document.createElement('a');
-	        anchor.setAttribute('href', url);
-	        //anchor.setAttribute('target', '_self');
-	        
-	        var dispatch = document.createEvent('HTMLEvents')
-	        dispatch.initEvent('click', true, true);
-	        
-	        anchor.dispatchEvent(dispatch);
-	    }
-
+		function openURL(urlString){
+    myURL = encodeURI(urlString);
+    window.open(myURL, '_self');
+}
     </script>
 </head>
 <body onload="onLoad()" style="background: url(b.jpg); background-size:     cover;                    
@@ -57,7 +49,7 @@
 
 
 		<div >
-		<a href="#" onclick='openInWebView("http://sanchosmexican.com/menu/")' class="button">Menu</a>
+		<a href="#" onclick='openURL("http://www.urlyouwant")' class="button">Menu</a>
 		<a href="#" class="button">Catering</a>
 		
 		

@@ -14,18 +14,14 @@
         Sanchos Mexican  Restaurant
     </description>
 	<gap:plugin name="org.apache.cordova.device" />
-	<gap:plugin name="cordova-plugin-inappbrowser" source="npm" version="1.0.0" />
 	
 	
 	
-	<!--<gap:plugin name="cordova-plugin-whitelist" source="npm" />-->
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
        Sanchos Mexican  
     </author>
-	
-	<access origin="*" />
-	<!--<access origin="http://sanchosmexican.com/" />-->
 
-	<!--<allow-navigation href="http://sanchosmexican.com/*" />-->
+	<access origin="*" />
 </widget>
 
