@@ -7,15 +7,16 @@
 
     <!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
+	<preference name="permissions" value="none" />
     <name>Sanchos Mexican</name>
 	<icon src="icon.png" />
     <description>
         Sanchos Mexican  Restaurant
     </description>
 	<gap:plugin name="org.apache.cordova.device" />
-	<gap:plugin name="com.kolwit.pickcontact" version="~1" />
-	<gap:plugin name="org.apache.cordova.contacts" version="~0" />
-	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
+	
+	
+	
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
     <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
        Sanchos Mexican  
