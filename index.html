@@ -32,6 +32,11 @@
 		$(function (){
 			balance();
 		});
+
+		function openURL(urlString){
+    myURL = encodeURI(urlString);
+    window.open(myURL, '_blank');
+}
     </script>
 </head>
 <body onload="onLoad()" style="background: url(b.jpg); background-size:     cover;                    
@@ -44,7 +49,7 @@
 
 
 		<div >
-		<a href="http://sanchosmexican.com/menu/" class="button">Menu</a>
+		<a href="#" onclick='openURL("http://sanchosmexican.com/menu/")' class="button">Menu</a>
 		<a href="#" class="button">Catering</a>
 		
 		
