@@ -21,7 +21,7 @@
     <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
        Sanchos Mexican  
     </author>
-
+	<access origin="tel:*" launch-external="yes" />
 	<access origin="*" />
 </widget>
 
