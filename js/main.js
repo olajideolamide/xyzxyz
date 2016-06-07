@@ -1,6 +1,6 @@
-api = 'http://www.sanchosmexican.com/smsmobi';
-domain = 'sanchosmexican.com';
-appname = 'Sanchos Mexican';
+api = 'http://www.ps24sms.com/smsmobi';
+domain = 'ps24sms.com';
+appname = 'ps24sms';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
@@ -25,9 +25,9 @@ $.ajaxSetup({
 });
 
 $(function (){
-	//$('.appname').html(appname);
-	//$('.domain').html(domain);
-	//$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
+	$('.appname').html(appname);
+	$('.domain').html(domain);
+	$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
 	
     setFontSize();
 
