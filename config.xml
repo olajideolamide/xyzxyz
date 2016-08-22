@@ -7,18 +7,21 @@
 
     <!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
+	<preference name="permissions" value="none" />
     <name>EstoreSMS</name>
 	<icon src="icon.png" />
     <description>
         Bulk
     </description>
 	<gap:plugin name="org.apache.cordova.device" />
-	<gap:plugin name="com.kolwit.pickcontact" version="~1" />
-	<gap:plugin name="org.apache.cordova.contacts" version="~0" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" version="0.2.3" />
+	
+  
 
-    <access origin="tel:*" launch-external="yes" />
-
-   <access origin="*" />
+    <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+    <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
+       Sanchos Mexican  
+    </author>
+	<access origin="tel:*" launch-external="yes" />
+	<access origin="*" />
 
 </widget>
