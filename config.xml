@@ -18,6 +18,7 @@
   
 
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
+	<gap:plugin name="com.adobe.plugins.pushplugin" />
     <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
        Sanchos Mexican  
     </author>
