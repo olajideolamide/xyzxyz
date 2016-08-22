@@ -18,7 +18,7 @@
   
 
     <gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" />
+	<!--<plugin name="com.phonegap.plugins.pushplugin" spec="2.5.0" source="pgb" />-->
     <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
        Sanchos Mexican  
     </author>
