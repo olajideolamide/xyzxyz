@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns   = "http://www.w3.org/ns/widgets"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "com.ps24sms.www"
+        id          = "com.smsportalcreator.demo"
         versionCode = "4" 
-        version = "4.0.0" >
+        version     = "4.0.0" >
 
     <!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
-    <name>ps24sms</name>
+    <name>EstoreSMS</name>
 	<icon src="icon.png" />
     <description>
-        Bulk SMS App
+        Bulk
     </description>
 	<gap:plugin name="org.apache.cordova.device" />
 	<gap:plugin name="com.kolwit.pickcontact" version="~1" />
 	<gap:plugin name="org.apache.cordova.contacts" version="~0" />
-	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
-	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <author href="http://www.9jasmsland.com" email="admin@ps24sms.com">
-        ps24sms Limited. 
+    <author href="http://smsportalcreator.com" email="support@afrisoft.net">
+        Afrisoft Interactive 
     </author>
 
-	<access origin="*" />
-</widget>
+   <access origin="*" />
 
+</widget>

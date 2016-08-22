@@ -1,6 +1,6 @@
-api = 'http://www.ps24sms.com/smsmobi';
-domain = 'ps24sms.com';
-appname = 'ps24sms';
+api = 'http://www.padisms.com/smsmobi';
+domain = 'estoresms.com';
+appname = 'EstoreSMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
@@ -20,17 +20,15 @@ x_103 = 'Unable to load voucher';
 x_106 = 'Invalid group name.';
 x_107 = 'Operation failed.';
 
-$.ajaxSetup({
-  timeout: 20000
-});
+$.support.cors = true;
+
 
 $(function (){
 	$('.appname').html(appname);
 	$('.domain').html(domain);
-	$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
+	$('.footer').html('&copy; '+domain+'. All rights reserved.');
 	
     setFontSize();
-
 });
 
 
@@ -52,7 +50,7 @@ function clearSession(){
 function setFontSize(){
     var fs = getSession('fontsize');
     if(fs == '' || !is_numeric(fs) || fs < 10){
-		fs = 13;
+		fs = 16;
 		setSession('fontsize',fs);
 	}
     $("html, body, .page, a, textarea, select").css("font-size", fs+"px");
@@ -85,18 +83,26 @@ function balance(){
 	
 	if(u != '' || u != undefined || p != '' || p != undefined){
 	} else {
-
 		logout();
 	}
 	
-	
+	/*$.get( api+'username='+escape(u)+'&password='+escape(p)+'&balance=true' )
+	.fail(function() {
+		alert( "Error connecting to server" );
+	  })
+	  .done(function(data) {
+		if(data == '2905' || data == '-2905'){
+			alert('Invalid username and password combination.');
+			logout();
+		} else {
+			$(".balance").html(number_format(0+data,2));
+		}
+	  });*/
 		
 	  $.ajax({
 			type: 'GET',
 
 		  	dataType:'jsonp',
-			
-			cache: 'false',
 
 			url: api+'?pd_m=balance&email='+escape(u)+'&password='+escape(p)+'&callback=?',
 			
@@ -111,13 +117,13 @@ function balance(){
 				else
 				{
 					
-					//alert('Wrong email/password combination.');
-					//logout();
+					alert('Wrong email/password combination.');
+					logout();
 				}
 		    },
 		    error: function(e) {
-		       //alert('Wrong email/password combination.');
-		       //logout();
+		       alert('Wrong email/password combination.');
+		       logout();
 		    }
 		});
 }

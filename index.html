@@ -1,24 +1,19 @@
 <html>
 <head>
-	<title>[title]</title>
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-	<meta  name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
 	<meta name="apple-mobile-web-app-capable" content="yes" />
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
 	<script src="cordova.js"></script>
-
+	<script src="js/php_number_format.js"></script>
 	<script src="js/jquery-2.0.0.js"></script>
-	<script src="js/jquery.xdomainrequest.min.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/index.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		// Wait for device API libraries to load
 		//
 		function onLoad() {
 			document.addEventListener("deviceready", onDeviceReady, false);
-			
 		}
 
 		// device APIs are available
@@ -30,40 +25,24 @@
 			if(os == "Android") $(".quit").removeClass('hidden');
 		}
 		
-		function onBackKeyDown() {
-			// Handle the back button
-			var os = device.platform;
-			if(os == "Android") {
-				if(confirm('Quit '+appname+'?')) navigator.app.exitApp();
-			}
-		}
+		
 		
     </script>
 </head>
-<body onload="onLoad()">
-<h1 class="title appname">Menu</h1>
-<div class="page">
-	<h3>&nbsp;</h3>
-	<div class="login hidden center">Connecting to Server...<br /><img src="images/loading.gif" /></div>
-	<div class="login">
-		<div class="form-container" style="width: 80%;">
-			<h3>Login</h3>
-			
-			<div class="label">Email</div>
-			<input type="text" id="email" placeholder="Email" />
-			
-			<div class="label">Password</div>
-			<input type="text" id="password" placeholder="Password" />
-			
-			<div class="button-div">
-				<a href="#" onclick="login(); return false;" class="button"><b>Login</b></a>
-				<center><p><b>Or</b></p></center>
-				<a href="#" onclick="window.open('http://www.ps24sms.com/pd-admin/extstart', '_system');" class="buttonGreen register "><b>Register</b></a>
-				<!--<a href="#"  onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="button quit hidden">Quit</a>-->
-			</div>
-		</div>
+<body onload="onLoad()" style="background-color:black;  background-image:url(slide3.jpg); background-repeat: no-repeat; background-size: 100% 100%;">
+
+<div class="page" style="padding:0px">
+
+		<div style="  text-align:center; background-color:black; padding:20px; border-bottom: solid 4px #ff302b"><img style="height:10%" src="logo.png" /></div>
+
+		<div style="padding-top:80px">
+		<a href="http://www.littleindiaofdenver.com/menu-2/" class="button">Menu</a>
+		<a href="http://littleindiaofdenver.net/" class="button">Order Online</a>
+		<a href="tel:303-871-9777" class="button">Call Us</a>
+		<a href="https://www.google.com/maps/place/330+E+6th+Ave,+Denver,+CO+80203/@39.7254329,-104.9850602,17z/data=!3m1!4b1!4m5!3m4!1s0x876c7ed8e2e01341:0xfffb1fd60a0945f!8m2!3d39.7254288!4d-104.9828715" class="button">See Directions</a>
+		
 	</div>
-<div>
-<div class="footer"></a>
+</div>
+
 </body>
 </html>

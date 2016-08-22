@@ -55,16 +55,10 @@ function login(){
 					window.location = 'menu.html';
 				}
 				else
-				{
-					alert('Wrong email/password combination');
-					logout();
-					$('.login').toggle();
-				}
+					alert('Sorry, we could not log you in.');
 		    },
 		    error: function(e) {
-		       alert('No internet connection');
-		       logout();
-		       $('.login').toggle();
+		       alert('Sorry, we could not log you in.');
 		    }
 		});
 
