@@ -1,0 +1,113 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="cordova.js"></script>
+	<script src="js/php_number_format.js"></script>
+	<script src="js/jquery-2.0.0.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		// Wait for device API libraries to load
+		//
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		// device APIs are available
+		
+		
+		function onDeviceReady() {
+			// Now safe to use device APIs
+			document.addEventListener("backbutton", onBackKeyDown, false);
+		}
+		
+		function onBackKeyDown() {
+			// Handle the back button
+			window.location = 'menu.html';
+		}
+		/*$(function (){
+			balance();
+		});*/
+
+
+	/*function  voucher(){
+		var x = "Submit Voucher?";
+		if(confirm(x)){
+			var v = $('#voucher').val();
+			if(v == ''){
+				alert('Invalid Voucher');
+				return;
+			}
+			var u = getSession('username');
+			var p = getSession('password');
+			var url = api+'username='+escape(u)+'&password='+escape(p)+'&voucher='+escape(v);
+			
+			$('.sending').toggle(300);
+			$.get( url )
+			.fail(function() {
+				alert( "Error connecting to server!" );
+				$('.sending').toggle(300);
+			})
+			.done(function(data) {
+				if(data.indexOf("OK") > -1){
+					var ok = data.split(' ');
+					alert( "Voucher loaded successfully. "+number_format(ok[1],2)+' units' );
+					$('#voucher').val('');
+					$('.sending').toggle(300);
+					balance();
+				}else {
+					var e = "Voucher loading failed. ";
+					if(data == '-101') e += 'Invalid Voucher!';
+					else if(data == '-102') e += 'Used Voucher!';
+					else if(data == '-103') e += 'Try again later.';
+					alert(e);
+					$('.sending').toggle(300);
+				}
+				
+			})
+		};
+	}*/
+</script>
+</head>
+<body onload="onLoad()">
+	<h1 class="title appname">Buy SMS</h1>
+	<div class="menu"><a href="compose.html" style="width: 50%;" >Compose SMS</a><a href="menu.html" style="width: 50%;" >Menu</a></div>
+	
+	<h1 class="pageName">Buy SMS</h1>
+	<div class="page">
+		<div class="sending hidden center">Connecting to server...<br /><img src="images/loading.gif" /></div>
+		<div class="sending">
+			
+			<a class="button" href="#" onclick="window.open('http://www.jancosms.com/sms?pd_m=buy', '_system');" >Buy with ATM Card</a>
+			<center>
+
+				<h2>Or</h2><h4>Pay directly to our account</h4>
+
+			</center>
+
+			<center><img src="banklogo.png" />
+				<br />
+				<p><b>Bank Name:</b> Diamond Bankl</p>
+				<p><b>Account Name:</b> Joseph N Obasi</p>
+				<p><b>Account No.:</b> 0049551227</p>
+
+				<h2>Or</h2>
+
+				Call us on: 08109879625
+				<br/>
+				Or: 09056513924
+				<br />
+
+
+
+
+			</center>
+		</div>
+	</div>
+	
+	<div class="footer"></a>
+	</body>
+	</html>
