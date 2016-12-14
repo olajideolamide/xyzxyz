@@ -1,6 +1,6 @@
-api = 'http://www.jancosms.com/smsmobi';
-domain = 'jancosms.com';
-appname = 'JancoSMS';
+api = 'http://www.dechoicesms.com/smsmobi';
+domain = 'dechoicesms.com';
+appname = 'DeChoiceSMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
