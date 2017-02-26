@@ -1,6 +1,6 @@
-api = 'http://www.dechoicesms.com/smsmobi';
-domain = 'dechoicesms.com';
-appname = 'DeChoiceSMS';
+api = 'http://www.presidentsms.com/smsmobi';
+domain = 'presidentsms.com';
+appname = 'PresidentSMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';

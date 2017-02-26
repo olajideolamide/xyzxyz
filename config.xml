@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
-	id          = "org.padisoft.app"
+	id          = "org.presidentsms.app"
 	versionCode = "4" 
 	version = "4.0.0" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
-	<name>DeChoiceSMS</name>
+	<name>PresidentSMS</name>
 	<icon src="icon.png" />
 	<description>
 		Bulk SMS App
@@ -17,8 +17,8 @@
 	<gap:plugin name="org.apache.cordova.contacts" source="npm" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<author href="http://www.bulkiesms.com" email="info@dechoicesms.com">
-		DeChoiceSMS Limited. 
+	<author href="http://www.presidentsms.com" email="info@presidentsms.com">
+		PresidentSMS 
 	</author>
 
 	<access origin="*" />
