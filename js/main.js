@@ -1,6 +1,6 @@
 api = 'http://www.smsafrica.com.ng/smsmobi';
 domain = 'smsafrica.com.ng';
-appname = 'PresidentSMS';
+appname = 'SMSAfrica';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
