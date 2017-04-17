@@ -1,5 +1,5 @@
-api = 'http://www.presidentsms.com/smsmobi';
-domain = 'presidentsms.com';
+api = 'http://www.smsafrica.com.ng/smsmobi';
+domain = 'smsafrica.com.ng';
 appname = 'PresidentSMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
