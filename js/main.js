@@ -1,6 +1,6 @@
-api = 'http://www.smsafrica.com.ng/smsmobi';
-domain = 'smsafrica.com.ng';
-appname = 'SMSAfrica';
+api = 'http://portal.iconnectsms.com/smsmobi';
+domain = 'portal.iconnectsms.com';
+appname = 'IConnect SMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
