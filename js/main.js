@@ -1,5 +1,5 @@
-api = 'http://portal.iconnectsms.com/smsmobi';
-domain = 'portal.iconnectsms.com';
+api = 'http://www.portal-iconnectsms.com/smsmobi';
+domain = 'www.portal-iconnectsms.com';
 appname = 'IConnect SMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
