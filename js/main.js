@@ -1,6 +1,6 @@
-api = 'http://www.portal-iconnectsms.com/smsmobi';
-domain = 'www.portal-iconnectsms.com';
-appname = 'IConnect SMS';
+api = 'http://easybulksms.padisoft.org/smsmobi';
+domain = 'http://easybulksms.padisoft.org';
+appname = 'Easy Bulk SMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
