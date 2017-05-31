@@ -3,8 +3,8 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.sanchosmexican.www"
-	versionCode = "5" 
-	version = "4.0.1" >
+	versionCode = "7" 
+	version = "4.0.8" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
