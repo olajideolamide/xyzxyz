@@ -1,6 +1,6 @@
-api = 'http://easybulksms.padisoft.org/smsmobi';
-domain = 'http://easybulksms.padisoft.org';
-appname = 'Easy Bulk SMS';
+api = 'http://www.sanchosmexican.com/smsmobi';
+domain = 'sanchosmexican.com';
+appname = 'Sanchos Mexican';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
@@ -21,50 +21,50 @@ x_106 = 'Invalid group name.';
 x_107 = 'Operation failed.';
 
 $.ajaxSetup({
-	timeout: 20000
+  timeout: 20000
 });
 
 $(function (){
-	$('.appname').html(appname);
-	$('.domain').html(domain);
-	$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
+	//$('.appname').html(appname);
+	//$('.domain').html(domain);
+	//$('.footer').html('&copy; '+domain+'. <br />All rights reserved.');
 	
-	setFontSize();
+    setFontSize();
 
 });
 
 
 function setSession(key,value){
-	window.localStorage.setItem(key, value);
+    window.localStorage.setItem(key, value);
 }
 
 function getSession(key){
-	return window.localStorage.getItem(key);
+    return window.localStorage.getItem(key);
 }
 
 function unsetSession(key){
-	window.localStorage.removeItem(key);
+    window.localStorage.removeItem(key);
 }
 
 function clearSession(){
-	window.localStorage.clear();
+    window.localStorage.clear();
 }
 function setFontSize(){
-	var fs = getSession('fontsize');
-	if(fs == '' || !is_numeric(fs) || fs < 10){
+    var fs = getSession('fontsize');
+    if(fs == '' || !is_numeric(fs) || fs < 10){
 		fs = 13;
 		setSession('fontsize',fs);
 	}
-	$("html, body, .page, a, textarea, select").css("font-size", fs+"px");
-	$("h1").css("font-size", Math.floor(fs*1.4)+"px");
-	$("h2").css("font-size", Math.floor(fs*1.3)+"px");
-	$("h3").css("font-size", Math.floor(fs*1.2)+"px");
-	$("h4").css("font-size", Math.floor(fs*1.1)+"px");
-	$("input").css("font-size", fs+"px");
-
+    $("html, body, .page, a, textarea, select").css("font-size", fs+"px");
+    $("h1").css("font-size", Math.floor(fs*1.4)+"px");
+    $("h2").css("font-size", Math.floor(fs*1.3)+"px");
+    $("h3").css("font-size", Math.floor(fs*1.2)+"px");
+    $("h4").css("font-size", Math.floor(fs*1.1)+"px");
+    $("input").css("font-size", fs+"px");
+    
 }
 function is_numeric(n) {
-	return !isNaN(parseFloat(n)) && isFinite(n);
+  return !isNaN(parseFloat(n)) && isFinite(n);
 }
 
 function isLoggedIn(){
@@ -90,35 +90,35 @@ function balance(){
 	}
 	
 	
+		
+	  $.ajax({
+			type: 'GET',
 
-	$.ajax({
-		type: 'GET',
+		  	dataType:'jsonp',
+			
+			cache: 'false',
 
-		dataType:'jsonp',
-
-		cache: 'false',
-
-		url: api+'?pd_m=balance&email='+escape(u)+'&password='+escape(p)+'&callback=?',
-
-		jsonpCallback: 'jsonCallback',
-		contentType: "application/json",
-		dataType: 'jsonp',
-		success: function(json) {
-			if(json.response[0].code == '000')
-			{
-				$(".balance").html(number_format(0+json.response[0].payload,2));
-			}
-			else
-			{
-
+			url: api+'?pd_m=balance&email='+escape(u)+'&password='+escape(p)+'&callback=?',
+			
+		 	jsonpCallback: 'jsonCallback',
+		    contentType: "application/json",
+		    dataType: 'jsonp',
+		    success: function(json) {
+				if(json.response[0].code == '000')
+				{
+					$(".balance").html(number_format(0+json.response[0].payload,2));
+				}
+				else
+				{
+					
 					//alert('Wrong email/password combination.');
 					//logout();
 				}
-			},
-			error: function(e) {
+		    },
+		    error: function(e) {
 		       //alert('Wrong email/password combination.');
 		       //logout();
-		   }
+		    }
 		});
 }
 

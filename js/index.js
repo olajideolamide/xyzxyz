@@ -33,40 +33,40 @@ function login(){
 			$('.login').toggle();
 			window.location = 'menu.html';
 		}
-	});*/
+	  });*/
 
 
-$.ajax({
-	type: 'GET',
+		$.ajax({
+			type: 'GET',
 
-	dataType:'jsonp',
+		  	dataType:'jsonp',
 
-	url: api+'?pd_m=login&email='+escape(email)+'&password='+escape(password)+'&callback=?',
+			url: api+'?pd_m=login&email='+escape(email)+'&password='+escape(password)+'&callback=?',
 
-	jsonpCallback: 'jsonCallback',
-	contentType: "application/json",
-	dataType: 'jsonp',
-	success: function(json) {
-		if(json.response[0].code == '000')
-		{
-			setSession('email',email);
-			setSession('password',password);
-			$('.login').toggle();
-			window.location = 'menu.html';
-		}
-		else
-		{
-			alert('Wrong email/password combination');
-			logout();
-			$('.login').toggle();
-		}
-	},
-	error: function(e) {
-		alert('No internet connection');
-		logout();
-		$('.login').toggle();
-	}
-});
+		 	jsonpCallback: 'jsonCallback',
+		    contentType: "application/json",
+		    dataType: 'jsonp',
+		    success: function(json) {
+		       if(json.response[0].code == '000')
+		       {
+					setSession('email',email);
+					setSession('password',password);
+					$('.login').toggle();
+					window.location = 'menu.html';
+				}
+				else
+				{
+					alert('Wrong email/password combination');
+					logout();
+					$('.login').toggle();
+				}
+		    },
+		    error: function(e) {
+		       alert('No internet connection');
+		       logout();
+		       $('.login').toggle();
+		    }
+		});
 
 
 }
