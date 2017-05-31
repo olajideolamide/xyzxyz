@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        xmlns:android   = "http://schemas.android.com/apk/res/android"
-        id          = "com.sanchosmexican.www"
-        versionCode = "5" 
-        version = "4.0.1" >
+<widget xmlns   = "http://www.w3.org/ns/widgets"
+	xmlns:gap   = "http://phonegap.com/ns/1.0"
+	xmlns:android   = "http://schemas.android.com/apk/res/android"
+	id          = "com.sanchosmexican.www"
+	versionCode = "5" 
+	version = "4.0.1" >
 
-    <!-- versionCode is optional and Android only -->
+	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
-    <name>Sanchos Mexican</name>
+	<name>Sanchos Mexican</name>
 	<icon src="icon.png" />
-    <description>
-        Sanchos Mexican  Restaurant
-    </description>
-	<gap:plugin name="org.apache.cordova.device" />
+	<description>
+		Sanchos Mexican  Restaurant
+	</description>
+	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
 	
 	
 	
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-    <author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
-       Sanchos Mexican  
-    </author>
+	<author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
+		Sanchos Mexican  
+	</author>
 	<access origin="tel:*" launch-external="yes" />
 	<access origin="*" />
 </widget>
