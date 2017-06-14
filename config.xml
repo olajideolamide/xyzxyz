@@ -9,10 +9,10 @@
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
-	<name>Inwood Bar & Grill</name>
+	<name>Inwood Bar and Grill</name>
 	<icon src="icon.png" />
 	<description>
-		Inwood Bar & Grill
+		Inwood Bar and Grill
 	</description>
 	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
