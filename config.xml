@@ -2,17 +2,17 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.sanchosmexican.www"
+	id          = "com.inwoodbarandgrill.www"
 	versionCode = "7" 
 	version = "4.0.8" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
-	<name>Sanchos Mexican</name>
+	<name>Inwood Bar & Grill</name>
 	<icon src="icon.png" />
 	<description>
-		Sanchos Mexican  Restaurant
+		Inwood Bar & Grill
 	</description>
 	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
@@ -20,8 +20,8 @@
 	
 	
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<author href="http://sanchosmexican.com/" email="admin@sanchosmexican.com/">
-		Sanchos Mexican  
+	<author href="https://folos.net/" email="apps@folos.net/">
+		Food Online Ordering Systems 
 	</author>
 	<access origin="tel:*" launch-external="yes" />
 	<access origin="*" />

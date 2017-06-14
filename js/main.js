@@ -1,6 +1,6 @@
-api = 'http://www.sanchosmexican.com/smsmobi';
-domain = 'sanchosmexican.com';
-appname = 'Sanchos Mexican';
+api = 'http://www.inwoodbarandgrill.com//smsmobi';
+domain = 'inwoodbarandgrill.com';
+appname = 'Inwood Bar and Grill';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
