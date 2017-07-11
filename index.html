@@ -29,7 +29,10 @@
 			// Handle the back button
 			if(confirm('Logout of '+appname+'?')) logout();
 		}
-		
+		$(function (){
+			balance();
+		});
+
 		function openURL(urlString){
 			myURL = encodeURI(urlString);
 			window.open(myURL, '_self');
@@ -50,8 +53,8 @@
 </script>
 </head>
 <body onload="onLoad()" >
-	<div style="width:100%; height: 95%; overflow: scroll">
-		<iframe src="http://www.onlinefoodorderingsoftware.com/orderonline/testv3/?shop_method=pickup" frameborder="0" style="overflow: hidden; height: 100%; width: 100%; position: absolute;" height="100%" width="100%"></iframe>
+	<div style="width:100%; height: 95%; overflow: hidden">
+		<iframe src="http://www.onlinefoodorderingsoftware.com/orderonline/testv3/?shop_method=pickup" style="width:100%; height:100%; overflow:scroll"></iframe>
 
 	</div>
 	<div style="width:100%; height: 4%; overflow:hidden">
