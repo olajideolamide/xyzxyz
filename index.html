@@ -8,8 +8,11 @@
 	<script src="cordova.js"></script>
 	<script src="js/php_number_format.js"></script>
 	<script src="js/jquery-2.0.0.js"></script>
+	
 	<script src="js/main.js"></script>
 	<script type="text/javascript" charset="utf-8">
+
+
 		// Wait for device API libraries to load
 		//
 		function onLoad() {
@@ -29,9 +32,7 @@
 			// Handle the back button
 			if(confirm('Logout of '+appname+'?')) logout();
 		}
-		$(function (){
-			balance();
-		});
+		
 
 		function openURL(urlString){
 			myURL = encodeURI(urlString);
@@ -50,11 +51,18 @@
 }
 
 
+
+
+
+
+
+
+
 </script>
 </head>
 <body onload="onLoad()" >
 	<div style="width:100%; height: 95%; overflow: hidden">
-		<iframe src="http://www.onlinefoodorderingsoftware.com/orderonline/testv3/?shop_method=pickup" style="width:100%; height:100%; overflow:scroll"></iframe>
+		<iframe id="myIframe" src="http://www.onlinefoodorderingsoftware.com/orderonline/testv3/?shop_method=pickup" style="width:100%; height:80%"  scrolling="no"></iframe>
 
 	</div>
 	<div style="width:100%; height: 4%; overflow:hidden">
@@ -62,4 +70,11 @@
 	</div>
 
 </body>
+<script src="js/iframeResizer.min.js"></script>
+<script>
+	document.getElementById('myIframe').onload = function() {
+		iFrameResize({log:true}, '#myIframe')
+	}
+</script>
+
 </html>
