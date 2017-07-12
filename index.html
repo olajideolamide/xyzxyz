@@ -5,9 +5,12 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src="cordova.js"></script>
 	<script src="js/php_number_format.js"></script>
 	<script src="js/jquery-2.0.0.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<script src="js/main.js"></script>
 	<script type="text/javascript" charset="utf-8">
 		// Wait for device API libraries to load
@@ -34,20 +37,27 @@
 		
 		
 	</script>
+
+	<style>
+
+		.col-xs-6{padding: 0px; margin-bottom: 10px}
+	</style>
 </head>
 <body onload="onLoad()" style="  background-image:url(taco.jpg); background-repeat: no-repeat; background-cover: cover;">
 
 	<div class="page" style="padding:0px">
 
-		<div style="  text-align:center;  padding:20px; border-bottom: solid 4px #ff302b"><img style="height:10%" src="Logo.png" /></div>
+		<div style="  text-align:center;  padding:20px; "><img style="height:30%" src="Logo.png" /></div>
 
-		<div style="padding-top:80px">
-			<a href="#" onclick='openURL("")' class="button"  >Menu</a>
-			<a href="order.html" class="button">Order Online</a>
-			<a href="" class="button">Call Us</a>
-			<a href="" class="button">See Directions</a>
-			
+
+		<div class="row" style="margin: 0px auto; width:100%; padding-top:80px">
+			<div class="col-xs-6"><a href="#" onclick='openURL("")' class="button"  ><i class="fa fa-cutlery fa-2x"></i></a></div>
+			<div class="col-xs-6"><a href="order.html" class="button"><i class="fa fa-shopping-cart fa-2x"></i></a></div>
+			<div class="col-xs-6"><a href="" class="button"><i class="fa fa-phone fa-2x"></i></a></div>
+			<div class="col-xs-6"><a href="" class="button"><i class="fa fa-map fa-2x"></i></a></div>
 		</div>
+
+		
 	</div>
 
 </body>

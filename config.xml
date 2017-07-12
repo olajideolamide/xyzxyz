@@ -9,7 +9,7 @@
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
-	<preference name="SplashScreen" value="5000"/>
+	<preference name="SplashScreen" value="8000"/>
 	<name>Inwood Bar and Grill</name>
 	<icon src="icon.png" />
 	<description>
@@ -28,7 +28,7 @@
 
 	
 	<splash src="splash.png" />
-	
+
 	
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
