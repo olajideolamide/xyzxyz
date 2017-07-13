@@ -12,7 +12,7 @@
 	<description>
 		Bulk SMS App
 	</description>
-	<gap:plugin name="org.apache.cordova.device"  />
+	<!--<gap:plugin name="org.apache.cordova.device"  />-->
 	<gap:plugin name="com.kolwit.pickcontact" version="~1" />
 	<gap:plugin name="org.apache.cordova.contacts" version="~0" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
