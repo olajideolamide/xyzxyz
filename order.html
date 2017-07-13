@@ -5,6 +5,7 @@
 	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src="cordova.js"></script>
 	<script src="js/php_number_format.js"></script>
 	<script src="js/jquery-2.0.0.js"></script>
@@ -344,6 +345,8 @@
 	}
 
 
+	a:active, a:focus, a:hover{color: white !important; text-decoration: none}
+
 </style>
 </head>
 <body onload="onLoad()" >
@@ -353,13 +356,13 @@
 			<a href="#nav" title="Show navigation">Show navigation</a>
 			<a href="#" title="Hide navigation">Hide navigation</a>
 			<ul style="margin-top:0px">
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html"><i class="fa fa-bars "></i> Main Menu</a></li>
 				<li>
-					<a href="/" aria-haspopup="true">Call Restaurant</a>
+					<a href="#" aria-haspopup="true"><i class="fa fa-phone "></i> Call Restaurant</a>
 					
 				</li>
 				<li>
-					<a href="/" aria-haspopup="true">Get Directions</a>
+					<a href="#" aria-haspopup="true"><i class="fa fa-map "></i> Get Directions</a>
 					
 				</li>
 				
@@ -367,7 +370,7 @@
 		</nav>
 	</div>
 	
-	<div  style="height: 93%; width: 100%; overflow: hidden; border-top: solid 1px #382107;">
+	<div  style="height: 93%; width: 100%;  border-top: solid 1px #382107;">
 		<iframe id="myIframe" src="https://www.orderfood.menu/orderonline/demov3/?shop_method=pickup" style="width:100%; height: 100%;  border:none"   ></iframe>
 
 	</div>
