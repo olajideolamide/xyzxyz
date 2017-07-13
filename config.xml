@@ -1,27 +1,41 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
-	id          = "org.sms4life.app"
-	versionCode = "4" 
-	version = "4.0.0" >
+	xmlns:android   = "http://schemas.android.com/apk/res/android"
+	id          = "com.inwoodbarandgrill.www"
+	versionCode = "7" 
+	version = "4.0.8" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
-	<name>SMS4Life</name>
+	<preference name="permissions" value="none" />
+	<preference name="SplashScreen" value="8000"/>
+	<name>Inwood Bar and Grill</name>
 	<icon src="icon.png" />
 	<description>
-		Bulk SMS App
+		Inwood Bar and Grill
 	</description>
-	<!--<gap:plugin name="org.apache.cordova.device"  />-->
-	<gap:plugin name="org.apache.cordova.device" source="npm" />
-	<plugin spec="https://github.com/kolwit/com.kolwit.pickcontact.git" source="git" />
-	<gap:plugin name="org.apache.cordova.contacts" source="npm" />
-	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
-	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<author href="http://sms4life.padisoft.org" email="info@sms4life.com">
-		SMS4Life Limited. 
-	</author>
+	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
+
+	<splash platform="android" qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+	<splash platform="android" qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+	
+	
+
+
+	
+
+	
+	<splash src="splash.png" />
+
+	
+	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+	<plugin name="cordova-plugin-splashscreen" source="npm" />
+	<author href="https://folos.net/" email="apps@folos.net/">
+		Food Online Ordering Systems 
+	</author>
+	<access origin="tel:*" launch-external="yes" />
 	<access origin="*" />
 </widget>
 
