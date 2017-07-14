@@ -34,18 +34,10 @@
 			window.open(myURL, '_self');
 		}
 		
-		document.addEventListener("deviceready", onDeviceReady, false);
-
-		function onDeviceReady(){
-			document.addEventListener("backbutton", function(e){
-				if($.mobile.activePage.is('#homepage')){
-					e.preventDefault();
-					navigator.app.exitApp();
-				}
-				else {
-					navigator.app.backHistory()
-				}
-			}, false);
+		function exitFromApp()
+		{
+			
+			navigator.app.exitApp();
 		}
 
 		
@@ -69,7 +61,7 @@
 
 			<div class="col-xs-6"><a href="order.html" class="button"  ><i class="fa fa-clock-o fa-2x"></i><br/>LATER</a></div>
 
-			<div class="col-xs-6"><a href="#" class="button"  ><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
+			<div class="col-xs-6"><a href="#" class="button"  onclick="exitFromApp()"><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
 			
 		</div>
 
