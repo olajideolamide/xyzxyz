@@ -53,19 +53,10 @@
 
 
 
-
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady(){
-	document.addEventListener("backbutton", function(e){
-		if($.mobile.activePage.is('#homepage')){
-			e.preventDefault();
-			navigator.app.exitApp();
-		}
-		else {
-			navigator.app.backHistory()
-		}
-	}, false);
+function exitFromApp()
+{
+	
+	navigator.app.exitApp();
 }
 
 
@@ -371,6 +362,10 @@ function onDeviceReady(){
 			<ul style="margin-top:0px">
 				<li><a href="index.html"><i class="fa fa-bars "></i> Main Menu</a></li>
 				
+				<li>
+					<a href="#" aria-haspopup="true"  onclick="exitFromApp()"><i class="fa fa-sign-out "></i> Exit App</a>
+					
+				</li>
 				
 			</ul>
 		</nav>
