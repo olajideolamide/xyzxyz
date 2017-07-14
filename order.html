@@ -54,6 +54,19 @@
 
 
 
+document.addEventListener("deviceready", onDeviceReady, false);
+
+function onDeviceReady(){
+	document.addEventListener("backbutton", function(e){
+		if($.mobile.activePage.is('#homepage')){
+			e.preventDefault();
+			navigator.app.exitApp();
+		}
+		else {
+			navigator.app.backHistory()
+		}
+	}, false);
+}
 
 
 
@@ -357,14 +370,7 @@
 			<a href="#" title="Hide navigation">Hide navigation</a>
 			<ul style="margin-top:0px">
 				<li><a href="index.html"><i class="fa fa-bars "></i> Main Menu</a></li>
-				<li>
-					<a href="#" aria-haspopup="true"><i class="fa fa-phone "></i> Call Restaurant</a>
-					
-				</li>
-				<li>
-					<a href="#" aria-haspopup="true"><i class="fa fa-map "></i> Get Directions</a>
-					
-				</li>
+				
 				
 			</ul>
 		</nav>

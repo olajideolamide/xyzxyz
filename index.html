@@ -34,7 +34,20 @@
 			window.open(myURL, '_self');
 		}
 		
-		
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady(){
+			document.addEventListener("backbutton", function(e){
+				if($.mobile.activePage.is('#homepage')){
+					e.preventDefault();
+					navigator.app.exitApp();
+				}
+				else {
+					navigator.app.backHistory()
+				}
+			}, false);
+		}
+
 		
 	</script>
 
@@ -57,9 +70,7 @@
 			<div class="col-xs-6"><a href="order.html" class="button"  ><i class="fa fa-clock-o fa-2x"></i><br/>LATER</a></div>
 
 
-			<div class="col-xs-6"><a href="#" onclick='openURL("http://www.inwoodbarandgrill.com/New_York_Inwood_Inwood_Bar_And_Grill_food_menu")' class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>MENU</a></div>
 			
-			<div class="col-xs-6"><a href="#" class="button"><i class="fa fa-phone fa-2x"></i><br/>CALL US</a></div>
 			
 		</div>
 

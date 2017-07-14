@@ -4,7 +4,7 @@
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.wingmanco.www"
 	versionCode = "7" 
-	version = "4.0.8" >
+	version = "4.0.9" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
