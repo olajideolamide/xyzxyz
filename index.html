@@ -36,9 +36,20 @@
 		
 		function exitFromApp()
 		{
-			
+
 			navigator.app.exitApp();
 		}
+
+
+		document.addEventListener("backbutton", function(e){
+			if($.mobile.activePage.is('#homepage')){
+				
+				navigator.app.exitApp();
+			}
+			else {
+				navigator.app.backHistory()
+			}
+		}, false);
 
 		
 	</script>
@@ -53,7 +64,7 @@
 
 	<div class="page" style="padding:0px">
 
-		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:250px" src="logo.png" /></div>
+		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:150px" src="logo.png" /></div>
 
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:100px">

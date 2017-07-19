@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.wingmanco.www"
+	id          = "com.inwoodbarandgrill.www"
 	versionCode = "8" 
 	version = "4.0.9" >
 
@@ -10,10 +10,10 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<preference name="SplashScreen" value="10000"/>
-	<name>Wingman Wings Brighton</name>
+	<name>Inwood Bar and Grill</name>
 	<icon src="icon.png" />
 	<description>
-		Wingman Wings Brighton
+		Inwood Bar and Grill
 	</description>
 	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
