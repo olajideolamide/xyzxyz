@@ -1,0 +1,65 @@
+
+/*accordion	headers*/
+.accordion > h1, .accordion > h2, .accordion > h3, .accordion > h4, .accordion > h5, .accordion > h6 {
+
+	color: #000 !important;
+
+	background: #7abcff !important;
+
+	margin: 1px 0px 1px 0px;
+
+	font-weight: normal;
+
+	padding: 10px;
+
+	font-size: 14px;
+
+	-webkit-border-radius: 5px;
+
+	-moz-border-radius: 5px;
+
+	border-radius: 5px;
+
+	cursor: pointer;
+
+} 
+
+.accordion > h1:hover, .accordion > h2:hover, .accordion > h3:hover, .accordion > h4:hover, .accordion > h5:hover, .accordion > h6:hover {
+
+	background: #0d5ea4 !important;
+
+	color: #fff !important;
+
+} 
+
+/*accordion	DIVs*/
+
+.accordion > div {
+
+	-webkit-border-radius: 5px;
+
+	-moz-border-radius: 5px;
+
+	border-radius: 5px;
+
+	cursor: pointer;
+
+	border: #bbb solid 1px;
+
+	padding: 5px;
+
+	margin-bottom: 15px;
+
+	-o-box-sizing:border-box;
+
+	-moz-box-sizing:border-box;
+
+	-ms-box-sizing:border-box;
+
+	-webkit-box-sizing:border-box;
+
+	-khtml-box-sizing:border-box;
+
+	box-sizing:border-box;
+
+}

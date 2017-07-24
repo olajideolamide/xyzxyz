@@ -1,86 +1,154 @@
-<!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
 <head>
-	<meta charset="utf-8" />
-	<meta name="format-detection" content="telephone=no" />
-	<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>Hello World</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<script src="cordova.js"></script>
+	<script src="js/jquery-2.0.0.js"></script>
+	<script type="text/javascript" src="PushNotification.js"></script>
+	<script src="js/main.js"></script>
+	<script type="text/javascript" charset="utf-8">
+		// Wait for device API libraries to load
+		//
+		function onLoad() {
+			document.addEventListener("deviceready", onDeviceReady, false);
+		}
+
+		// device APIs are available
+		
+		function onDeviceReady() {
+			// Now safe to use device APIs
+			document.addEventListener("backbutton", onBackKeyDown, false);
+			var os = device.platform;
+			if(os == "Android") $(".quit").removeClass('hidden');
+		}
+
+
+		function openURL(urlString){
+    myURL = encodeURI(urlString);
+    window.open(myURL, '_self');
+}
+
+
+var app = {
+    // Application Constructor
+    initialize: function() {
+        this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+        document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicity call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+        app.receivedEvent('deviceready');
+    },
+    tokenHandler:function(msg) {
+        console.log("Token Handler " + msg);
+    },
+    errorHandler:function(error) {
+        console.log("Error Handler  " + error);
+        alert(error);
+    },
+    // result contains any message sent from the plugin call
+    successHandler: function(result) {
+        alert('Success! Result = '+result)
+    },
+    // Update DOM on a Received Event
+    receivedEvent: function(id) {
+        var pushNotification = window.plugins.pushNotification;
+        // TODO: Enter your own GCM Sender ID in the register call for Android
+        if (device.platform == 'android' || device.platform == 'Android') {
+            pushNotification.register(this.successHandler, this.errorHandler,{"senderID":"little-india-141108","ecb":"app.onNotificationGCM"});
+        }
+        else {
+            pushNotification.register(this.tokenHandler,this.errorHandler,{"badge":"true","sound":"true","alert":"true","ecb":"app.onNotificationAPN"});
+        }
+        var parentElement = document.getElementById(id);
+        var listeningElement = parentElement.querySelector('.listening');
+        var receivedElement = parentElement.querySelector('.received');
+
+        listeningElement.setAttribute('style', 'display:none;');
+        receivedElement.setAttribute('style', 'display:block;');
+
+        console.log('Received Event: ' + id);
+    },
+    // iOS
+    onNotificationAPN: function(event) {
+        var pushNotification = window.plugins.pushNotification;
+        console.log("Received a notification! " + event.alert);
+        console.log("event sound " + event.sound);
+        console.log("event badge " + event.badge);
+        console.log("event " + event);
+        if (event.alert) {
+            navigator.notification.alert(event.alert);
+        }
+        if (event.badge) {
+            console.log("Set badge on  " + pushNotification);
+            pushNotification.setApplicationIconBadgeNumber(this.successHandler, event.badge);
+        }
+        if (event.sound) {
+            var snd = new Media(event.sound);
+            snd.play();
+        }
+    },
+    // Android
+    onNotificationGCM: function(e) {
+        switch( e.event )
+        {
+            case 'registered':
+                if ( e.regid.length > 0 )
+                {
+                    // Your GCM push server needs to know the regID before it can push to this device
+                    // here is where you might want to send it the regID for later use.
+                    alert('registration id = '+e.regid);
+                }
+            break;
+
+            case 'message':
+              // this is the actual push notification. its format depends on the data model
+              // of the intermediary push server which must also be reflected in GCMIntentService.java
+              alert('message = '+e.message+' msgcnt = '+e.msgcnt);
+            break;
+
+            case 'error':
+              alert('GCM error = '+e.msg);
+            break;
+
+            default:
+              alert('An unknown GCM event has occurred');
+              break;
+        }
+    }
+
+};
+		
+		
+		
+    </script>
 </head>
-<body>
-	<div class="app">
-		<div id="deviceready" class="blink">
-			<p class="event listening">Connecting to Device</p>
-			<p class="event received">Device is Ready</p>
-		</div>
-		<fieldset>
-			<legend>Pushwoosh status:</legend>
-			Push token: <br>
-			<div class="statustext" id="pushToken"></div>
-			Push message: <br>
-			<div class="statustext" id="pushMessage"></div>
-			Push data: <br>
-			<div class="statustext" id="pushData"></div>
-		</fieldset>
+<body onload="onLoad()" style="background-color:black;  background-image:url(slide3.jpg); background-repeat: no-repeat; background-size: 100% 100%;">
+
+<div class="page" style="padding:0px">
+
+		<div style="  text-align:center; background-color:black; padding:20px; border-bottom: solid 4px #ff302b"><img style="height:10%" src="logo.png" /></div>
+
+		<div style="padding-top:80px">
+		<a href="#" onclick="window.open('http://www.smswind.com/sms?pd_m=buy', '_system');" class="button"  >Menu</a>
+		<a href="http://littleindiaofdenver.net/" class="button">Order Online</a>
+		<a href="tel:303-871-9777" class="button">Call Us</a>
+		<a href="https://www.google.com/maps/place/330+E+6th+Ave,+Denver,+CO+80203/@39.7254329,-104.9850602,17z/data=!3m1!4b1!4m5!3m4!1s0x876c7ed8e2e01341:0xfffb1fd60a0945f!8m2!3d39.7254288!4d-104.9828715" class="button">See Directions</a>
+		
 	</div>
-	<script type="text/javascript" src="cordova.js"></script>
-
-	<script>
-
-		var push = PushNotification.init({
-			android: {
-			},
-			browser: {
-				pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-			},
-			ios: {
-				alert: "true",
-				badge: "true",
-				sound: "true"
-			},
-			windows: {}
-		});
-
-		push.on('registration', function(data) {
-	// data.registrationId
-});
-
-		push.on('notification', function(data) {
-	// data.message,
-	// data.title,
-	// data.count,
-	// data.sound,
-	// data.image,
-	// data.additionalData
-	alert(data.message);
-});
-
-		push.on('error', function(e) {
-	// e.message
-});
-
-	</script>
-
-
+</div>
 
 </body>
 </html>
