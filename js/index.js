@@ -80,7 +80,7 @@ function initPushwoosh() {
 
     //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
     pushNotification.onDeviceReady({
-    	projectid: "974167092163",
+    	projectid: "folos-push-9821a",
     	appid: "B4489-0C048",
     	serviceName: ""
     });
