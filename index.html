@@ -1,169 +1,52 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1" /> 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
-	
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-	<script src="cordova.js"></script>
-	<script src="js/php_number_format.js"></script>
-	<script src="js/jquery-2.0.0.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<script src="js/main.js"></script>
-	<script type="text/javascript" charset="utf-8">
-		// Wait for device API libraries to load
-		//
-		function onPushwooshInitialized(pushNotification) {
-
-    //if you need push token at a later time you can always get it from Pushwoosh plugin
-    pushNotification.getPushToken(
-    	function(token) {
-    		console.info('push token: ' + token);
-    	}
-    	);
-
-    //and HWID if you want to communicate with Pushwoosh API
-    pushNotification.getPushwooshHWID(
-    	function(token) {
-    		console.info('Pushwoosh HWID: ' + token);
-    	}
-    	);
-
-    //settings tags
-    pushNotification.setTags({
-    	tagName: "tagValue",
-    	intTagName: 10
-    },
-    function(status) {
-    	console.info('setTags success: ' + JSON.stringify(status));
-    },
-    function(status) {
-    	console.warn('setTags failed');
-    }
-    );
-
-    pushNotification.getTags(
-    	function(status) {
-    		console.info('getTags success: ' + JSON.stringify(status));
-    	},
-    	function(status) {
-    		console.warn('getTags failed');
-    	}
-    	);
-
-    //start geo tracking.
-    //pushNotification.startLocationTracking();
-}
-
-function initPushwoosh() {
-	var pushNotification = cordova.require("pushwoosh-cordova-plugin.PushNotification");
-
-    //set push notifications handler
-    document.addEventListener('push-notification',
-    	function(event) {
-    		var message = event.notification.message;
-    		var userData = event.notification.userdata;
-
-    		document.getElementById("pushMessage").innerHTML = message + "<p>";
-    		document.getElementById("pushData").innerHTML = JSON.stringify(event.notification) + "<p>";
-
-            //dump custom data to the console if it exists
-            if (typeof(userData) != "undefined") {
-            	console.warn('user data: ' + JSON.stringify(userData));
-            }
-        }
-        );
-
-    //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
-    pushNotification.onDeviceReady({
-    	projectid: "folos-push-9821a",
-    	appid: "B4489-0C048",
-    	serviceName: ""
-    });
-
-    //register for push notifications
-    pushNotification.registerDevice(
-    	function(status) {
-    		document.getElementById("pushToken").innerHTML = status.pushToken + "<p>";
-    		onPushwooshInitialized(pushNotification);
-    	},
-    	function(status) {
-    		alert("failed to register: " + status);
-    		console.warn(JSON.stringify(['failed to register ', status]));
-    	}
-    	);
-}
-
-
-var app = {
-    // Application Constructor
-    initialize: function() {
-    	this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-    	document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-    	initPushwoosh();
-    	app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-    	var parentElement = document.getElementById(id);
-    	var listeningElement = parentElement.querySelector('.listening');
-    	var receivedElement = parentElement.querySelector('.received');
-
-    	listeningElement.setAttribute('style', 'display:none;');
-    	receivedElement.setAttribute('style', 'display:block;');
-
-    	console.log('Received Event: ' + id);
-    }
-};
-
-
-
-
-
-app.initialize();
-
-
-
-
-</script>
-
-<style>
-
-	.col-xs-6{padding: 0px; margin-bottom: 10px}
-	a:active, a:focus, a:hover{color: white !important; text-decoration: none}
-</style>
-</head>
-<body onload="onLoad()" style="  background-image:url(background.jpg); background-repeat: no-repeat; background-cover: cover;">
-
-	<div class="page" style="padding:0px">
-
-		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:150px" src="logo.png" /></div>
-
-
-		<div class="row" style="margin: 0px auto; width:100%; padding-top:100px">
-			<div class="col-xs-12"><a href="order.html" class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>ORDER NOW</a></div>
-
-			
-			<div class="col-xs-12"><a href="#" class="button"  onclick="exitFromApp()"><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
-			
-		</div>
-
-		<div class="statustext" id="pushMessage"></div>
-	</div>
-
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+        <div class="app">
+            <div id="deviceready" class="blink">
+                <p class="event listening">Connecting to Device</p>
+                <p class="event received">Device is Ready</p>
+            </div>
+            <fieldset>
+                <legend>Pushwoosh status:</legend>
+                Push token: <br>
+                <div class="statustext" id="pushToken"></div>
+                Push message: <br>
+                <div class="statustext" id="pushMessage"></div>
+                Push data: <br>
+                <div class="statustext" id="pushData"></div>
+            </fieldset>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>
+    </body>
 </html>
