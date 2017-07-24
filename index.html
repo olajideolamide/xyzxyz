@@ -51,14 +51,55 @@
 			}
 		}, false);
 
-		
-	</script>
 
-	<style>
+		function initPushwoosh() {
+			var pushwoosh = cordova.require("pushwoosh-cordova-plugin.PushNotification");
 
-		.col-xs-6{padding: 0px; margin-bottom: 10px}
-		a:active, a:focus, a:hover{color: white !important; text-decoration: none}
-	</style>
+  // Should be called before pushwoosh.onDeviceReady
+  document.addEventListener('push-notification', function(event) {
+  	var notification = event.notification;
+    // handle push open here
+});
+  
+  // Initialize Pushwoosh. This will trigger all pending push notifications on start.
+  pushwoosh.onDeviceReady({
+  	appid: "4489-0C048",
+  	projectid: "folos-push",
+  	serviceName: "MPNS_SERVICE_NAME"
+  });
+}
+
+bindEvents: function() {
+	document.addEventListener('deviceready', this.onDeviceReady, false);
+},
+    // deviceready Event Handler
+    //
+    // 'this' covers the event. To call 'receivedEvent' function, explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+    	app.receivedEvent('deviceready');
+    	initPushwoosh();
+    },
+
+    pushwoosh.registerDevice(
+    	function(status) {
+    		var pushToken = status.pushToken;
+      // handle successful registration here
+  },
+  function(status) {
+    // handle registration error here
+}
+);
+
+
+    
+
+</script>
+
+<style>
+
+	.col-xs-6{padding: 0px; margin-bottom: 10px}
+	a:active, a:focus, a:hover{color: white !important; text-decoration: none}
+</style>
 </head>
 <body onload="onLoad()" style="  background-image:url(background.jpg); background-repeat: no-repeat; background-cover: cover;">
 
