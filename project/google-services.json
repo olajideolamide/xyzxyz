@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "974167092163",
+    "firebase_url": "https://folos-push-9821a.firebaseio.com",
+    "project_id": "folos-push-9821a",
+    "storage_bucket": "folos-push-9821a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:974167092163:android:9abc726f389f0386",
+        "android_client_info": {
+          "package_name": "com.inwoodbarandgrill.www"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "974167092163-gkqa23t6dr1r6gan968qu0eol99am5ph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh4gtxTRl7WpEHg0xHyW6Pi8UMKCFNWbQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
