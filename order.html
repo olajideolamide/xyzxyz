@@ -22,12 +22,12 @@
 
 		// device APIs are available
 		
-		function onDeviceReady() {
+		//function onDeviceReady() {
 			// Now safe to use device APIs
-			document.addEventListener("backbutton", onBackKeyDown, false);
-			var os = device.platform;
-			if(os == "Android") $(".quit").removeClass('hidden');
-		}
+			//document.addEventListener("backbutton", onBackKeyDown, false);
+			//var os = device.platform;
+			//if(os == "Android") $(".quit").removeClass('hidden');
+		//}
 		
 		function onBackKeyDown() {
 			// Handle the back button
@@ -166,7 +166,7 @@ function exitFromApp()
 	}
 	#nav li a:active
 	{
-		background-color: #c00 !important;
+		background-color: #011fb5 !important;
 	}
 
 	#nav span:after
@@ -175,7 +175,7 @@ function exitFromApp()
 		height: 0;
 		border: 0.313em solid transparent; /* 5 */
 		border-bottom: none;
-		border-top-color: #efa585;
+		border-top-color: #ff3e47;
 		content: '';
 		vertical-align: middle;
 		display: inline-block;
@@ -188,7 +188,7 @@ function exitFromApp()
 	#nav > ul
 	{
 		height: 3.75em; /* 60 */
-		background-color: #382107;
+		background-color: #ff3e47;
 	}
 	#nav > ul > li
 	{
@@ -205,12 +205,12 @@ function exitFromApp()
 	}
 	#nav > ul > li:not( :last-child ) > a
 	{
-		border-right: 1px solid #cc470d;
+		border-right: 1px solid #ff3e47;
 	}
 	#nav > ul > li:hover > a,
 	#nav > ul:not( :hover ) > li.active > a
 	{
-		background-color: #382107;
+		background-color: #ff3e47;
 	}
 
 
@@ -218,7 +218,7 @@ function exitFromApp()
 
 	#nav li ul
 	{
-		background-color: #382107;
+		background-color: ##ff3e47;
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -242,7 +242,7 @@ function exitFromApp()
 	#nav li ul li a:hover,
 	#nav li ul:not( :hover ) li.active a
 	{
-		background-color: #382107;
+		background-color: #ff3e47;
 	}
 
 
@@ -275,7 +275,7 @@ function exitFromApp()
 			height: 100%;
 			text-align: left;
 			text-indent: -9999px;
-			background-color: #382107;
+			background-color: #ff3e47;
 			position: relative;
 		}
 		#nav > a:before,
@@ -361,6 +361,7 @@ function exitFromApp()
 			<a href="#" title="Hide navigation">Hide navigation</a>
 			<ul style="margin-top:0px">
 				<li><a href="index.html"><i class="fa fa-bars "></i> Main Menu</a></li>
+				<li><a href="alerts.html"><i class="fa fa-bullhorn "></i> Alerts</a></li>
 				
 				<li>
 					<a href="#" aria-haspopup="true"  onclick="exitFromApp()"><i class="fa fa-sign-out "></i> Exit App</a>
@@ -372,7 +373,7 @@ function exitFromApp()
 	</div>
 	
 	<div  style="height: 93%; width: 100%;  border-top: solid 1px #382107;">
-		<iframe id="myIframe" src="https://inwoodbarandgrill.orderfood.menu/?flmobileapp=true" style="width:100%; height: 100%;  border:none"   ></iframe>
+		<iframe id="myIframe" src="https://wingmanco.orderfood.menu//?flmobileapp=true" style="width:100%; height: 100%;  border:none"   ></iframe>
 
 	</div>
 
@@ -381,5 +382,101 @@ function exitFromApp()
 
 
 </body>
+
+<script>
+
+
+	function onDeviceReady(){
+		console.log("Device Ready");
+
+		var push = PushNotification.init({
+			android: {
+				senderID: "974167092163",
+				icon: 'icons',
+				sound: true,
+				vibrate: true,
+				alert: true,
+				forceShow: true,
+				topics: ['wingmanbrighton']
+			},
+			browser: {
+				pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+			},
+			ios: {
+				alert: true,
+				badge: true,
+				sound: true
+			},
+			windows: {}
+		});
+
+		push.on('registration', function(data) {
+			console.log(data.registrationId);
+
+			$("#gcm_id").html(data.registrationId);
+
+
+			var user = data.registrationId;
+
+
+		});
+
+		push.on('notification', function(data) {
+
+			console.log(data.message);
+
+			var d = new Date();
+
+			var month = d.getMonth()+1;
+			var day = d.getDate();
+
+			var today = d.getFullYear() + '/' +(month<10 ? '0' : '') + month + '/' +(day<10 ? '0' : '') + day;
+
+			var storage = window.localStorage;
+			var notifs = data.title+'//'+data.message+'//'+today;
+
+
+			var current_notifs = storage.getItem('notifs');
+			
+			if(current_notifs != null)
+			{
+				var notifs_array = JSON.parse(current_notifs); 
+			}
+			else
+			{
+				var notifs_array = [];
+			}
+
+			notifs_array.unshift(notifs);
+			storage.setItem('notifs', JSON.stringify( notifs_array ));
+
+
+
+			alert(data.message);
+
+
+
+//alert(data.title+" Message: " +data.message);
+// data.title,
+// data.count,
+// data.sound,
+// data.image,
+// data.additionalData
+});
+
+		push.on('error', function(e) {
+			alert(e.message);
+		});
+	}
+
+
+	document.addEventListener("deviceready",onDeviceReady,false);
+
+
+	onDeviceReady();
+
+
+
+</script>
 
 </html>
