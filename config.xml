@@ -1,73 +1,41 @@
 <<<<<<< HEAD
-<?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"
-	xmlns:gap   = "http://phonegap.com/ns/1.0"
-	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.inwoodbarandgrill.www"
-	versionCode = "8" 
-	version = "4.0.9" >
+	<?xml version="1.0" encoding="UTF-8" ?>
+	<widget xmlns   = "http://www.w3.org/ns/widgets"
+		xmlns:gap   = "http://phonegap.com/ns/1.0"
+		xmlns:android   = "http://schemas.android.com/apk/res/android"
+		id          = "com.inwoodbarandgrill.www"
+		versionCode = "8" 
+		version = "4.0.9" >
 
-	<!-- versionCode is optional and Android only -->
-	<preference name="orientation" value="portrait" />
-	<preference name="permissions" value="none" />
-	<preference name="SplashScreen" value="10000"/>
-	<name>Inwood Bar and Grill</name>
-	<icon src="icon.png" />
-	<description>
-		Inwood Bar and Grill
-	</description>
-	<!--<gap:plugin name="org.apache.cordova.device" />-->
-
-
-	<splash platform="android" qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
-	<splash platform="android" qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
-	
-	
+		<!-- versionCode is optional and Android only -->
+		<preference name="orientation" value="portrait" />
+		<preference name="permissions" value="none" />
+		<preference name="SplashScreen" value="10000"/>
+		<name>Inwood Bar and Grill</name>
+		<icon src="icon.png" />
+		<description>
+			Inwood Bar and Grill
+		</description>
+		<!--<gap:plugin name="org.apache.cordova.device" />-->
 
 
-	
+		<splash platform="android" qualifier="port-ldpi" src="res/screen/android/screen-ldpi-portrait.png" />
+		<splash platform="android" qualifier="port-mdpi" src="res/screen/android/screen-mdpi-portrait.png" />
+		
+		
 
-	
-	<splash src="splash.png" />
 
-	
-	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<plugin name="cordova-plugin-splashscreen" source="npm" />
-	<author href="https://folos.net/" email="apps@folos.net/">
-		Food Online Ordering Systems 
-	</author>
-	<access origin="tel:*" launch-external="yes" />
-	<access origin="*" />
-</widget>
+		
 
-=======
-<?xml version='1.0' encoding='utf-8'?>
-<widget id="com.example.hello" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-	<name>HelloWorld</name>
-	<description>
-		A sample Apache Cordova application that responds to the deviceready event.
-	</description>
-	<author email="dev@cordova.apache.org" href="http://cordova.io">
-		Apache Cordova Team
-	</author>
-	<content src="index.html" />
-	<plugin name="cordova-plugin-whitelist" spec="1" />
-	<access origin="*" />
-	<allow-intent href="http://*/*" />
-	<allow-intent href="https://*/*" />
-	<allow-intent href="tel:*" />
-	<allow-intent href="sms:*" />
-	<allow-intent href="mailto:*" />
-	<allow-intent href="geo:*" />
-	<platform name="android">
-		<allow-intent href="market:*" />
-		<resource-file src="google-services.json" target="google-services.json" />
-	</platform>
+		
+		<splash src="splash.png" />
 
-	<plugin name="cordova-plugin-fcm" source="npm" />
-	<platform name="ios">
-		<allow-intent href="itms:*" />
-		<allow-intent href="itms-apps:*" />
-	</platform>
-</widget>
->>>>>>> f5037b63af07d8e81f49f96e6d7f78e50106396e
+		
+		<gap:plugin name="cordova-plugin-whitelist" source="npm" />
+		<plugin name="cordova-plugin-splashscreen" source="npm" />
+		<author href="https://folos.net/" email="apps@folos.net/">
+			Food Online Ordering Systems 
+		</author>
+		<access origin="tel:*" launch-external="yes" />
+		<access origin="*" />
+	</widget>
