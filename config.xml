@@ -10,6 +10,13 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<preference name="SplashScreen" value="10000"/>
+
+	<preference name="android-build-tool" value="gradle" />
+	<plugin name="phonegap-plugin-push" source="npm">
+		<param name="SENDER_ID" value="123456789" />
+	</plugin>
+
+
 	<name>Inwood Bar and Grill</name>
 	<icon src="icon.png" />
 	<description>
