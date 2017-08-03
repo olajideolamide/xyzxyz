@@ -18,8 +18,8 @@
 	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
 
-	<splash platform="android" qualifier="port-ldpi" src="res/screen/android/ldpi.png" />
-	<splash platform="android" qualifier="port-mdpi" src="res/screen/android/mdpi.png" />
+	<splash platform="android" qualifier="port-ldpi" src="res/screen/android/splash.png" />
+	<splash platform="android" qualifier="port-mdpi" src="res/screen/android/splash.png" />
 	
 	
 
