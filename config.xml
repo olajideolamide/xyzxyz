@@ -29,12 +29,12 @@
 	
 	<splash src="splash.png" />
 
-<icon src="ios/icon.png" platform="ios" width="57" height="57" />
-<icon src="ios/icon.png" platform="ios" width="72" height="72" />
-<icon src="ios/icon.png" platform="ios" width="114" height="114" />
-<icon src="ios/icon.png" platform="ios" width="120" height="120" />
-<icon src="ios/icon.png" platform="ios" width="144" height="144" />
-<icon src="ios/icon.png" platform="ios" width="152" height="152" />
+<icon src="ios/icon57.png" platform="ios" width="57" height="57" />
+<icon src="ios/icon72.png" platform="ios" width="72" height="72" />
+<icon src="ios/icon114.png" platform="ios" width="114" height="114" />
+<icon src="ios/icon120.png" platform="ios" width="120" height="120" />
+<icon src="ios/icon144.png" platform="ios" width="144" height="144" />
+<icon src="ios/icon152.png" platform="ios" width="152" height="152" />
 	
 
 	
