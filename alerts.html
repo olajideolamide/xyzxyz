@@ -375,7 +375,12 @@
 		}
 
 		$( '.notif_group_list' ).html(html);
+
 		
+		
+		if(notifs_array.length == 0)
+			$( '.notif_group_list' ).html('<li class="list-group-item">You have no notitfications</li>');
+
 		//storage.removeItem(key) 
 
 	</script>
@@ -437,7 +442,7 @@
 
 
 				var current_notifs = storage.getItem('notifs');
-				
+
 				if(current_notifs != null)
 				{
 					var notifs_array = JSON.parse(current_notifs); 

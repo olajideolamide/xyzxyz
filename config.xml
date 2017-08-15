@@ -3,8 +3,8 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.inwoodbarandgrill.www"
-	versionCode = "16" 
-	version = "4.0.16" >
+	versionCode = "17" 
+	version = "4.0.17" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
