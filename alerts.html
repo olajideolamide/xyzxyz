@@ -8,7 +8,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src="cordova.js"></script>
-	<script src="js/push.js"></script>
+	
 	<script src="js/jquery-2.0.0.js"></script>
 	
 	
@@ -119,6 +119,7 @@
 			top: 25%;
 			left: 50%;
 			margin-left: -30em; /* 30 480 */
+			z-index: 100
 		}
 
 		#nav > a
@@ -137,7 +138,7 @@
 		}
 		#nav li a:active
 		{
-			background-color: #011fb5 !important;
+			background-color: #c00 !important;
 		}
 
 		#nav span:after
@@ -146,7 +147,7 @@
 			height: 0;
 			border: 0.313em solid transparent; /* 5 */
 			border-bottom: none;
-			border-top-color: #ff3e47;
+			border-top-color: #efa585;
 			content: '';
 			vertical-align: middle;
 			display: inline-block;
@@ -159,7 +160,7 @@
 		#nav > ul
 		{
 			height: 3.75em; /* 60 */
-			background-color: #ff3e47;
+			background-color: #382107;
 		}
 		#nav > ul > li
 		{
@@ -176,20 +177,22 @@
 		}
 		#nav > ul > li:not( :last-child ) > a
 		{
-			border-right: 1px solid #ff3e47;
+			border-right: 1px solid #cc470d;
 		}
 		#nav > ul > li:hover > a,
 		#nav > ul:not( :hover ) > li.active > a
 		{
-			background-color: #ff3e47;
+			background-color: #382107;
 		}
+
+
 
 
 		/* second level */
 
 		#nav li ul
 		{
-			background-color: ##ff3e47;
+			background-color: #382107;
 			display: none;
 			position: absolute;
 			top: 100%;
@@ -213,7 +216,7 @@
 		#nav li ul li a:hover,
 		#nav li ul:not( :hover ) li.active a
 		{
-			background-color: #ff3e47;
+			background-color: #382107;
 		}
 
 
@@ -246,7 +249,7 @@
 				height: 100%;
 				text-align: left;
 				text-indent: -9999px;
-				background-color: #ff3e47;
+				background-color: #382107;
 				position: relative;
 			}
 			#nav > a:before,
@@ -321,6 +324,7 @@
 
 
 		a:active, a:focus, a:hover{color: white !important; text-decoration: none}
+
 	</style>
 </head>
 <body  >
@@ -329,7 +333,7 @@
 		<nav id="nav" role="navigation"><p style="width: 90%;text-align: center;font-size: 20px;line-height: 35px;display: inline-block;margin: 0px; float:right; min-height: 100%"> Online Ordering</p>
 			<a href="#nav" title="Show navigation">Show navigation</a>
 			<a href="#" title="Hide navigation">Hide navigation</a>
-			<ul style="margin-top:0px; z-index: 100">
+			<ul style="margin-top:0px">
 				<li><a href="index.html"><i class="fa fa-bars "></i> Main Menu</a></li>
 				<li><a href="alerts.html"><i class="fa fa-bullhorn "></i> Alerts</a></li>
 				
@@ -372,9 +376,11 @@
 
 		$( '.notif_group_list' ).html(html);
 
+		
+		
 		if(notifs_array.length == 0)
 			$( '.notif_group_list' ).html('<li class="list-group-item">You have no notitfications</li>');
-		
+
 		//storage.removeItem(key) 
 
 	</script>
@@ -396,7 +402,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: true,
-					topics: ['wingmanbrighton']
+					topics: ['inwoodbarandgrill']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -436,7 +442,7 @@
 
 
 				var current_notifs = storage.getItem('notifs');
-				
+
 				if(current_notifs != null)
 				{
 					var notifs_array = JSON.parse(current_notifs); 
