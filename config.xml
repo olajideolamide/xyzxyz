@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.wingmanco.www"
+	id          = "com.inwoodbarandgrill.www"
 	versionCode = "19" 
 	version = "4.0.19" >
 
@@ -10,10 +10,10 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Wingman Wings Brighton</name>
+	<name>Inwood Bar and Grill</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Wingman Wings Brighton
+		Inwood Bar and Grill
 	</description>
 	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
@@ -22,15 +22,14 @@
 	<splash platform="android" qualifier="port-mdpi" src="res/screen/android/splash.png" />
 	
 	
-	<splash src="res/screen/ios/Default@2x~universal~anyany.png" />-->
+
 
 	
 
 	
-	<!--<splash src="splash.png" />-->
+	<splash src="splash.png" />-->
 
-	<icon platform="ios" src="icon.png" />
-
+	<icon platform="ios" src="icon180.png" />
 
 	<icon src="icon29.png" platform="ios" width="29" height="29" />
 	<icon src="icon40.png" platform="ios" width="40" height="40" />
@@ -49,6 +48,9 @@
 	<icon src="icon152.png" platform="ios" width="152" height="152" />
 	<icon src="icon167.png" platform="ios" width="167" height="167" />
 	<icon src="icon180.png" platform="ios" width="180" height="180" />
+
+
+	
 
 	
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
