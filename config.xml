@@ -14,7 +14,7 @@
 	</description>
 	<!--<gap:plugin name="org.apache.cordova.device" source="npm" />-->
 	<plugin spec="https://github.com/kolwit/com.kolwit.pickcontact.git" source="git" />
-	<gap:plugin name="org.apache.cordova.contacts" source="npm" />
+	<!--<gap:plugin name="org.apache.cordova.contacts" source="npm" />-->
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	<author href="http://www.kingbulksms.com.ng" email="kingstarconcept@gmail.com">
