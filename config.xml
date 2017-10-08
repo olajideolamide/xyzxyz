@@ -7,7 +7,7 @@
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
-	<name>My Sure SMS</name>
+	<name>BSE SMS</name>
 	<icon src="icon.png" />
 	<description>
 		Bulk SMS App
@@ -17,8 +17,8 @@
 	<!--<gap:plugin name="org.apache.cordova.contacts" source="npm" />-->
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<author href="http://mysuresms.com" email="gisogie@yahoo.com">
-		MY SURE SMS. 
+	<author href="http://bsesms.com" email="ayeseadewale@yahoo.com">
+		BSE SMS. 
 	</author>
 
 	<access origin="*" />

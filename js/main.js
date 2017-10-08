@@ -1,6 +1,6 @@
-api = 'http://mysuresms.com/smsmobi';
-domain = 'mysuresms.com';
-appname = 'My Sure SMS';
+api = 'http://bsesms.padisoft.org/smsmobi';
+domain = 'bsesms.com';
+appname = 'BSE SMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
