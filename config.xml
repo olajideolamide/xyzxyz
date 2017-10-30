@@ -2,18 +2,18 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.wingmanco.www"
-	versionCode = "21" 
-	version = "4.0.21" >
+	id          = "com.longmontpublichouse.www"
+	versionCode = "1" 
+	version = "4.0.1" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Wingman Wings Brighton</name>
+	<name>Longmont Public House</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Wingman Wings Brighton
+		Longmont Public House Mobile App
 	</description>
 	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
@@ -58,6 +58,8 @@
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />
 	<preference name="StatusBarStyle" value="lightcontent" />
+	<preference name="SplashScreenDelay" value="0"/>
+	<preference name="FadeSplashScreenDuration" value="0"/>
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 
 	<author href="https://folos.net/" email="apps@folos.net/">

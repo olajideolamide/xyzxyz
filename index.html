@@ -21,14 +21,14 @@
 
 	<div class="page" style="padding:0px">
 
-		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:250px" src="logo.png" /></div>
+		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:220px" src="logo.png" /></div>
 
 
-		<div class="row" style="margin: 0px auto; width:100%; padding-top:200px">
+		<div class="row" style="margin: 0px auto; width:100%; padding-top:100px">
 			<div class="col-xs-12"><a style="width:100%" href="order.html" class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>ORDER NOW</a></div>
 
 			<div class="col-xs-6"><a href="alerts.html" class="button"  ><i class="fa fa-bullhorn fa-2x"></i><br/>ALERTS</a></div>
-			<div class="col-xs-6"><a href="#" class="button"  onclick="exitFromApp()"><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
+			<div class="col-xs-6"><a href="#" class="button"  id="exitApp" ><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
 			
 		</div>
 
@@ -53,11 +53,18 @@
 			myURL = encodeURI(urlString);
 			window.open(myURL, '_self');
 		}
-		
-		function exitFromApp()
-		{
 
-			navigator.app.exitApp();
+		document.addEventListener("deviceready", onDeviceReady, false);
+
+		function onDeviceReady() {
+
+
+
+			document.getElementById('exitApp').addEventListener('click', function() {
+				navigator.app.exitApp();
+			});
+			
+
 		}
 
 
@@ -88,7 +95,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: true,
-					topics: ['wingmanbrighton']
+					topics: ['lph']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
