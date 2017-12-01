@@ -47,9 +47,9 @@
     if( (navigator.platform.indexOf("iPhone") != -1) 
     	|| (navigator.platform.indexOf("iPod") != -1)
     	|| (navigator.platform.indexOf("iPad") != -1))
-    	window.open("maps://maps.google.com/maps?daddr=40.8670616,-73.92243559&amp;ll=");
+    	window.open("");
     else
-    	window.open("http://maps.google.com/maps?daddr=40.8670616,-73.92243559&amp;ll=");
+    	window.open("");
 }
 
 
@@ -171,7 +171,7 @@ function exitFromApp()
 	}
 	#nav li a:active
 	{
-		background-color: #5f6280 !important;
+		background-color: #670069 !important;
 	}
 
 	#nav span:after
@@ -193,7 +193,7 @@ function exitFromApp()
 	#nav > ul
 	{
 		height: 3.75em; /* 60 */
-		background-color: #5f6280;
+		background-color: #670069;
 	}
 	#nav > ul > li
 	{
@@ -210,12 +210,12 @@ function exitFromApp()
 	}
 	#nav > ul > li:not( :last-child ) > a
 	{
-		border-right: 1px solid #5f6280;
+		border-right: 1px solid #670069;
 	}
 	#nav > ul > li:hover > a,
 	#nav > ul:not( :hover ) > li.active > a
 	{
-		background-color: #5f6280;
+		background-color: #670069;
 	}
 
 
@@ -223,7 +223,7 @@ function exitFromApp()
 
 	#nav li ul
 	{
-		background-color: #5f6280;
+		background-color: #670069;
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -247,7 +247,7 @@ function exitFromApp()
 	#nav li ul li a:hover,
 	#nav li ul:not( :hover ) li.active a
 	{
-		background-color: #5f6280;
+		background-color: #670069;
 	}
 
 
@@ -280,7 +280,7 @@ function exitFromApp()
 			height: 100%;
 			text-align: left;
 			text-indent: -9999px;
-			background-color: #5f6280;
+			background-color: #670069;
 			position: relative;
 		}
 		#nav > a:before,
@@ -377,7 +377,7 @@ function exitFromApp()
 	</div>
 	
 	<div  style="height: 93%; width: 100%;  border-top: solid 1px #382107;">
-		<iframe id="myIframe" src="https://www.orderfood.menu/orderonline/lph/?shop_method=pickup" style="width:100%; height: 100%;  border:none"   ></iframe>
+		<iframe id="myIframe" src="https://www.orderfood.menu/orderonline/wings2geaux/?shop_method=pickup" style="width:100%; height: 100%;  border:none"   ></iframe>
 
 	</div>
 
@@ -401,7 +401,7 @@ function exitFromApp()
 				vibrate: true,
 				alert: true,
 				forceShow: true,
-				topics: ['lph']
+				topics: ['wings2geaux']
 			},
 			browser: {
 				pushServiceURL: 'http://push.api.phonegap.com/v1/push'
