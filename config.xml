@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"  
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.wings2geaux.www"
+	id          = "com.ginospizza.www"
 	versionCode = "1" 
 	version = "4.0.1" >
 
@@ -10,10 +10,10 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Wings 2 Geaux</name>
+	<name>Ginos Pizza</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Wings2Geaux App
+		Online ordering available for Charleston, Elkview, Fayetteville, Hurricane, Nitro, and Summersville
 	</description>
 	
 
@@ -34,7 +34,7 @@
 	<preference name="FadeSplashScreenDuration" value="0"/>
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 
-	<author href="https://folos.net/" email="apps@folos.net/">
+	<author href="https://folos.net/" email="support@folos.net/">
 		Food Online Ordering Systems 
 	</author>
 	<access origin="*" />

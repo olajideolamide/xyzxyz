@@ -17,38 +17,47 @@
 		.button{width: 100% !important}
 	</style>
 </head>
-<body  style="background-image:url(background.jpg); background-repeat: no-repeat; background-size: cover; ">
+<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">
 
 	<div class="page" style="padding:0px">
 
 		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:150px" src="logo.png" /></div>
 
 
-		<div class="row" style="margin: 0px auto; width:100%; padding-top:100px">
+
+		<center>
+			<div style="color: #ffffff;
+			background-color: #c61e24;
+			font-size: 15px;
+			margin-top: 50px; padding: 5px 0px;">Online ordering available for Charleston, Elkview, Fayetteville, Hurricane, Nitro, and Summersville</div>
+		</center>
+
+
+		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
 			<div class="col-xs-12"><a style="width:100%" href="order.html" class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>ORDER NOW</a></div>
 
 			<div class="col-xs-6"><a href="alerts.html" class="button"  ><i class="fa fa-bullhorn fa-2x"></i><br/>ALERTS</a></div>
 			<div class="col-xs-6"><a href="#" class="button"  id="exitApp" ><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
-			
+
 		</div>
 
-		
+
 	</div>
 
 
 
 	<script type="text/javascript" src="cordova.js"></script>
 
-	
+
 	<script src="js/jquery-2.0.0.js"></script>
 	<script src="js/index.js"></script>
 	<script src="js/push.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
+
 	<script type="text/javascript" charset="utf-8">
 
 
-		
+
 		function openURL(urlString){
 			myURL = encodeURI(urlString);
 			window.open(myURL, '_self');
@@ -63,14 +72,14 @@
 			document.getElementById('exitApp').addEventListener('click', function() {
 				navigator.app.exitApp();
 			});
-			
+
 
 		}
 
 
 		document.addEventListener("backbutton", function(e){
 			if($.mobile.activePage.is('#homepage')){
-				
+
 				navigator.app.exitApp();
 			}
 			else {
@@ -78,7 +87,7 @@
 			}
 		}, false);
 
-		
+
 	</script>
 
 	<script>
@@ -95,7 +104,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: true,
-					topics: ['wings2geaux']
+					topics: ['ginospizza']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -139,7 +148,7 @@
 
 
 				var current_notifs = storage.getItem('notifs');
-				
+
 				if(current_notifs != null)
 				{
 					var notifs_array = JSON.parse(current_notifs); 
