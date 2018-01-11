@@ -39,11 +39,7 @@
 	<icon src="icon167.png" platform="ios" width="167" height="167" />
 	<icon src="icon180.png" platform="ios" width="180" height="180" />
 
-	<splash src="splash.png" />
-
-	<platform name="ios">
-		<splash src="wallpaper.png" />
-	</platform>
+	
 
 
 	<!-- iPhone and iPod touch -->
