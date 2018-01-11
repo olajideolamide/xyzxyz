@@ -15,6 +15,60 @@
 	<description>
 		Online ordering available for Charleston, Elkview, Fayetteville, Hurricane, Nitro, and Summersville
 	</description>
+
+
+
+	<icon platform="ios" src="icon.png" />
+
+
+	<icon src="icon29.png" platform="ios" width="29" height="29" />
+	<icon src="icon40.png" platform="ios" width="40" height="40" />
+	<icon src="icon50.png" platform="ios" width="50" height="50" />
+	<icon src="icon57.png" platform="ios" width="57" height="57" />
+	<icon src="icon58.png" platform="ios" width="58" height="58" />
+	<icon src="icon60.png" platform="ios" width="60" height="60" />
+	<icon src="icon72.png" platform="ios" width="72" height="72" />
+	<icon src="icon76.png" platform="ios" width="76" height="76" />
+	<icon src="icon80.png" platform="ios" width="80" height="80" />
+	<icon src="icon87.png" platform="ios" width="87" height="87" />
+	<icon src="icon100.png" platform="ios" width="100" height="100" />
+	<icon src="icon114.png" platform="ios" width="114" height="114" />
+	<icon src="icon120.png" platform="ios" width="120" height="120" />
+	<icon src="icon144.png" platform="ios" width="144" height="144" />
+	<icon src="icon152.png" platform="ios" width="152" height="152" />
+	<icon src="icon167.png" platform="ios" width="167" height="167" />
+	<icon src="icon180.png" platform="ios" width="180" height="180" />
+
+	<splash src="splash.png" />
+
+	<platform name="ios">
+		<splash src="wallpaper.png" />
+	</platform>
+
+
+	<!-- iPhone and iPod touch -->
+	<splash src="Default.png" platform="ios" width="320" height="480" />
+	<splash src="Default@2x.png" platform="ios" width="640" height="960" />
+
+	<!-- iPhone 5 / iPod Touch (5th Generation) -->
+	<splash src="Default-568h@2x.png" platform="ios" width="640" height="1136" />
+
+	<!-- iPhone 6 -->
+	<splash src="Default-667h@2x.png" platform="ios" width="750" height="1334" />
+	<splash src="Default-Portrait-736h@3x.png" platform="ios" width="1242" height="2208" />
+	
+
+	<!-- iPad -->
+	<splash src="Default-Portrait.png" platform="ios" width="768" height="1024" />
+	
+
+	<!-- Retina iPad -->
+	<splash src="Default-Portrait@2x.png" platform="ios" width="1536" height="2048" />
+
+
+
+
+	
 	
 
 
