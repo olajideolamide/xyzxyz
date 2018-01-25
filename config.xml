@@ -3,8 +3,8 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.ginospizza.www"
-	versionCode = "2" 
-	version = "4.0.2" >
+	versionCode = "3" 
+	version = "4.0.3" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
@@ -13,7 +13,7 @@
 	<name>Ginos Pizza</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Online ordering available for Charleston, Elkview, Fayetteville, Hurricane, Nitro, and Summersville
+		Thank you for your patience while we add new stores. Check back soon!
 	</description>
 
 
