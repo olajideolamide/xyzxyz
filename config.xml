@@ -3,8 +3,8 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.ginospizza.www"
-	versionCode = "3" 
-	version = "4.0.3" >
+	versionCode = "4" 
+	version = "4.0.4" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
