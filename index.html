@@ -25,12 +25,7 @@
 
 
 
-		<center>
-			<div style="color: #ffffff;
-			background-color: #c61e24;
-			font-size: 15px;
-			margin-top: 50px; padding: 5px 0px;">Thank you for your patience while we add new stores. Check back soon!</div>
-		</center>
+		
 
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
@@ -93,7 +88,7 @@
 	<script>
 
 
-		/**function onDeviceReady(){
+		function onDeviceReady(){
 			console.log("Device Ready");
 
 			var push = PushNotification.init({
@@ -104,7 +99,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: true,
-					topics: ['ginospizza']
+					topics: ['gofish']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -184,7 +179,7 @@
 		document.addEventListener("deviceready",onDeviceReady,false);
 
 
-		onDeviceReady();**/
+		onDeviceReady();
 
 
 
