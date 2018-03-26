@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"  
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.ginospizza.www"
+	id          = "com.gofishdenver.www"
 	versionCode = "4" 
 	version = "4.0.4" >
 
@@ -10,10 +10,10 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Ginos Pizza</name>
+	<name>Gofish Sushi</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Thank you for your patience while we add new stores. Check back soon!
+		Gofish Sushi
 	</description>
 
 
@@ -21,7 +21,7 @@
 	<icon platform="ios" src="icon.png" />
 
 
-	<icon src="icon29.png" platform="ios" width="29" height="29" />
+	<!--<icon src="icon29.png" platform="ios" width="29" height="29" />
 	<icon src="icon40.png" platform="ios" width="40" height="40" />
 	<icon src="icon50.png" platform="ios" width="50" height="50" />
 	<icon src="icon57.png" platform="ios" width="57" height="57" />
@@ -37,7 +37,7 @@
 	<icon src="icon144.png" platform="ios" width="144" height="144" />
 	<icon src="icon152.png" platform="ios" width="152" height="152" />
 	<icon src="icon167.png" platform="ios" width="167" height="167" />
-	<icon src="icon180.png" platform="ios" width="180" height="180" />
+	<icon src="icon180.png" platform="ios" width="180" height="180" />-->
 
 	
 
