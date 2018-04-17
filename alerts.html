@@ -360,7 +360,7 @@
 
 		var storage = window.localStorage;
 		//storage.setItem('notifs', JSON.stringify( notifs ));
-		var notifs_array = JSON.parse(storage.getItem('notifs')); 
+		var notifs_array = JSON.parse(storage.getItem('ginospizza')); 
 
 
 		var html = '';
@@ -425,7 +425,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['testginos']
+					topics: ['ginospizza']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -468,7 +468,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('notifs');
+				var current_notifs = storage.getItem('ginospizza');
 
 				if(current_notifs != null)
 				{
@@ -480,7 +480,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('notifs', JSON.stringify( notifs_array ));
+				storage.setItem('ginospizza', JSON.stringify( notifs_array ));
 
 
 

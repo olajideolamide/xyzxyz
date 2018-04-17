@@ -3,8 +3,8 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.ginospizza.www"
-	versionCode = "4" 
-	version = "4.0.4" >
+	versionCode = "5" 
+	version = "4.0.5" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
@@ -36,6 +36,8 @@
 	<icon src="icon120.png" platform="ios" width="120" height="120" />
 	<icon src="icon144.png" platform="ios" width="144" height="144" />
 	<icon src="icon152.png" platform="ios" width="152" height="152" />
+
+
 	<icon src="icon167.png" platform="ios" width="167" height="167" />
 	<icon src="icon180.png" platform="ios" width="180" height="180" />
 
@@ -75,12 +77,12 @@
 	
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	<!--<plugin name="cordova-plugin-splashscreen" source="npm" />-->
-	<!--<plugin name="phonegap-plugin-push" spec="~1.8.1">
-		<variable name="SENDER_ID" value="Gin" />
+	<plugin name="phonegap-plugin-push" spec="~1.8.1">
+		<variable name="SENDER_ID" value="ginospizza" />
 
-	</plugin>-->
+	</plugin>
 
-	<plugin name="phonegap-plugin-push" spec="2.0.0" />
+	<!--<plugin name="phonegap-plugin-push" spec="2.0.0" />-->
 
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />
