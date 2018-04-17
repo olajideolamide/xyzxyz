@@ -8,7 +8,7 @@
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<script src="cordova.js"></script>
-	<!--<script src="js/push.js"></script>-->
+	<script src="js/push.js"></script>
 	<script src="js/jquery-2.0.0.js"></script>
 	
 	
@@ -34,11 +34,11 @@
 	</script>
 
 	<style type="text/css">
-		.notif_title{color: #fb9300}
+		.notif_title{color: #382107}
 		.notif_date{font-size: 10px; color: #666}
 		.notif_group_list{z-index: 1}
 		a.btn {
-			background-color: #9e1b1f !important;
+			background-color: #5f6280 !important;
 		}
 		a.btn {
 			font-size: 15px;
@@ -84,7 +84,7 @@
 			-moz-box-shadow: inset 0px 1px 0px 0px #C7C7C7;
 			-webkit-box-shadow: inset 0px 1px 0px 0px #C7C7C7;
 			box-shadow: inset 0px 1px 0px 0px #C7C7C7;
-			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #9e1b1f), color-stop(1, #9e1b1f));
+			background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5f6280), color-stop(1, #5f6280));
 		}
 		.btn {
 			display: inline-block;
@@ -138,7 +138,7 @@
 		}
 		#nav li a:active
 		{
-			background-color: #fb9300 !important;
+			background-color: #5f6280 !important;
 		}
 
 		#nav span:after
@@ -160,7 +160,7 @@
 		#nav > ul
 		{
 			height: 3.75em; /* 60 */
-			background-color: #fb9300;
+			background-color: #5f6280;
 		}
 		#nav > ul > li
 		{
@@ -177,12 +177,12 @@
 		}
 		#nav > ul > li:not( :last-child ) > a
 		{
-			border-right: 1px solid #fb9300;
+			border-right: 1px solid #5f6280;
 		}
 		#nav > ul > li:hover > a,
 		#nav > ul:not( :hover ) > li.active > a
 		{
-			background-color: #9e1b1f;
+			background-color: #5f6280;
 		}
 
 
@@ -190,7 +190,7 @@
 
 		#nav li ul
 		{
-			background-color: #fb9300;
+			background-color: #5f6280;
 			display: none;
 			position: absolute;
 			top: 100%;
@@ -214,7 +214,7 @@
 		#nav li ul li a:hover,
 		#nav li ul:not( :hover ) li.active a
 		{
-			background-color: #9e1b1f;
+			background-color: #5f6280;
 		}
 
 
@@ -247,7 +247,7 @@
 				height: 100%;
 				text-align: left;
 				text-indent: -9999px;
-				background-color: #fb9300;
+				background-color: #5f6280;
 				position: relative;
 			}
 			#nav > a:before,
@@ -324,7 +324,6 @@
 		a:active, a:focus, a:hover{color: white !important; text-decoration: none}
 	</style>
 </head>
-</head>
 <body  >
 
 	<div style="height: 7%; max-height: 40px; width: 100%; background-color: white">
@@ -360,7 +359,7 @@
 
 		var storage = window.localStorage;
 		//storage.setItem('notifs', JSON.stringify( notifs ));
-		var notifs_array = JSON.parse(storage.getItem('notifs')); 
+		var notifs_array = JSON.parse(storage.getItem('lph')); 
 
 
 		var html = '';
@@ -390,33 +389,6 @@
 		function onDeviceReady(){
 			console.log("Device Ready");
 
-			
-
-			
-
-			
-
-			
-		}
-
-
-		document.addEventListener("deviceready",onDeviceReady,false);
-
-
-		onDeviceReady();
-
-
-
-	</script>
-
-
-
-	<script>
-
-
-		function onDeviceReady(){
-			console.log("Device Ready");
-
 			var push = PushNotification.init({
 				android: {
 					senderID: "974167092163",
@@ -425,7 +397,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['poke']
+					topics: ['lph']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -468,7 +440,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('poke');
+				var current_notifs = storage.getItem('lph');
 
 				if(current_notifs != null)
 				{
@@ -480,7 +452,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('poke', JSON.stringify( notifs_array ));
+				storage.setItem('lph', JSON.stringify( notifs_array ));
 
 
 
@@ -510,6 +482,8 @@
 
 
 	</script>
+
+</body>
 
 
 
