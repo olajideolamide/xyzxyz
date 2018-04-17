@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<widget xmlns   = "http://www.w3.org/ns/widgets"  
+<widget xmlns   = "http://www.w3.org/ns/widgets"
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.longmontpublichouse.www"
-	versionCode = "2" 
-	version = "4.0.2" >
+	id          = "com.wingmanco.www"
+	versionCode = "22" 
+	version = "4.0.22" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Longmont Public House</name>
+	<name>Wingman Wings Brighton</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Longmont Public House Mobile App
+		Wingman Wings Brighton
 	</description>
 	<!--<gap:plugin name="org.apache.cordova.device" />-->
 
@@ -28,9 +28,9 @@
 
 	
 	<!--<splash src="splash.png" />-->
-
-	<icon platform="ios" src="icon.png" />
 	<icon platform="android" src="icon.png" />
+	<icon platform="ios" src="icon.png" />
+
 
 	<icon src="icon29.png" platform="ios" width="29" height="29" />
 	<icon src="icon40.png" platform="ios" width="40" height="40" />
@@ -50,38 +50,11 @@
 	<icon src="icon167.png" platform="ios" width="167" height="167" />
 	<icon src="icon180.png" platform="ios" width="180" height="180" />
 
-
-
-	<!-- iPhone and iPod touch -->
-	<splash src="background.jpg" platform="ios" width="320" height="480" />
-	<splash src="best-restaurants-in-longmont@2x.png" platform="ios" width="640" height="960" />
-
-	<!-- iPhone 5 / iPod Touch (5th Generation) -->
-	<splash src="best-restaurants-in-longmont@2x.png" platform="ios" width="640" height="1136" />
-
-	<!-- iPhone 6 -->
-	<splash src="best-restaurants-in-longmont@3x.png" platform="ios" width="750" height="1334" />
-	<splash src="best-restaurants-in-longmont@3x.png" platform="ios" width="1242" height="2208" />
-	<splash src="best-restaurants-in-longmont@3x.png" platform="ios" width="2208" height="1242" />
-
-	<!-- iPad -->
-	<splash src="best-restaurants-in-longmont@3x.png" platform="ios" width="768" height="1024" />
-	<splash src="best-restaurants-in-longmont@3x.png" platform="ios" width="1024" height="768" />
-
-	<!-- Retina iPad -->
-	<splash src="best-restaurants-in-longmont@3x.png" platform="ios" width="1536" height="2048" />
-	<splash src="best-restaurants-in-longmont@3x.png" platform="ios" width="2048" height="1536" />
-
-
-
-
-
-
 	
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	<!--<plugin name="cordova-plugin-splashscreen" source="npm" />-->
 	<plugin name="phonegap-plugin-push" spec="~1.8.1">
-		<variable name="SENDER_ID" value="LPH" />
+		<variable name="SENDER_ID" value="wingmanbrighton" />
 
 	</plugin>
 

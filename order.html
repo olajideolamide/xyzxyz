@@ -67,11 +67,8 @@ function exitFromApp()
 </script>
 
 <style type="text/css">
-	.notif_title{color: #382107}
-	.notif_date{font-size: 10px; color: #666}
-	.notif_group_list{z-index: 1}
 	a.btn {
-		background-color: #5f6280 !important;
+		background-color: #f48f1d !important;
 	}
 	a.btn {
 		font-size: 15px;
@@ -85,11 +82,11 @@ function exitFromApp()
 		text-decoration: none;
 	}
 	.btn {
-
+		
 	}
 	.btn {
 		display: inline-block;
-
+		
 		margin-bottom: 0;
 		font-size: 14px;
 		line-height: 20px;
@@ -99,11 +96,11 @@ function exitFromApp()
 		vertical-align: middle;
 		cursor: pointer;
 		background-color: #f5f5f5;
-		background: -moz-linear-gradient(top, #5f6280 5%, #9AA917 100%);
-		background: -webkit-linear-gradient(top, #787a94 5%, #5f6280 100%);
-		background: -o-linear-gradient(top, #5f6280 5%, #9AA917 100%);
-		background: -ms-linear-gradient(top, #5f6280 5%, #9AA917 100%);
-		background: linear-gradient(to bottom, #5f6280 5%, #9AA917 100%)
+		background-image: -moz-linear-gradient(top, #ffffff, #e6e6e6);
+		background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#e6e6e6));
+		background-image: -webkit-linear-gradient(top, #ffffff, #e6e6e6);
+		background-image: -o-linear-gradient(top, #ffffff, #e6e6e6);
+		background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
 		background-repeat: repeat-x;
 		border: 1px solid #cccccc;
 		border-color: #e6e6e6 #e6e6e6 #bfbfbf;
@@ -114,10 +111,9 @@ function exitFromApp()
 		border-radius: 4px;
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ffe6e6e6', GradientType=0);
 		filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
-		-moz-box-shadow: inset 0px 1px 0px 0px #C7C7C7;
-		-webkit-box-shadow: inset 0px 1px 0px 0px #C7C7C7;
-		box-shadow: inset 0px 1px 0px 0px #C7C7C7;
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5f6280), color-stop(1, #5f6280));
+		-webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		-moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+		box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
 	}
 	.btn {
 		display: inline-block;
@@ -171,7 +167,7 @@ function exitFromApp()
 	}
 	#nav li a:active
 	{
-		background-color: #5f6280 !important;
+		background-color: #011fb5 !important;
 	}
 
 	#nav span:after
@@ -180,7 +176,7 @@ function exitFromApp()
 		height: 0;
 		border: 0.313em solid transparent; /* 5 */
 		border-bottom: none;
-		border-top-color: #5f6280;
+		border-top-color: #ff3e47;
 		content: '';
 		vertical-align: middle;
 		display: inline-block;
@@ -193,7 +189,7 @@ function exitFromApp()
 	#nav > ul
 	{
 		height: 3.75em; /* 60 */
-		background-color: #5f6280;
+		background-color: #ff3e47;
 	}
 	#nav > ul > li
 	{
@@ -210,12 +206,12 @@ function exitFromApp()
 	}
 	#nav > ul > li:not( :last-child ) > a
 	{
-		border-right: 1px solid #5f6280;
+		border-right: 1px solid #ff3e47;
 	}
 	#nav > ul > li:hover > a,
 	#nav > ul:not( :hover ) > li.active > a
 	{
-		background-color: #5f6280;
+		background-color: #ff3e47;
 	}
 
 
@@ -223,7 +219,7 @@ function exitFromApp()
 
 	#nav li ul
 	{
-		background-color: #5f6280;
+		background-color: ##ff3e47;
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -247,7 +243,7 @@ function exitFromApp()
 	#nav li ul li a:hover,
 	#nav li ul:not( :hover ) li.active a
 	{
-		background-color: #5f6280;
+		background-color: #ff3e47;
 	}
 
 
@@ -280,7 +276,7 @@ function exitFromApp()
 			height: 100%;
 			text-align: left;
 			text-indent: -9999px;
-			background-color: #5f6280;
+			background-color: #ff3e47;
 			position: relative;
 		}
 		#nav > a:before,
@@ -355,6 +351,7 @@ function exitFromApp()
 
 
 	a:active, a:focus, a:hover{color: white !important; text-decoration: none}
+
 </style>
 </head>
 <body onload="onLoad()" >
@@ -377,7 +374,7 @@ function exitFromApp()
 	</div>
 	
 	<div  style="height: 93%; width: 100%;  border-top: solid 1px #382107;">
-		<iframe id="myIframe" src="https://www.orderfood.menu/orderonline/lph/?shop_method=pickup" style="width:100%; height: 100%;  border:none"   ></iframe>
+		<iframe id="myIframe" src="https://wingmanco.orderfood.menu//?flmobileapp=true" style="width:100%; height: 100%;  border:none"   ></iframe>
 
 	</div>
 
@@ -401,7 +398,7 @@ function exitFromApp()
 				vibrate: true,
 				alert: true,
 				forceShow: false,
-				topics: ['lph']
+				topics: ['wingmanbrighton']
 			},
 			browser: {
 				pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -444,7 +441,7 @@ function exitFromApp()
 			var notifs = data.title+'//'+data.message+'//'+today;
 
 
-			var current_notifs = storage.getItem('lph');
+			var current_notifs = storage.getItem('wingmanbrighton');
 
 			if(current_notifs != null)
 			{
@@ -456,7 +453,7 @@ function exitFromApp()
 			}
 
 			notifs_array.unshift(notifs);
-			storage.setItem('lph', JSON.stringify( notifs_array ));
+			storage.setItem('wingmanbrighton', JSON.stringify( notifs_array ));
 
 
 
@@ -464,8 +461,13 @@ function exitFromApp()
 
 
 
-
-		});
+//alert(data.title+" Message: " +data.message);
+// data.title,
+// data.count,
+// data.sound,
+// data.image,
+// data.additionalData
+});
 
 		push.on('error', function(e) {
 			alert(e.message);
