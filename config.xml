@@ -20,6 +20,8 @@
 
 	<icon platform="ios" src="icon.png" />
 
+	
+
 
 	<platform name="ios">
 		<icon src="res/icon/ios/icon-1024.png" width="1024" height="1024"/>
