@@ -171,7 +171,7 @@ function exitFromApp()
 	}
 	#nav li a:active
 	{
-		background-color: #fb9300 !important;
+		background-color: #c61e24 !important;
 	}
 
 	#nav span:after
@@ -193,7 +193,7 @@ function exitFromApp()
 	#nav > ul
 	{
 		height: 3.75em; /* 60 */
-		background-color: #fb9300;
+		background-color: #c61e24;
 	}
 	#nav > ul > li
 	{
@@ -210,7 +210,7 @@ function exitFromApp()
 	}
 	#nav > ul > li:not( :last-child ) > a
 	{
-		border-right: 1px solid #fb9300;
+		border-right: 1px solid #c61e24;
 	}
 	#nav > ul > li:hover > a,
 	#nav > ul:not( :hover ) > li.active > a
@@ -223,7 +223,7 @@ function exitFromApp()
 
 	#nav li ul
 	{
-		background-color: #fb9300;
+		background-color: #c61e24;
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -280,7 +280,7 @@ function exitFromApp()
 			height: 100%;
 			text-align: left;
 			text-indent: -9999px;
-			background-color: #fb9300;
+			background-color: #c61e24;
 			position: relative;
 		}
 		#nav > a:before,
@@ -377,7 +377,7 @@ function exitFromApp()
 	</div>
 	
 	<div  style="height: 93%; width: 100%;  border-top: solid 1px #382107;">
-		<iframe id="myIframe" src="https://poke.orderfood.menu/" style="width:100%; height: 100%;  border:none"   ></iframe>
+		<iframe id="myIframe" src="https://gofish.orderfood.menu/" style="width:100%; height: 100%;  border:none"   ></iframe>
 
 	</div>
 
@@ -412,105 +412,4 @@ function exitFromApp()
 
 </script>
 
-
-<!--	<script>
-
-
-		function onDeviceReady(){
-			console.log("Device Ready");
-
-			var push = PushNotification.init({
-				android: {
-					senderID: "974167092163",
-					icon: 'icons',
-					sound: true,
-					vibrate: true,
-					alert: true,
-					forceShow: false,
-					topics: ['poke']
-				},
-				browser: {
-					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-				},
-				ios: {
-					alert: true,
-					badge: true,
-					sound: true
-				},
-				windows: {}
-			});
-
-			push.on('registration', function(data) {
-				console.log(data.registrationId);
-
-				$("#gcm_id").html(data.registrationId);
-
-
-				var user = data.registrationId;
-
-
-				//only for ios
-				$.get( notification_url, { "device_token": data.registrationId } );
-
-
-			});
-
-			push.on('notification', function(data) {
-
-				console.log(data.message);
-
-				var d = new Date();
-
-				var month = d.getMonth()+1;
-				var day = d.getDate();
-
-				var today = d.getFullYear() + '/' +(month<10 ? '0' : '') + month + '/' +(day<10 ? '0' : '') + day;
-
-				var storage = window.localStorage;
-				var notifs = data.title+'//'+data.message+'//'+today;
-
-
-				var current_notifs = storage.getItem('poke');
-
-				if(current_notifs != null)
-				{
-					var notifs_array = JSON.parse(current_notifs); 
-				}
-				else
-				{
-					var notifs_array = [];
-				}
-
-				notifs_array.unshift(notifs);
-				storage.setItem('poke', JSON.stringify( notifs_array ));
-
-
-
-				alert(data.message);
-
-
-
-//alert(data.title+" Message: " +data.message);
-// data.title,
-// data.count,
-// data.sound,
-// data.image,
-// data.additionalData
-});
-
-			push.on('error', function(e) {
-				alert(e.message);
-			});
-		}
-
-
-		document.addEventListener("deviceready",onDeviceReady,false);
-
-
-		onDeviceReady();
-
-
-
-	</script>-->
-
-	</html>
+</html>
