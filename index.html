@@ -102,7 +102,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['yojeet']
+					topics: ['chicfishkin']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -145,7 +145,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('yojeet');
+				var current_notifs = storage.getItem('chicfishkin');
 
 				if(current_notifs != null)
 				{
@@ -157,7 +157,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('yojeet', JSON.stringify( notifs_array ));
+				storage.setItem('chicfishkin', JSON.stringify( notifs_array ));
 
 
 
