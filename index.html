@@ -102,7 +102,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['abospizza']
+					topics: ['yojeet']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -145,7 +145,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('abospizza');
+				var current_notifs = storage.getItem('yojeet');
 
 				if(current_notifs != null)
 				{
@@ -157,7 +157,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('abospizza', JSON.stringify( notifs_array ));
+				storage.setItem('yojeet', JSON.stringify( notifs_array ));
 
 
 
