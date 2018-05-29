@@ -20,7 +20,7 @@
 <!--<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">-->
 <body  style="">
 
-	<div style="background-color: black;   text-align:center;   padding-top: 5%; height: 20% "><img style="height:80%" src="logo.png" /></div>
+	<div style="text-align:center;   padding-top: 5%; height: 20% "><img style="height:80%" src="logo.png" /></div>
 
 	<div class="page" style="padding:0px; background-image:url(wallpaper.jpg); background-repeat: no-repeat; background-size: cover; height:80% ">
 
@@ -102,7 +102,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['corleones']
+					topics: ['sociale']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -145,7 +145,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('corleones');
+				var current_notifs = storage.getItem('sociale');
 
 				if(current_notifs != null)
 				{
@@ -157,7 +157,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('corleones', JSON.stringify( notifs_array ));
+				storage.setItem('sociale', JSON.stringify( notifs_array ));
 
 
 
