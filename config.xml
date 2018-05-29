@@ -10,10 +10,10 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Babajoons</name>
+	<name>Corleones</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Babajoons
+		Corleones
 	</description>
 
 
