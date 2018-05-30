@@ -425,7 +425,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['casaole']
+					topics: ['bubu']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -468,7 +468,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('casaole');
+				var current_notifs = storage.getItem('bubu');
 
 				if(current_notifs != null)
 				{
@@ -480,7 +480,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('casaole', JSON.stringify( notifs_array ));
+				storage.setItem('bubu', JSON.stringify( notifs_array ));
 
 
 
