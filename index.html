@@ -17,15 +17,18 @@
 		.button{width: 100% !important}
 	</style>
 </head>
-<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">
+<!--<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">-->
+<body  style="">
 
-	<div class="page" style="padding:0px">
+	<div style="  text-align:center;   padding-top: 5%; height: 20% "><img style="height:80%;" src="logo.png" /></div>
 
-		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:150px" src="logo.png" /></div>
-
-
+	<div class="page" style="padding:0px; background-image:url(wallpaper.jpg); background-repeat: no-repeat; background-size: cover; height:80% ">
 
 		
+
+
+
+
 
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
@@ -98,8 +101,8 @@
 					sound: true,
 					vibrate: true,
 					alert: true,
-					forceShow: true,
-					topics: ['gofish']
+					forceShow: false,
+					topics: ['abospizza']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -142,7 +145,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('notifs');
+				var current_notifs = storage.getItem('abospizza');
 
 				if(current_notifs != null)
 				{
@@ -154,7 +157,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('notifs', JSON.stringify( notifs_array ));
+				storage.setItem('abospizza', JSON.stringify( notifs_array ));
 
 
 
