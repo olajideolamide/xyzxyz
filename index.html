@@ -20,9 +20,9 @@
 <!--<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">-->
 <body  style="">
 
-	<div style="text-align:center;   padding-top: 5%; height: 15% "><img style="height:80%" src="logo.png" /></div>
+	<div style="text-align:center;   padding-top: 5%; height: 20% "><img style="height:80%" src="logo.png" /></div>
 
-	<div class="page" style="padding:0px; background-image:url(wallpaper.jpg); background-repeat: no-repeat; background-size: cover; height:85% ">
+	<div class="page" style="padding:0px; background-image:url(wallpaper.jpg); background-repeat: no-repeat; background-size: cover; height:80% ">
 
 		
 
@@ -32,8 +32,7 @@
 
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
-			<div class="col-xs-12"><a style="width:100%" href="pasadena.html" class="button"  >Pasadena</a></div>
-			<div class="col-xs-12"><a style="width:100%" href="pearland.html" class="button"  >Pearland</a></div>
+			<div class="col-xs-12"><a style="width:100%" href="order.html" class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>ORDER NOW</a></div>
 
 			<div class="col-xs-6"><a href="alerts.html" class="button"  ><i class="fa fa-bullhorn fa-2x"></i><br/>ALERTS</a></div>
 			<div class="col-xs-6"><a href="#" class="button"  id="exitApp" ><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
@@ -103,7 +102,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['casaole']
+					topics: ['sociale']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -146,7 +145,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('casaole');
+				var current_notifs = storage.getItem('sociale');
 
 				if(current_notifs != null)
 				{
@@ -158,7 +157,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('casaole', JSON.stringify( notifs_array ));
+				storage.setItem('sociale', JSON.stringify( notifs_array ));
 
 
 
