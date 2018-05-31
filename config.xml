@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"  
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.abospizza.app"
+	id          = "com.bubu.app"
 	versionCode = "7" 
 	version = "4.0.7" >
 
@@ -10,12 +10,15 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Abos Pizza</name>
-	<icon platform="ios" src="icon.png" />
+	<name>Bubu</name>
+	
 	<description>
-		Abos Pizza
+		Bubu
 	</description>
 
+
+
+	<icon platform="ios" src="icon.png" />
 
 
 	<platform name="ios">
@@ -60,12 +63,11 @@
 
 
 
-
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<plugin name="phonegap-plugin-push" spec="~1.8.1">
-		<variable name="SENDER_ID" value="abos pizza" />
+	<!--<plugin name="phonegap-plugin-push" spec="~1.8.1">
+		<variable name="SENDER_ID" value="bubu" />
 
-	</plugin>
+	</plugin>-->
 
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />

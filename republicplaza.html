@@ -171,7 +171,7 @@ function exitFromApp()
 	}
 	#nav li a:active
 	{
-		background-color: #00673b !important;
+		background-color: #131212 !important;
 	}
 
 	#nav span:after
@@ -193,7 +193,7 @@ function exitFromApp()
 	#nav > ul
 	{
 		height: 3.75em; /* 60 */
-		background-color: #00673b;
+		background-color: #131212;
 	}
 	#nav > ul > li
 	{
@@ -210,7 +210,7 @@ function exitFromApp()
 	}
 	#nav > ul > li:not( :last-child ) > a
 	{
-		border-right: 1px solid #00673b;
+		border-right: 1px solid #131212;
 	}
 	#nav > ul > li:hover > a,
 	#nav > ul:not( :hover ) > li.active > a
@@ -223,7 +223,7 @@ function exitFromApp()
 
 	#nav li ul
 	{
-		background-color: #00673b;
+		background-color: #131212;
 		display: none;
 		position: absolute;
 		top: 100%;
@@ -280,7 +280,7 @@ function exitFromApp()
 			height: 100%;
 			text-align: left;
 			text-indent: -9999px;
-			background-color: #00673b;
+			background-color: #131212;
 			position: relative;
 		}
 		#nav > a:before,
@@ -377,7 +377,7 @@ function exitFromApp()
 	</div>
 	
 	<div  style="height: 93%; width: 100%;  border-top: solid 1px #382107;">
-		<iframe id="myIframe" src="https://abospizza.orderfood.menu/" style="width:100%; height: 100%;  border:none"   ></iframe>
+		<iframe id="myIframe" src="https://www.orderfood.menu/orderonline/republicplaza/?shop_method=pickup" style="width:100%; height: 100%;  border:none"   ></iframe>
 
 	</div>
 
@@ -427,7 +427,7 @@ function exitFromApp()
 				vibrate: true,
 				alert: true,
 				forceShow: false,
-				topics: ['abospizza']
+				topics: ['bubu']
 			},
 			browser: {
 				pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -470,7 +470,7 @@ function exitFromApp()
 			var notifs = data.title+'//'+data.message+'//'+today;
 
 
-			var current_notifs = storage.getItem('abospizza');
+			var current_notifs = storage.getItem('bubu');
 
 			if(current_notifs != null)
 			{
@@ -482,7 +482,7 @@ function exitFromApp()
 			}
 
 			notifs_array.unshift(notifs);
-			storage.setItem('abospizza', JSON.stringify( notifs_array ));
+			storage.setItem('bubu', JSON.stringify( notifs_array ));
 
 
 
