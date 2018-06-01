@@ -2,7 +2,7 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"  
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.bostonfishsupreme.app"
+	id          = "com.goldendragon.app"
 	versionCode = "7" 
 	version = "4.0.7" >
 
@@ -10,10 +10,10 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Boston Fish Supreme</name>
+	<name>Golden Dragon Chinese Restaurant</name>
 	
 	<description>
-		supreme quality taste &amp; service. treat yourself and eat fish often
+		Golden Dragon Chinese Restaurant
 	</description>
 
 
@@ -67,7 +67,7 @@
 
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
 	<!--<plugin name="phonegap-plugin-push" spec="~1.8.1">
-		<variable name="SENDER_ID" value="bostonfishsupreme" />
+		<variable name="SENDER_ID" value="goldendragon" />
 
 	</plugin>-->
 
