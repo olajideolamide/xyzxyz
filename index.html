@@ -17,7 +17,8 @@
 		.button{width: 100% !important}
 	</style>
 </head>
-<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">
+<!--<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">-->
+<body  style="background-image:url(wallpaper.jpg); background-repeat: no-repeat; background-size: cover; ">
 
 	<div class="page" style="padding:0px">
 
@@ -25,7 +26,7 @@
 
 
 
-		
+
 
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
@@ -98,8 +99,8 @@
 					sound: true,
 					vibrate: true,
 					alert: true,
-					forceShow: true,
-					topics: ['gofish']
+					forceShow: false,
+					topics: ['poke']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -142,7 +143,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('notifs');
+				var current_notifs = storage.getItem('poke');
 
 				if(current_notifs != null)
 				{
@@ -154,7 +155,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('notifs', JSON.stringify( notifs_array ));
+				storage.setItem('poke', JSON.stringify( notifs_array ));
 
 
 
