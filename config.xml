@@ -2,18 +2,18 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"  
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.gofishdenver.www"
-	versionCode = "5" 
-	version = "4.0.5" >
+	id          = "com.pokedenver.www"
+	versionCode = "10" 
+	version = "4.0.10" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Gofish Sushi</name>
+	<name>Poke</name>
 	<icon platform="android" src="icon.png" />
 	<description>
-		Gofish Sushi
+		Poke
 	</description>
 
 
