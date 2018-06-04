@@ -2,9 +2,9 @@
 <widget xmlns   = "http://www.w3.org/ns/widgets"  
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
-	id          = "com.pokeconcepts.app"
-	versionCode = "8" 
-	version = "4.0.8" >
+	id          = "com.pokedenver.www"
+	versionCode = "9" 
+	version = "4.0.9" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
