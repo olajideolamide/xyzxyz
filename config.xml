@@ -10,7 +10,7 @@
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Gino’s Pizza &amp; Spaghetti House &reg;</name>
+	<name>Gino's Pizza &amp; Spaghetti House &reg;</name>
 	<icon platform="android" src="icon.png" />
 	<description>
 		Thank you for your patience while we add new stores. Check back soon!
