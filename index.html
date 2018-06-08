@@ -25,7 +25,12 @@
 
 
 
-		
+		<center>
+			<div style="color: #ffffff;
+			background-color: #c61e24;
+			font-size: 15px;
+			margin-top: 50px; padding: 5px 0px;">Thank you for your patience while we add new stores. Check back soon!</div>
+		</center>
 
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
@@ -85,7 +90,7 @@
 
 	</script>
 
-	<!--<script>
+	<script>
 
 
 		function onDeviceReady(){
@@ -98,8 +103,8 @@
 					sound: true,
 					vibrate: true,
 					alert: true,
-					forceShow: true,
-					topics: ['gofish']
+					forceShow: false,
+					topics: ['ginospizza']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -142,7 +147,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('notifs');
+				var current_notifs = storage.getItem('ginospizza');
 
 				if(current_notifs != null)
 				{
@@ -154,7 +159,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('notifs', JSON.stringify( notifs_array ));
+				storage.setItem('ginospizza', JSON.stringify( notifs_array ));
 
 
 
@@ -183,7 +188,7 @@
 
 
 
-	</script>-->
+	</script>
 
 </body>
 </html>
