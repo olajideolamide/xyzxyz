@@ -3,14 +3,14 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.ginospizza.www"
-	versionCode = "6" 
-	version = "4.0.6" >
+	versionCode = "7" 
+	version = "4.0.7" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
 	<preference name="permissions" value="none" />
 	<!--<preference name="SplashScreen" value="10000"/>-->
-	<name>Gino's Pizza </name>
+	<name>Ginos Pizza and Spaghetti House</name>
 	<icon platform="android" src="icon.png" />
 	<description>
 		Thank you for your patience while we add new stores. Check back soon!
