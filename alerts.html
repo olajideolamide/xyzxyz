@@ -34,7 +34,7 @@
 	</script>
 
 	<style type="text/css">
-		.notif_title{color: #c61e24}
+		.notif_title{color: #0e68a6}
 		.notif_date{font-size: 10px; color: #666}
 		.notif_group_list{z-index: 1}
 		a.btn {
@@ -138,7 +138,7 @@
 		}
 		#nav li a:active
 		{
-			background-color: #c61e24 !important;
+			background-color: #0e68a6 !important;
 		}
 
 		#nav span:after
@@ -160,7 +160,7 @@
 		#nav > ul
 		{
 			height: 3.75em; /* 60 */
-			background-color: #c61e24;
+			background-color: #0e68a6;
 		}
 		#nav > ul > li
 		{
@@ -177,7 +177,7 @@
 		}
 		#nav > ul > li:not( :last-child ) > a
 		{
-			border-right: 1px solid #c61e24;
+			border-right: 1px solid #0e68a6;
 		}
 		#nav > ul > li:hover > a,
 		#nav > ul:not( :hover ) > li.active > a
@@ -190,7 +190,7 @@
 
 		#nav li ul
 		{
-			background-color: #c61e24;
+			background-color: #0e68a6;
 			display: none;
 			position: absolute;
 			top: 100%;
@@ -247,7 +247,7 @@
 				height: 100%;
 				text-align: left;
 				text-indent: -9999px;
-				background-color: #c61e24;
+				background-color: #0e68a6;
 				position: relative;
 			}
 			#nav > a:before,
@@ -360,7 +360,7 @@
 
 		var storage = window.localStorage;
 		//storage.setItem('notifs', JSON.stringify( notifs ));
-		var notifs_array = JSON.parse(storage.getItem('ginospizza')); 
+		var notifs_array = JSON.parse(storage.getItem('thecajunspot')); 
 
 
 		var html = '';
@@ -425,7 +425,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['ginospizza']
+					topics: ['thecajunspot']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -468,7 +468,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('ginospizza');
+				var current_notifs = storage.getItem('thecajunspot');
 
 				if(current_notifs != null)
 				{
@@ -480,7 +480,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('ginospizza', JSON.stringify( notifs_array ));
+				storage.setItem('thecajunspot', JSON.stringify( notifs_array ));
 
 
 
