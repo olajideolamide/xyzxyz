@@ -388,7 +388,7 @@ function exitFromApp()
 </body>-->
 
 <script>
-	window.open('https://www.orderfood.menu/orderonline/thecajunspot/?shop_method=pickup', '_system');
+	cordova.InAppBrowser.open('https://www.orderfood.menu/orderonline/thecajunspot/?shop_method=pickup', '_system');
 	function onDeviceReady(){
 		console.log("Device Ready");
 
