@@ -3,8 +3,8 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	xmlns:android   = "http://schemas.android.com/apk/res/android"
 	id          = "com.thecajunspot.www"
-	versionCode = "10" 
-	version = "4.0.10" >
+	versionCode = "11" 
+	version = "4.0.11" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
@@ -30,7 +30,7 @@
 	</plugin>-->
 
 	<!--<plugin name="phonegap-plugin-push" spec="2.0.0" />-->
-	<preference name="OverrideUserAgent" value="Mozilla/7.0 My Browser" />
+	<preference name="OverrideUserAgent" value="Mozilla/5.0 (Linux; Android 4.0.4; Galaxy Nexus Build/IMM76B) AppleWebKit/535.19 (KHTML, like Gecko) Chrome/18.0.1025.133 Mobile Safari/535.19" />
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />
 	<preference name="StatusBarStyle" value="lightcontent" />
