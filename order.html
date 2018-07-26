@@ -377,7 +377,7 @@ function exitFromApp()
 	</div>
 	
 	<div  style="height: 93%; width: 100%;  border-top: solid 1px #382107;">
-		<iframe id="myIframe" src="https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&state=state_parameter_passthrough_value&redirect_uri=http%3A%2F%2Flocalhost%2Foauth2callback&response_type=token&client_id=583306224539-atbcaa8ne8g85e8kc006o6vmq99qiid0.apps.googleusercontent.com" style="width:100%; height: 100%;  border:none"   ></iframe>
+		<iframe id="myIframe" src="https://www.orderfood.menu/orderonline/thecajunspot/?shop_method=pickup" style="width:100%; height: 100%;  border:none"   ></iframe>
 
 	</div>
 
@@ -394,19 +394,24 @@ function exitFromApp()
 		console.log("Device Ready");
 
 		
-
-		
-
-		
-
-		
-	}
+//https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&state=state_parameter_passthrough_value&redirect_uri=http%3A%2F%2Flocalhost%2Foauth2callback&response_type=token&client_id=583306224539-atbcaa8ne8g85e8kc006o6vmq99qiid0.apps.googleusercontent.co
 
 
-	document.addEventListener("deviceready",onDeviceReady,false);
+cordova.InAppBrowser.open('https://accounts.google.com/o/oauth2/v2/auth?scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdrive.metadata.readonly&state=state_parameter_passthrough_value&redirect_uri=http%3A%2F%2Flocalhost%2Foauth2callback&response_type=token&client_id=583306224539-atbcaa8ne8g85e8kc006o6vmq99qiid0.apps.googleusercontent.com', '_blank', 'location=yes');
 
 
-	onDeviceReady();
+
+
+
+
+
+}
+
+
+document.addEventListener("deviceready",onDeviceReady,false);
+
+
+onDeviceReady();
 
 
 
