@@ -37,7 +37,7 @@
 	<preference name="SplashScreenDelay" value="0"/>
 	<preference name="FadeSplashScreenDuration" value="0"/>
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
-	<plugin name="org.li8.inappbrowser" spec="0.1" source="pgb" />
+	<plugin name="org.li8.inappbrowser"  source="pgb" />
 	<author href="https://folos.net/" email="support@folos.net/">
 		Food Online Ordering Systems 
 	</author>
