@@ -33,8 +33,11 @@
 	<preference name="StatusBarStyle" value="lightcontent" />
 	<preference name="SplashScreenDelay" value="0"/>
 	<preference name="FadeSplashScreenDuration" value="0"/>
-	
 
+	
+	
+	
+	<plugin spec="https://github.com/dpa99c/cordova-android-play-services-gradle-release.git" source="git" />
 
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 	<plugin name="cordova-plugin-inappbrowser"/>
