@@ -39,7 +39,7 @@
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 	<plugin name="cordova-plugin-inappbrowser"/>
 
-	<gap:plugin name="cordova-plugin-googleplus" source="npm">
+	<gap:plugin name="cordova-plugin-googleplus" source="npm" spec="5.2.1">
 		<param name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk" />
 	</gap:plugin>
 	
@@ -51,6 +51,6 @@
 	<!--<access origin="tel:*" launch-external="yes" />-->
 	<allow-navigation href="*" />
 	<allow-intent href="*" />
-	<engine name="android" spec="^7.0.0" />
+	
 </widget>
 
