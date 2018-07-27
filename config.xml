@@ -40,9 +40,10 @@
 	<plugin name="cordova-plugin-inappbrowser"/>
 
 	<gap:plugin name="cordova-plugin-googleplus" source="npm">
-		<param name="REVERSED_CLIENT_ID" value="com.thecajunspot.www" />
+		<param name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk" />
 	</gap:plugin>
 	
+
 	<author href="https://folos.net/" email="support@folos.net/">
 		Food Online Ordering Systems 
 	</author>
@@ -50,5 +51,6 @@
 	<!--<access origin="tel:*" launch-external="yes" />-->
 	<allow-navigation href="*" />
 	<allow-intent href="*" />
+	<engine name="android" spec="^7.0.0" />
 </widget>
 
