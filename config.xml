@@ -40,7 +40,7 @@
 	<plugin name="cordova-plugin-inappbrowser"/>
 	<plugin name="cordova-plugin-multidex"/>
 
-	<gap:plugin name="cordova-plugin-googleplus" source="npm" spec="5.2.1">
+	<gap:plugin name="cordova-plugin-googleplus" source="npm" >
 		<param name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk" />
 		<variable name="WEB_APPLICATION_CLIENT_ID" value="831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk.apps.googleusercontent.com" />
 		
