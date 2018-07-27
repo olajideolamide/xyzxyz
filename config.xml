@@ -42,11 +42,12 @@
 	<gap:plugin name="cordova-plugin-googleplus" source="npm" spec="5.2.1">
 		<param name="REVERSED_CLIENT_ID" value="com.googleusercontent.apps.831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk" />
 		<variable name="WEB_APPLICATION_CLIENT_ID" value="831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk.apps.googleusercontent.com" />
+		<variable name="FCM_VERSION" value="15.0.0" />
 	</gap:plugin>
 
-	<plugin name="phonegap-plugin-push" spec="~1.10.5">
+	<plugin name="phonegap-plugin-push" spec="~1.8.1">
 		<variable name="SENDER_ID" value="thecajunspot" />
-
+		<variable name="FCM_VERSION" value="15.0.0" />
 	</plugin>
 	
 
