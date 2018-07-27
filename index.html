@@ -73,6 +73,22 @@
 			});
 
 
+
+			window.plugins.googleplus.login(
+			{
+				'scopes': '... ', 
+				'webClientId': '831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk.apps.googleusercontent.com', 
+				'offline': true, 
+			},
+			function (obj) {
+      alert(JSON.stringify(obj)); // do something useful instead of alerting
+  },
+  function (msg) {
+  	alert('error: ' + msg);
+  }
+  );
+
+
 		}
 
 

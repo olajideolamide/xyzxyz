@@ -38,6 +38,11 @@
 	<preference name="FadeSplashScreenDuration" value="0"/>
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 	<plugin name="cordova-plugin-inappbrowser"/>
+
+	<gap:plugin name="cordova-plugin-googleplus" source="npm">
+		<param name="REVERSED_CLIENT_ID" value="com.thecajunspot.www" />
+	</gap:plugin>
+	
 	<author href="https://folos.net/" email="support@folos.net/">
 		Food Online Ordering Systems 
 	</author>
