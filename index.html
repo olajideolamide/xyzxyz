@@ -33,8 +33,6 @@
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
 			<div class="col-xs-12"><a style="width:100%" href="order.html" class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>ORDER NOW</a></div>
-
-			<div class="col-xs-12"><a style="width:100%" href="#" class="button" id="google_login"  ><i class="fa fa-user fa-2x"></i><br/>LOGIN</a></div>
 			
 
 			<div class="col-xs-6"><a href="alerts.html" class="button"  ><i class="fa fa-bullhorn fa-2x"></i><br/>ALERTS</a></div>
@@ -74,29 +72,6 @@
 				navigator.app.exitApp();
 			});
 
-			document.getElementById('google_login').addEventListener('click', function() {
-				
-				window.plugins.googleplus.login(
-				{
-
-					'webClientId': '831584020908-b65p6af57qaqg14tbobki9lggh7f5ekk.apps.googleusercontent.com'
-				},
-				function (obj) {
-					alert(JSON.stringify(obj)); 
-
-					alert(obj.displayName); 
-				},
-				function (msg) {
-					alert('error: ' + msg);
-				}
-				);
-
-			});
-
-
-
-			
-
 
 		}
 
@@ -110,14 +85,6 @@
 				navigator.app.backHistory()
 			}
 		}, false);
-
-
-
-
-		function google_login()
-		{
-			
-		}
 
 
 	</script>
@@ -136,7 +103,7 @@
 					vibrate: true,
 					alert: true,
 					forceShow: false,
-					topics: ['thecajunspot']
+					topics: ['vito']
 				},
 				browser: {
 					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
@@ -179,7 +146,7 @@
 				var notifs = data.title+'//'+data.message+'//'+today;
 
 
-				var current_notifs = storage.getItem('thecajunspot');
+				var current_notifs = storage.getItem('vito');
 
 				if(current_notifs != null)
 				{
@@ -191,7 +158,7 @@
 				}
 
 				notifs_array.unshift(notifs);
-				storage.setItem('thecajunspot', JSON.stringify( notifs_array ));
+				storage.setItem('vito', JSON.stringify( notifs_array ));
 
 
 
