@@ -33,7 +33,7 @@
 		<splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png"/>
 		<splash density="port-xxhdpi" src="res/screen/android/splash-port-xxhdpi.png"/>
 		<splash density="port-xxxhdpi" src="res/screen/android/splash-port-xxxhdpi.png"/>
-		
+
 	</platform>
 
 
@@ -65,6 +65,7 @@
 	<preference name="StatusBarStyle" value="lightcontent" />
 	<preference name="SplashScreenDelay" value="0"/>
 	<preference name="FadeSplashScreenDuration" value="0"/>
+	<preference name="android-targetSdkVersion" value="26"/>
 	<plugin spec="https://github.com/apache/cordova-plugin-statusbar.git" source="git" />
 
 	<author href="https://folos.net/" email="support@folos.net/">
