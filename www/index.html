@@ -59,137 +59,102 @@
 
 
 
-		function openURL(urlString){
-			myURL = encodeURI(urlString);
-			window.open(myURL, '_self');
-		}
+		/*
+ * Licensed to the Apache Software Foundation (ASF) under one
+ * or more contributor license agreements.  See the NOTICE file
+ * distributed with this work for additional information
+ * regarding copyright ownership.  The ASF licenses this file
+ * to you under the Apache License, Version 2.0 (the
+ * "License"); you may not use this file except in compliance
+ * with the License.  You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing,
+ * software distributed under the License is distributed on an
+ * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ * KIND, either express or implied.  See the License for the
+ * specific language governing permissions and limitations
+ * under the License.
+ */
+ var app = {
+    // Application Constructor
+    initialize: function() {
+    	this.bindEvents();
+    },
+    // Bind Event Listeners
+    //
+    // Bind any events that are required on startup. Common events are:
+    // 'load', 'deviceready', 'offline', and 'online'.
+    bindEvents: function() {
+    	document.addEventListener('deviceready', this.onDeviceReady, false);
+    },
+    // deviceready Event Handler
+    //
+    // The scope of 'this' is the event. In order to call the 'receivedEvent'
+    // function, we must explicitly call 'app.receivedEvent(...);'
+    onDeviceReady: function() {
+    	console.log('Received Device Ready Event');
+    	console.log('calling setup push');
+    	app.setupPush();
+    },
+    setupPush: function() {
+    	console.log('calling push init');
+    	var push = PushNotification.init({
+    		"android": {
+    			"senderID": "456571461732"
+    		},
+    		"browser": {},
+    		"ios": {
+    			"sound": true,
+    			"vibration": true,
+    			"badge": true
+    		},
+    		"windows": {}
+    	});
+    	console.log('after init');
 
-		document.addEventListener("deviceready", onDeviceReady, false);
+    	push.on('registration', function(data) {
+    		alert(data.registrationId);
+    		$('div.total-title').text(data.registrationId);
+    		console.log('registration event: ' + data.registrationId);
 
-		function onDeviceReady() {
+    		var oldRegId = localStorage.getItem('registrationId');
+    		if (oldRegId !== data.registrationId) {
+                // Save new registration ID
+                localStorage.setItem('registrationId', data.registrationId);
+                // Post registrationId to your app server as the value has changed
+            }
 
+            var parentElement = document.getElementById('registration');
+            var listeningElement = parentElement.querySelector('.waiting');
+            var receivedElement = parentElement.querySelector('.received');
 
+            listeningElement.setAttribute('style', 'display:none;');
+            receivedElement.setAttribute('style', 'display:block;');
+        });
 
-			document.getElementById('exitApp').addEventListener('click', function() {
-				navigator.app.exitApp();
-			});
+    	push.on('error', function(e) {
+    		console.log("push error = " + e.message);
+    	});
 
-
-		}
-
-
-		document.addEventListener("backbutton", function(e){
-			if($.mobile.activePage.is('#homepage')){
-
-				navigator.app.exitApp();
-			}
-			else {
-				navigator.app.backHistory()
-			}
-		}, false);
-
-
-	</script>
-
-	<script>
-
-
-		function onDeviceReady(){
-			console.log("Device Ready");
-
-			var push = PushNotification.init({
-				android: {
-					senderID: "974167092163",
-					icon: 'icons',
-					sound: true,
-					vibrate: true,
-					alert: true,
-					forceShow: false,
-					topics: ['thecajunspot']
-				},
-				browser: {
-					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
-				},
-				ios: {
-					alert: true,
-					badge: true,
-					sound: true
-				},
-				windows: {}
-			});
-
-			push.on('registration', function(data) {
-				console.log(data.registrationId);
-
-				$("#gcm_id").html(data.registrationId);
-
-
-				var user = data.registrationId;
-
-
-				//only for ios
-				$.get( notification_url, { "device_token": data.registrationId } );
-
-
-			});
-
-			push.on('notification', function(data) {
-
-				console.log(data.message);
-
-				var d = new Date();
-
-				var month = d.getMonth()+1;
-				var day = d.getDate();
-
-				var today = d.getFullYear() + '/' +(month<10 ? '0' : '') + month + '/' +(day<10 ? '0' : '') + day;
-
-				var storage = window.localStorage;
-				var notifs = data.title+'//'+data.message+'//'+today;
-
-
-				var current_notifs = storage.getItem('thecajunspot');
-
-				if(current_notifs != null)
-				{
-					var notifs_array = JSON.parse(current_notifs); 
-				}
-				else
-				{
-					var notifs_array = [];
-				}
-
-				notifs_array.unshift(notifs);
-				storage.setItem('thecajunspot', JSON.stringify( notifs_array ));
+    	push.on('notification', function(data) {
+    		console.log('notification event');
+    		navigator.notification.alert(
+                data.message,         // message
+                null,                 // callback
+                data.title,           // title
+                'Ok'                  // buttonName
+                );
+    	});
+    }
+};
+app.bindEvents();
 
 
-
-				alert(data.message);
-
+</script>
 
 
-//alert(data.title+" Message: " +data.message);
-// data.title,
-// data.count,
-// data.sound,
-// data.image,
-// data.additionalData
-});
-
-			push.on('error', function(e) {
-				alert(e.message);
-			});
-		}
-
-
-		document.addEventListener("deviceready",onDeviceReady,false);
-
-
-		onDeviceReady();
-
-
-
-	</script>
 
 </body>
 </html>
