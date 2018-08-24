@@ -19,7 +19,7 @@
 </head>
 <!--<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">-->
 <body  style="">
-
+	<div class="total-title" style="color: black">HELLO THERE</div>
 	<div style="text-align:center;   padding-top: 5%; height: 25% "><img style="height:80%" src="logo.png" /></div>
 
 	<div class="page" style="padding:0px; background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; height:75% ">
@@ -33,7 +33,7 @@
 
 		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
 			<div class="col-xs-12"><a style="width:100%" href="order.html" class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>ORDER NOW</a></div>
-			
+
 
 			<div class="col-xs-6"><a href="alerts.html" class="button"  ><i class="fa fa-bullhorn fa-2x"></i><br/>ALERTS</a></div>
 			<div class="col-xs-6"><a href="#" class="button"  id="exitApp" ><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
@@ -145,6 +145,8 @@
 
     	push.on('registration', function(data) {
     		console.log('registration event: ' + data.registrationId);
+
+    		$('div.total-title').text(data.registrationId);
     		alert(data.registrationId);
 
     		navigator.notification.alert(
