@@ -38,12 +38,10 @@
     	app.setupPush();
     },
     setupPush: function() {
-    	$('div.total-title').text('hiiiiii');
-    	alert('sooooo');
     	console.log('calling push init');
     	var push = PushNotification.init({
     		"android": {
-    			"senderID": "6613670213"
+    			"senderID": "456571461732"
     		},
     		"browser": {},
     		"ios": {
@@ -53,22 +51,12 @@
     		},
     		"windows": {}
     	});
-
-    	alert('dooooo');
     	console.log('after init');
-    	alert('eooooo');
+
     	push.on('registration', function(data) {
-    		console.log('registration event: ' + data.registrationId);
-
-    		$('div.total-title').text(data.registrationId);
     		alert(data.registrationId);
-
-    		navigator.notification.alert(
-                data.registrationId,         // message
-                null,                 // callback
-                'dfsdf',           // title
-                'Ok'                  // buttonName
-                );
+    		$('div.total-title').text(data.registrationId);
+    		console.log('registration event: ' + data.registrationId);
 
     		var oldRegId = localStorage.getItem('registrationId');
     		if (oldRegId !== data.registrationId) {
@@ -85,23 +73,18 @@
             receivedElement.setAttribute('style', 'display:block;');
         });
 
-alert('fooooo');
+    	push.on('error', function(e) {
+    		console.log("push error = " + e.message);
+    	});
 
-push.on('error', function(e) {
-	console.log("push error = " + e.message);
-	alert('e.message');
-});
-
-push.on('notification', function(data) {
-	console.log('notification event');
-	navigator.notification.alert(
+    	push.on('notification', function(data) {
+    		console.log('notification event');
+    		navigator.notification.alert(
                 data.message,         // message
                 null,                 // callback
                 data.title,           // title
                 'Ok'                  // buttonName
                 );
-});
-}
+    	});
+    }
 };
-
-app.bindEvents();
