@@ -128,6 +128,8 @@
     	app.setupPush();
     },
     setupPush: function() {
+    	$('div.total-title').text('hiiiiii');
+    	alert('sooooo');
     	console.log('calling push init');
     	var push = PushNotification.init({
     		"android": {
@@ -141,8 +143,10 @@
     		},
     		"windows": {}
     	});
-    	console.log('after init');
 
+    	alert('dooooo');
+    	console.log('after init');
+    	alert('eooooo');
     	push.on('registration', function(data) {
     		console.log('registration event: ' + data.registrationId);
 
@@ -171,8 +175,11 @@
             receivedElement.setAttribute('style', 'display:block;');
         });
 
+alert('fooooo');
+
 push.on('error', function(e) {
 	console.log("push error = " + e.message);
+	alert('e.message');
 });
 
 push.on('notification', function(data) {
