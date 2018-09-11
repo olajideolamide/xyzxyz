@@ -83,7 +83,7 @@
 	</plugin>
 
 	<!--<plugin name="phonegap-plugin-push" spec="2.0.0" />-->
-	<gap:plugin name="org.apache.cordova.core.inappbrowser" />
+	<gap:plugin name="org.apache.cordova.core.inappbrowser"  source="npm"/>
 
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />
