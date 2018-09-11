@@ -83,7 +83,7 @@
 	</plugin>
 
 	<!--<plugin name="phonegap-plugin-push" spec="2.0.0" />-->
-	<plugin name="cordova-plugin-inappbrowser-wkwebview" spec="git+https://github.com/dpa99c/cordova-plugin-inappbrowser-wkwebview" />
+	<gap:plugin name="cordova-plugin-inappbrowser" version="1.3.0" source="npm" />
 
 	<preference name="StatusBarOverlaysWebView" value="false" />
 	<preference name="StatusBarBackgroundColor" value="#000000" />
