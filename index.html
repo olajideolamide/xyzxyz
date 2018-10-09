@@ -1,69 +1,194 @@
 <html>
 <head>
-	<title>[title]</title>
-	<!--<meta name="viewport" content="width=device-width, initial-scale=1" /> -->
-	<meta  name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" >
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<meta http-equiv="Content-Security-Policy" content="default-src * gap: ws: https://ssl.gstatic.com;style-src * 'unsafe-inline' 'self' data: blob:;script-src * 'unsafe-inline' 'unsafe-eval' data: blob:;img-src * data: 'unsafe-inline' 'self' content:;">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
 	
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<script src="cordova.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	
+
+	<style>
+
+		.col-xs-6{padding: 14px; margin-bottom: 10px}
+		a:active, a:focus, a:hover{color: white !important; text-decoration: none}
+		.button{width: 100% !important}
+	</style>
+</head>
+<body  style="background-image:url(wallpaper.png); background-repeat: no-repeat; background-size: cover; ">
+
+	<div class="page" style="padding:0px">
+
+		<div style="  text-align:center;  padding:20px; padding-top: 50px "><img style="width:150px" src="logo.png" /></div>
+
+
+
+		<center>
+			<div style="color: #ffffff;
+			background-color: #c61e24;
+			font-size: 15px;
+			margin-top: 50px; padding: 5px 0px;">Online ordering available for Charleston, Elkview, Fayetteville, Hurricane, Nitro, and Summersville.<p><b>More Locations Coming Soon!<b></p></div>
+		</center>
+
+
+		<div class="row" style="margin: 0px auto; width:100%; padding-top:60px">
+			<div class="col-xs-12"><a style="width:100%" href="order.html" class="button"  ><i class="fa fa-cutlery fa-2x"></i><br/>ORDER NOW</a></div>
+
+			<div class="col-xs-6"><a href="alerts.html" class="button"  ><i class="fa fa-bullhorn fa-2x"></i><br/>ALERTS</a></div>
+			<div class="col-xs-6"><a href="#" class="button"  id="exitApp" ><i class="fa fa-sign-out fa-2x"></i><br/>EXIT</a></div>
+
+		</div>
+
+
+	</div>
+
+
+
+	<script type="text/javascript" src="cordova.js"></script>
+
 
 	<script src="js/jquery-2.0.0.js"></script>
-	<script src="js/jquery.xdomainrequest.min.js"></script>
-	<script src="js/main.js"></script>
 	<script src="js/index.js"></script>
+	<!--<script src="js/push.js"></script>-->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 	<script type="text/javascript" charset="utf-8">
-		// Wait for device API libraries to load
-		//
-		function onLoad() {
-			document.addEventListener("deviceready", onDeviceReady, false);
-			
+
+
+
+		function openURL(urlString){
+			myURL = encodeURI(urlString);
+			window.open(myURL, '_self');
 		}
 
-		// device APIs are available
-		
+		document.addEventListener("deviceready", onDeviceReady, false);
+
 		function onDeviceReady() {
-			// Now safe to use device APIs
-			document.addEventListener("backbutton", onBackKeyDown, false);
-			var os = device.platform;
-			if(os == "Android") $(".quit").removeClass('hidden');
+
+
+
+			document.getElementById('exitApp').addEventListener('click', function() {
+				navigator.app.exitApp();
+			});
+
+
 		}
-		
-		function onBackKeyDown() {
-			// Handle the back button
-			var os = device.platform;
-			if(os == "Android") {
-				if(confirm('Quit '+appname+'?')) navigator.app.exitApp();
+
+
+		document.addEventListener("backbutton", function(e){
+			if($.mobile.activePage.is('#homepage')){
+
+				navigator.app.exitApp();
 			}
-		}
-		
+			else {
+				navigator.app.backHistory()
+			}
+		}, false);
+
+
 	</script>
-</head>
-<body onload="onLoad()">
-	<h1 class="title appname">Menu</h1>
-	<div class="page">
-		<h3>&nbsp;</h3>
-		<div class="login hidden center">Connecting to Server...<br /><img src="images/loading.gif" /></div>
-		<div class="login">
-			<div class="form-container" style="width: 80%;">
-				<h3>Login</h3>
-				
-				<div class="label">Email</div>
-				<input type="text" id="email" placeholder="Email" />
-				
-				<div class="label">Password</div>
-				<input type="text" id="password" placeholder="Password" />
-				
-				<div class="button-div">
-					<a href="#" onclick="login(); return false;" class="button"><b>Login</b></a>
-					<center><p><b>Or</b></p></center>
-					<a href="#" onclick="window.open('http://www.titanicsms.com/pd-admin/extstart', '_system');" class="buttonGreen register "><b>Register</b></a>
-					<!--<a href="#"  onclick="if(confirm('Quit '+appname+'?')){ navigator.app.exitApp(); } return false;" class="button quit hidden">Quit</a>-->
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="footer"></a>
-			</body>
-			</html>
+
+	<script>
+
+
+		/**function onDeviceReady(){
+			console.log("Device Ready");
+
+			var push = PushNotification.init({
+				android: {
+					senderID: "974167092163",
+					icon: 'icons',
+					sound: true,
+					vibrate: true,
+					alert: true,
+					forceShow: true,
+					topics: ['ginospizza']
+				},
+				browser: {
+					pushServiceURL: 'http://push.api.phonegap.com/v1/push'
+				},
+				ios: {
+					alert: true,
+					badge: true,
+					sound: true
+				},
+				windows: {}
+			});
+
+			push.on('registration', function(data) {
+				console.log(data.registrationId);
+
+				$("#gcm_id").html(data.registrationId);
+
+
+				var user = data.registrationId;
+
+
+				//only for ios
+				$.get( notification_url, { "device_token": data.registrationId } );
+
+
+			});
+
+			push.on('notification', function(data) {
+
+				console.log(data.message);
+
+				var d = new Date();
+
+				var month = d.getMonth()+1;
+				var day = d.getDate();
+
+				var today = d.getFullYear() + '/' +(month<10 ? '0' : '') + month + '/' +(day<10 ? '0' : '') + day;
+
+				var storage = window.localStorage;
+				var notifs = data.title+'//'+data.message+'//'+today;
+
+
+				var current_notifs = storage.getItem('notifs');
+
+				if(current_notifs != null)
+				{
+					var notifs_array = JSON.parse(current_notifs); 
+				}
+				else
+				{
+					var notifs_array = [];
+				}
+
+				notifs_array.unshift(notifs);
+				storage.setItem('notifs', JSON.stringify( notifs_array ));
+
+
+
+				alert(data.message);
+
+
+
+//alert(data.title+" Message: " +data.message);
+// data.title,
+// data.count,
+// data.sound,
+// data.image,
+// data.additionalData
+});
+
+			push.on('error', function(e) {
+				alert(e.message);
+			});
+		}
+
+
+		document.addEventListener("deviceready",onDeviceReady,false);
+
+
+		onDeviceReady();**/
+
+
+
+	</script>
+
+</body>
+</html>
