@@ -12,6 +12,9 @@
 	<description>
 		Bulk SMS App
 	</description>
+
+<preference name="phonegap-version" value="cli-7.1.0" />
+<preference name="pgb-builder-version" value="2" />
 	<!--<gap:plugin name="org.apache.cordova.device" source="npm" />-->
 	<plugin spec="https://github.com/kolwit/com.kolwit.pickcontact.git" source="git" />
 	<plugin spec="https://github.com/apache/cordova-plugin-contacts.git" source="git" />
