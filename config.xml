@@ -3,25 +3,25 @@
 	xmlns:gap   = "http://phonegap.com/ns/1.0"
 	id          = "org.padisoft.app"
 	versionCode = "1" 
-	version = "1.0.0" >
+	version = "1.0.1" >
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
-	<name>Fides SMS</name>
+	<name>Frank SMS</name>
 	<icon src="icon.png" />
 	<description>
 		Bulk SMS App
 	</description>
 
-<preference name="phonegap-version" value="cli-7.1.0" />
-<preference name="pgb-builder-version" value="2" />
+	<preference name="phonegap-version" value="cli-7.1.0" />
+	<preference name="pgb-builder-version" value="2" />
 	<!--<gap:plugin name="org.apache.cordova.device" source="npm" />-->
 	<plugin spec="https://github.com/kolwit/com.kolwit.pickcontact.git" source="git" />
 	<plugin spec="https://github.com/apache/cordova-plugin-contacts.git" source="git" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<author href="http://www.smsfides.com" email="fidesnigeria247@gmail.com">
-		Fides SMS. 
+	<author href="http://www.Franksms.org" email="Franksms001@gmail.com">
+		Frank SMS 
 	</author>
 
 	<access origin="*" />

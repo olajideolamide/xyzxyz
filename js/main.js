@@ -1,6 +1,6 @@
-api = 'http://www.smsfides.com/smsmobi';
-domain = 'smsfides.com';
-appname = 'Fides SMS';
+api = 'http://www.Franksms.org/smsmobi';
+domain = 'Franksms.org';
+appname = 'Frank SMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
