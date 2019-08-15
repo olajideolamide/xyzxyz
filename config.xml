@@ -7,7 +7,7 @@
 
 	<!-- versionCode is optional and Android only -->
 	<preference name="orientation" value="portrait" />
-	<name>Frank SMS</name>
+	<name>Josidel SMS</name>
 	<icon src="icon.png" />
 	<description>
 		Bulk SMS App
@@ -20,8 +20,8 @@
 	<plugin spec="https://github.com/apache/cordova-plugin-contacts.git" source="git" />
 	<gap:plugin name="cordova-plugin-inappbrowser" source="npm"  />
 	<gap:plugin name="cordova-plugin-whitelist" source="npm" />
-	<author href="http://www.Franksms.org" email="Franksms001@gmail.com">
-		Frank SMS 
+	<author href="http://www.josidelsms.xyz" email="josidel@gmail.com">
+		Josidel SMS
 	</author>
 
 	<access origin="*" />
