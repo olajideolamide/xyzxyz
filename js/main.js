@@ -1,6 +1,6 @@
-api = 'http://www.josidelsms.xyz/smsmobi';
-domain = 'josidelsms.xyz';
-appname = 'Josidel SMS';
+api = 'http://www.deeservicessolutions.com/smsmobi';
+domain = 'deeservicessolutions.com';
+appname = 'Deeservices SMS';
 xOK = 'Operation completed successfully.';
 x_2904 = 'SMS Sending Failed';
 x_2905 = 'Username/Pasword combination is incorrect';
